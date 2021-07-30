@@ -1,0 +1,40 @@
+
+
+/*index page*/
+.main{
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.mb{
+display: flex;
+font-size: 30px;
+font-family: 'Maven Pro', sans-serif;
+}
+ul{
+  text-decoration: none;
+  /* float: left; */
+  list-style-type:none;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  margin-right: 500px;
+  
+}
+li{
+  float: left;
+  font-size: 20px;
+  color: blue;
+  margin-left: 60px;
+}
+
+a{
+  
+text-decoration: none;
+color:black;
+float: left;
+}
+a:hover{
+  transform: translateY(-4px);
+  
+}
