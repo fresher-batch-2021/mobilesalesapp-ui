@@ -20,8 +20,10 @@ form {
      margin-left: 500px;
  }
  body{
-    background: lightblue url("images/pngtree-flat-business-login-box-login-page-picture-image_1319176.jpg");
- }
+    background-image: url("images/mobaccs.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
  .outer.box.container{
      padding-bottom: 500px;
@@ -57,10 +59,12 @@ form {
         opacity: 0.8;
     }
     .container{
-        width: 317px;
+        width: 333px;
         height: 30px;
     }
         .cancelbtn {
+            text-decoration: white;
+            color: white;
             padding: 5;
             width: 80px;
             height: 30px;
