@@ -18,17 +18,17 @@ form {
      margin-bottom: 0px;
      margin-right: 500px;
      margin-left: 500px;
- }
- body{
+}
+body{
     background-image: url("images/mobaccs.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
- .outer.box.container{
+.outer.box.container{
      padding-bottom: 500px;
      height: 500px;
- }
+     }
     .imgcontainer {
         text-align: center;
         margin: 12px 0 12px 0;   

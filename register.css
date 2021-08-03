@@ -65,12 +65,15 @@ background-color: lightslategray;
             height: 30px;
             background-color: #f44336;
         }
+        a{
+            float: right;
+        }
         img.avatar {
             width: 40%;
             border-radius: 50%;
         }
         .container {
-            padding: 16px;
+            padding: 10px;
             
         }
         span.psw {
