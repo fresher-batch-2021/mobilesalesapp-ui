@@ -10,10 +10,10 @@ font-family: 'Quicksand', sans-serif;
 }
 form {
      text-align: center;
-     border: 3px solid #f1f1f1;
 }
 .outer{
-    background-color: lightcoral;
+    border-radius: 40px;
+    background-color: whitesmoke;
      margin-top: 100pX;
      margin-bottom: 0px;
      margin-right: 500px;
@@ -56,21 +56,23 @@ background-color: lightslategray;
         opacity: 0.8;
     }
     .container{
-        width: 33px;
-        height: 30px;
+        border-radius: 30px;
+        width: 325px;
+        height: 50px;
     }
         .cancelbtn {
+            margin-right: 180px;
             padding: 5;
             width: 80px;
             height: 30px;
             background-color: #f44336;
         }
         a{
+            margin-top: 15px;
             float: right;
         }
         img.avatar {
             width: 40%;
-            border-radius: 50%;
         }
         .container {
             padding: 10px;

@@ -2,27 +2,31 @@
     margin: 0%;
     padding: 0%;
 }
+
+body{
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h2{
     font-size: 50px;
     margin: 0px;
     text-align: center;
-font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
+
 form {
      text-align: center;
-     border: 3px solid #f1f1f1;
 }
+
 .outer{
-    background-color: lightblue;
+    border-radius: 40px;
+    background-color: whitesmoke;
      margin-top: 100pX;
      margin-bottom: 0px;
      margin-right: 500px;
      margin-left: 500px;
-}
-body{
-    background-image: url("images/mobaccs.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .outer.box.container{
@@ -59,33 +63,31 @@ body{
         opacity: 0.8;
     }
     .container{
+        border-radius: 40px;
         width: 333px;
         height: 30px;
+        padding: 16px;
+
     }
-        .cancelbtn {
-            text-decoration: white;
-            color: white;
+    .cancelbtn {
+            margin-right : 65px;
             padding: 5;
             width: 80px;
             height: 30px;
             background-color: #f44336;
         }
-        img.avatar {
+    img.avatar {
+            height: 40%;
             width: 40%;
-            border-radius: 50%;
         }
-        .container {
-            padding: 16px;
-            
-        }
-        span.psw {
+    span.psw {
             float: right;
             padding-top: 16px;
         }
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: left;
+    @media screen and (max-width: 300px) {
+    span.psw {
+            display: block;
+            float: left;
             }
         }
 
