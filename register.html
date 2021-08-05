@@ -7,10 +7,10 @@
     <h2>register</h2>
     
 <div class="outer">
-         <form action="register.html">
+         <form onsubmit="register()">
                 <div class="imgcontainer">
                 <img src="images/m.png" alt="avatar" class="avatar">
-                </div>
+                </div>  
 
             <div class="box">
             <input type="text" name="name" id="name" placeholder="user Name" required autofocus> <br />
@@ -23,7 +23,28 @@
             <button type="button" class="cancelbtn">Cancel</button>
             <a href="login.html">Signin</a>
             </div>
-    </form>       
-</div>   
+    </form> 
+</div>
+
+<script>
+    function register(){
+        event.preventDefault();
+        const name= document.querySelector("#name").value;
+        console.log();
+        const email= document.querySelector("#email").value;
+        console.log();
+        const password= document.querySelector("#password").value;
+        console.log();
+
+        let registerValues={
+            "name": name,
+            "email": email,
+            "password": password
+        };
+        console.log(registerValues);
+        alert ("successfl");
+        window.location.href="login.html";
+    }
+</script>
 </body>
 </html>
