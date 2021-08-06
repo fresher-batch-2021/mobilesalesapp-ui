@@ -7,12 +7,13 @@
     <h2>welcome</h2>
       
     <div class="outer">
-    <form action="index.html">
+    <form onsubmit="login()">
              
         <div class="imgcontainer">
                  <img src="images/profile.png" alt="avatar" class="avatar">
              </div>
-
+                 <h5>User Name: admin0102</h5>
+                 <h5>Password: 1234567890</h5>
                     <div class="box">
                     <input type="text" name="name" id="name" placeholder="user Name" required autofocus> <br />
                     <input type="password" name="password" id="password" placeholder="Password" required> <br />
@@ -21,11 +22,32 @@
                     </div>
                  
                     <div class="container" style="background-color:#f1f1f1">
-                    <button  type="button" class="cancelbtn">Cancel</button>
+                    <a href="index.html"><button  type="button" class="cancelbtn">Cancel</button></a>
                     <span class="psw">New member:&nbsp;<a href="register.html">Signup</a></span>
                     </div>
     </form>         
     </div>
-    
+
+    <script>
+        function login(){
+            event.preventDefault();
+            const name= document.querySelector("#name").value;
+            console.log();
+            const password= document.querySelector("#password").value;
+            console.log();
+            let loginValues = {
+                "name": name,
+                "password": password
+            };
+            console.log(loginValues);
+            if(name == "admin0102" && password == "1234567890"){
+                alert("login successful")
+                window.location.href="index.html";
+            }
+            else{
+                alert ("invalid user");
+            }
+        }
+    </script>
 </body>
 </html>

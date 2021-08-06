@@ -35,15 +35,19 @@
         console.log();
         const password= document.querySelector("#password").value;
         console.log();
-
-        let registerValues={
+        let registerValues = {
             "name": name,
             "email": email,
             "password": password
         };
         console.log(registerValues);
-        alert ("successfl");
-        window.location.href="login.html";
+        if(password.length >=6){
+            alert("register successful")
+            window.location.href="login.html";
+        }
+        else{
+            alert ("invalid password");
+        }
     }
 </script>
 </body>
