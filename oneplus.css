@@ -1,5 +1,5 @@
 html, body {
-background-color: tu;
+/* background-color:; */
     height: 100%;
     width: 100%;
     margin: 0;
@@ -39,7 +39,7 @@ background-color: tu;
 
   .product-description {
     border-bottom: 1px solid #E1E8EE;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
   }
   .product-description span {
     font-size: 12px;
@@ -103,11 +103,11 @@ background-color: tu;
   } 
 
 
-  .cable-choose {
+  .product-choose {
     margin-bottom: 20px;
   }
    
-  .cable-choose button {
+  .product-choose button {
     border: 2px solid #E1E8EE;
     border-radius: 6px;
     padding: 13px 20px;
@@ -118,19 +118,19 @@ background-color: tu;
     transition: all .5s;
   }
    
-  .cable-choose button:hover,
-  .cable-choose button:active,
-  .cable-choose button:focus {
+  .product-choose button:hover,
+  .product-choose button:active,
+  .product-choose button:focus {
     border: 2px solid #86939E;
     outline: none;
   }
    
-  .cable-config {
+  .product-config {
     border-bottom: 1px solid #E1E8EE;
     margin-bottom: 20px;
   }
    
-  .cable-config a {
+  .product-config a {
     color: #358ED7;
     text-decoration: none;
     font-size: 12px;
@@ -139,7 +139,7 @@ background-color: tu;
     display: inline-block;
   }
   
-.cable-config a:before {
+.product-config a:before {
     height: 15px;
     width: 15px;
     border-radius: 50%;
