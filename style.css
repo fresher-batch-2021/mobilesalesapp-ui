@@ -20,6 +20,11 @@ body{
   transform: unset;
   color: grey;
 }
+
+.product{
+  color: black;
+  text-decoration: none;
+}
 .account{
   width: 25px;
   height: 25px;
@@ -27,9 +32,16 @@ body{
   margin-right: 100px;
   margin-top: 15px;
 }
+.cart{
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-right: -80px;
+  margin-top: 15px;
+}
 
 
-.onepplus{
+/* .onepplus{
   top: 70px;
   position: relative;
   transition: transform .2s;
@@ -42,10 +54,7 @@ body{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* h2{
-margin-left: 100px;
-margin-top: 40px;
-} */
+
 .iphone{
   top: 50px;
   position: relative;
@@ -80,4 +89,50 @@ margin-top: 40px;
   margin-top: -145px;
   margin-right: 150px;
   float: right;
+} */
+
+/* brand images */
+.brand{
+  border-radius: 9px;
+  margin-top: 180px;
+  background-color: white;
+  padding: 50px;
+}
+h2{
+  font-size: 400%;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  margin-top: 100px;
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+img{
+  border-radius: 8px;
+}
+
+img.hover-shadow {
+
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

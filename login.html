@@ -3,28 +3,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <head>
         <title>login page</title>
         <link rel="stylesheet" href="login.css">
     </head>
-<body>
-    <h2>welcome</h2>
-      
-    <div class="outer">
-    <form onsubmit="login()">
-             
-        <div class="imgcontainer">
-                 <img src="images/profile.png" alt="avatar" class="avatar">
-             </div>
-                 <h5>User Name: admin0102</h5>
-                 <h5>Password: 1234567890</h5>
-                    <div class="box">
+    
+    <body>
+        <h2>welcome</h2>
+        
+        <div class="outer">
+            <form onsubmit="login()">
+                
+                <div class="imgcontainer">
+                    <img src="images/profile.png" alt="avatar" class="avatar">
+                </div>
+                    
+                <div class="box">
                     <input type="text" name="name" id="name" placeholder="user Name" required autofocus> <br />
                     <input type="password" name="password" id="password" placeholder="Password" required> <br />
                     <!-- <input type="confirmpassword" name="confirmpassword" id="confirmpassword" placeholder="confirmPassword" required> <br /> -->
                     <button type="submit">Sign in</button><br>
                     <input type="checkbox" checked="checked"> Remember       
-                    </div>
+                </div>
                  
                     <div class="container" style="background-color:#f1f1f1">
                     <a href="index.html"><button  type="button" class="cancelbtn">Cancel</button></a>
@@ -45,7 +46,7 @@
                 "password": password
             };
             console.log(loginValues);
-            if(name == "admin0102" && password == "1234567890"){
+            if( password.lenght >=6){
                 alert("login successful")
                 window.location.href="index.html";
             }

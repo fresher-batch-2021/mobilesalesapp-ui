@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>produts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="product.css">
+
+</head>
+
+<body>
+    <!-- <h2 style="text-align:center">ONE PLUS</h2> -->
+    <div class="row" id="oneplus">
+    </div>
+    <script>
+
+        function getOneplusarray() {
+            let content = "";
+            const url = "assest/oneplus.json";
+            axios.get(url).then((res) => {
+                console.log("res", res.data.oneplusModels);
+                var onepluslist = res.data.oneplusModels;
+                for (let oneplus of onepluslist) {
+                    content = content + ` <div class="column">
+                <div class="card">
+                <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
+                <h1>One Plus</h1>
+                <h3>${oneplus.modelName}</h3>
+                <p class="price">${oneplus.ModelPrice4}</p>
+                <p>${oneplus.ModelConfiguration}</p>
+                <p><button>Buy Now</button></p>
+                </div>
+                </div> `;
+                    console.log(content);
+                    document.querySelector("#oneplus").innerHTML = content;
+                }
+            })
+        }
+
+        function getMiarray() {
+            let content = "";
+            const url = "assest/mi.json";
+            axios.get(url).then((res) => {
+                console.log("res", res.data.miModels);
+                var milist = res.data.miModels;
+                for (let mi of milist) {
+                    content = content + ` <div class="column">
+                <div class="card">
+                <img src="images/${mi.imageUrl}" alt="oneplus" style="width:100%">
+                <h1>One Plus</h1>
+                <h3>${mi.modelName}</h3>
+                <p class="price">${mi.ModelPrice4}</p>
+                <p>${mi.ModelConfiguration}</p>
+                <p><button>Buy Now</button></p>
+                </div>
+                </div> `;
+                    console.log(content);
+                    document.querySelector("#oneplus").innerHTML = content;
+                }
+            })
+        }
+
+        const Params = new URLSearchParams(window.location.search.substr(1));
+              console.log(Params);
+              let value = Params.get("value");
+              console.log(value);
+        if(value === "oneplus"){
+            getOneplusarray();
+        }
+        else if(value === "mi"){
+            getMiarray();
+        }
+        
+    </script>
+
+
+</body>
+
+</html>
