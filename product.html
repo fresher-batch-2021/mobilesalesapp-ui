@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <!-- <h2 style="text-align:center">ONE PLUS</h2> -->
     <div class="row" id="oneplus">
     </div>
     <script>
@@ -31,9 +30,9 @@
                 <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
                 <h1>One Plus</h1>
                 <h3>${oneplus.modelName}</h3>
-                <p class="price">${oneplus.ModelPrice4}</p>
-                <p>${oneplus.ModelConfiguration}</p>
-                <p><button>Buy Now</button></p>
+                <p class="price">${oneplus.modelPrice}</p>
+                <p>${oneplus.modelConfiguration}</p>
+                <p><button id="cartPage" onclick="abc();">Add to Cart</button></p>
                 </div>
                 </div> `;
                     console.log(content);
@@ -52,11 +51,35 @@
                     content = content + ` <div class="column">
                 <div class="card">
                 <img src="images/${mi.imageUrl}" alt="oneplus" style="width:100%">
-                <h1>One Plus</h1>
+                <h1>Mi</h1>
                 <h3>${mi.modelName}</h3>
-                <p class="price">${mi.ModelPrice4}</p>
-                <p>${mi.ModelConfiguration}</p>
-                <p><button>Buy Now</button></p>
+                <p class="price">${mi.modelPrice}</p>
+                <p>${mi.modelConfiguration}</p>
+                <p><button>Add to Cart</button></p>
+                </div>
+                </div> `;
+                    console.log(content);
+                    document.querySelector("#oneplus").innerHTML = content;
+                }
+            })
+        }
+
+
+        function getRealmearray() {
+            let content = "";
+            const url = "assest/realme.json";
+            axios.get(url).then((res) => {
+                console.log("res", res.data.realmeModels);
+                var realmelist = res.data.realmeModels;
+                for (let realme of realmelist) {
+                    content = content + ` <div class="column">
+                <div class="card">
+                <img src="images/${realme.imageUrl}" alt="oneplus" style="width:100%">
+                <h1>Realme</h1>
+                <h3>${realme.modelName}</h3>
+                <p class="price">${realme.modelPrice}</p>
+                <p>${realme.modelConfiguration}</p>
+                <p><button>Add to Cart</button></p>
                 </div>
                 </div> `;
                     console.log(content);
@@ -66,16 +89,22 @@
         }
 
         const Params = new URLSearchParams(window.location.search.substr(1));
-              console.log(Params);
-              let value = Params.get("value");
-              console.log(value);
-        if(value === "oneplus"){
+        console.log(Params);
+        let value = Params.get("value");
+        console.log(value);
+        if (value === "oneplus") {
             getOneplusarray();
         }
-        else if(value === "mi"){
+        else if (value === "mi") {
             getMiarray();
         }
-        
+        else if (value === "realme") {
+            getRealmearray();
+        }
+
+        function abc() {
+            window.location.href = "buy.html";
+        }
     </script>
 
 

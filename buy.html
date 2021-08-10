@@ -1,93 +1,96 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
-    <head>
-        <title>shop1+</title>
-        <link rel="stylesheet" href="buy.css">
-        <!-- <script src="assest/oneplus.js"></script> -->
-    </head>
-    <body>
-        <main class="container">
- 
-            <div class="left-column" id="productimage">
-                <!-- <img data-image="red" class="active" src="images/oneplus.png" alt="">
+
+<head>
+  <title>shop1+</title>
+  <link rel="stylesheet" href="buy.css">
+  <!-- <script src="assest/oneplus.js"></script> -->
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="left-column" id="productimage">
+      <!-- <img data-image="red" class="active" src="images/oneplus.png" alt="">
               <img data-image="black"  src="images/grey.png" alt=""> -->
-            </div> 
-           
-           
-            <div class="right-column">
-           
-              <div class="product-description">
-                <!-- <span>oneplus</span>
+    </div>
+
+
+    <div class="right-column">
+
+      <div class="product-description">
+        <!-- <span>oneplus</span>
                 <h1>Nord 2</h1>
                 <p> Pretty much Everything You Could Ask For</p> -->
-              </div>
-           
-              <div class="product-configuration">
-           
-                <div class="product-color">
-                  <span>Color</span>
-           
-                  <div class="color-choose">
-                    <div>
-                      <input data-image="blue" type="radio" id="blue" name="color" value="blue" checked>
-                      <label for="blue"><span></span></label>
-                    </div>
-                    <div>
-                      <input data-image="black" type="radio" id="black" name="color" value="black">
-                      <label for="black"><span></span></label>
-                    </div>
-                      
-                  </div> 
-           
-                </div>
-           
-                <div class="product-config">
-                  <span>varient</span>
-           
-                  <div class="product-choose">
-                    <button>6+128</button>
-                    <button>8+128</button>
-                    <button>12+256</button>
-                  </div>
-           
-                  <a href="#">View Specifications</a>
-                </div>
-              </div>
-           
-              <div class="product-price">
-                <span>₹34,999</span>
-                <a href="#" class="cart-btn">Proceed</a>
-              </div>
+      </div>
+
+      <div class="product-configuration">
+
+        <div class="product-color">
+          <span>Color</span>
+
+          <div class="color-choose">
+            <div>
+              <input data-image="blue" type="radio" id="blue" name="color" value="blue" checked>
+              <label for="blue"><span></span></label>
+            </div>
+            <div>
+              <input data-image="black" type="radio" id="black" name="color" value="black">
+              <label for="black"><span></span></label>
             </div>
 
-            <script>
-              console.log(window.location.search.substr(1));
-              const Params = new URLSearchParams(window.location.search.substr(1));
-              console.log(Params);
-              let product = Params.get("productName");
-              let productUrl = Params.get("productUrl");
-              let productRate = Params.get("productRate");
-              let productBrand = Params.get("productBrand");
+          </div>
 
-              console.log("product :", product);
-              console.log("productUrl :", productUrl);
-              console.log("productRate :", productRate);
-              console.log("productBrand :", productBrand);
-             
-            document.querySelector(".product-description").innerHTML = `
+        </div>
+
+        <div class="product-config">
+          <span>varient</span>
+
+          <div class="product-choose">
+            <button>6+128</button>
+            <button>8+128</button>
+            <button>12+256</button>
+          </div>
+
+          <a href="#">View Specifications</a>
+        </div>
+      </div>
+
+      <div class="product-price">
+        <span>₹34,999</span>
+        <a href="#" class="cart-btn">Proceed</a>
+      </div>
+    </div>
+
+    <script>
+      console.log(window.location.search.substr(1));
+      const Params = new URLSearchParams(window.location.search.substr(1));
+      console.log(Params);
+      let product = Params.get("productName");
+      let productUrl = Params.get("productUrl");
+      let productRate = Params.get("productRate");
+      let productBrand = Params.get("productBrand");
+
+      console.log("product :", product);
+      console.log("productUrl :", productUrl);
+      console.log("productRate :", productRate);
+      console.log("productBrand :", productBrand);
+
+      document.querySelector(".product-description").innerHTML = `
             <span>${product}</span> 
                 <h1>${productBrand}</h1>
                 <p> ${productRate}</p>
-                `; 
-                document.querySelector("#productimage").innerHTML =`
+                `;
+      document.querySelector("#productimage").innerHTML = `
                 <img data-image="red" class="active" src="images/${productUrl}" alt="no image">
                 `;
-            </script>
-            
-          </main>
-          </body>
-          </html>
+    </script>
+
+  </main>
+</body>
+
+</html>
