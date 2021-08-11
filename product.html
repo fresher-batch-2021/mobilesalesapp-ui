@@ -18,11 +18,12 @@
     </div>
     <script>
 
-        function getOneplusarray() {
+        function getOneplusArray() {
             let content = "";
             const url = "assest/oneplus.json";
             axios.get(url).then((res) => {
                 console.log("res", res.data.oneplusModels);
+
                 var onepluslist = res.data.oneplusModels;
                 for (let oneplus of onepluslist) {
                     content = content + ` <div class="column">
@@ -32,16 +33,18 @@
                 <h3>${oneplus.modelName}</h3>
                 <p class="price">${oneplus.modelPrice}</p>
                 <p>${oneplus.modelConfiguration}</p>
-                <p><button id="cartPage" onclick="abc();">Add to Cart</button></p>
+                <p><button type="button" onclick="abc('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brand}')">Add to Cart</button></p>
                 </div>
                 </div> `;
                     console.log(content);
                     document.querySelector("#oneplus").innerHTML = content;
                 }
             })
+
         }
 
-        function getMiarray() {
+
+        function getMiArray() {
             let content = "";
             const url = "assest/mi.json";
             axios.get(url).then((res) => {
@@ -65,7 +68,7 @@
         }
 
 
-        function getRealmearray() {
+        function getRealmeArray() {
             let content = "";
             const url = "assest/realme.json";
             axios.get(url).then((res) => {
@@ -93,17 +96,18 @@
         let value = Params.get("value");
         console.log(value);
         if (value === "oneplus") {
-            getOneplusarray();
+            getOneplusArray();
         }
         else if (value === "mi") {
-            getMiarray();
+            getMiArray();
         }
         else if (value === "realme") {
-            getRealmearray();
+            getRealmeArray();
         }
 
-        function abc() {
-            window.location.href = "buy.html";
+        function abc(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
+            console.log(abc);
+            window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productRate= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
         }
     </script>
 

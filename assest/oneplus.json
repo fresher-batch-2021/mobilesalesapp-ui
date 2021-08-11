@@ -2,18 +2,21 @@
     "oneplusModels": [
         {
             "imageUrl": "oneplus.png",
+            "brand": "oneplus",
             "modelName": "Nord2",
             "modelPrice": "35,999",
             "modelConfiguration": "12GBRAM + 256GBROM,50MP sony imx766 triple camera, Mediatek 1200-AI"
         },
         {
             "imageUrl": "ce.jpg",
+            "brand": "oneplus",
             "modelName": "nordCE",
             "modelPrice": "30,000",
             "modelConfiguration": "8GBRAM + 128GBROM,64MP sony imx586 triple camera, snapdragon 752G processor"
         },
         {
             "imageUrl": "oneplus9r.jpg",
+            "brand": "oneplus",
             "modelName": "OnePlus9R",
             "modelPrice": "39,000",
             "modelConfiguration": "12GBRAM + 256GBROM,64MP sony imx586 triple camera, snapdragon 870 processor"

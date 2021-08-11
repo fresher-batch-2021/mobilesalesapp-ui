@@ -55,38 +55,46 @@
             <button>12+256</button>
           </div>
 
-          <a href="#">View Specifications</a>
+          <!-- <a href="#">Terms and Conditions</a> -->
         </div>
       </div>
 
       <div class="product-price">
-        <span>₹34,999</span>
-        <a href="#" class="cart-btn">Proceed</a>
+        <span>₹34,999 </span>
       </div>
+      <a href="#" class="cart-btn">Buy Now</a>
+
     </div>
 
     <script>
       console.log(window.location.search.substr(1));
       const Params = new URLSearchParams(window.location.search.substr(1));
       console.log(Params);
+
       let product = Params.get("productName");
       let productUrl = Params.get("productUrl");
       let productRate = Params.get("productRate");
       let productBrand = Params.get("productBrand");
+      let productPrice = Params.get("productPrice");
 
       console.log("product :", product);
       console.log("productUrl :", productUrl);
       console.log("productRate :", productRate);
       console.log("productBrand :", productBrand);
+      console.log("productPrice :", productPrice);
 
       document.querySelector(".product-description").innerHTML = `
             <span>${product}</span> 
                 <h1>${productBrand}</h1>
                 <p> ${productRate}</p>
                 `;
+
       document.querySelector("#productimage").innerHTML = `
                 <img data-image="red" class="active" src="images/${productUrl}" alt="no image">
                 `;
+      document.querySelector(".product-price").innerHTML = `
+         <span>${productPrice}</span>
+         `;
     </script>
 
   </main>
