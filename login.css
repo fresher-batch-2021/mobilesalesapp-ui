@@ -33,13 +33,13 @@ form {
      padding-bottom: 500px;
      height: 500px;
      }
-    .imgcontainer {
+.imgcontainer {
         text-align: center;
         margin: 12px 0 12px 0;   
         height: fit-content;
     }
-    input[type=email],
-    input[type=password] {
+input[type=email],
+input[type=password] {
         text-align: left;
         width: 70%;
         height: 5%;
@@ -49,6 +49,7 @@ form {
         border: 1px solid #ccc;
         box-sizing: border-box;
     }
+
     button {
         background-color: #4CAF50;
         color: white;

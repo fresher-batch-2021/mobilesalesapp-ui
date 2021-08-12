@@ -4,8 +4,9 @@
             "imageUrl": "oneplus.png",
             "brand": "oneplus",
             "modelName": "Nord2",
-            "modelPrice": "35,999",
-            "modelConfiguration": "12GBRAM + 256GBROM,50MP sony imx766 triple camera, Mediatek 1200-AI"
+            "modelPrice": "35999",
+            "ram":"12",
+            "modelConfiguration": "256GBROM,50MP sony imx766 triple camera, Mediatek 1200-AI"
         },
         {
             "imageUrl": "ce.jpg",

@@ -7,7 +7,8 @@ body{
   height: 40px;
   float: left;
 }
-.mb{
+
+.mobilehub{
   margin: 8px;
   font-size: 30px;
   color:black;
@@ -16,15 +17,13 @@ body{
   font-family: 'Spartan', sans-serif;
   font-family: 'Tenor Sans', sans-serif;
 }
-.mb:hover{
+.mobilehub:hover{
   transform: unset;
   color: grey;
 }
 
-.product{
-  color: black;
-  text-decoration: none;
-}
+
+
 .account{
   width: 25px;
   height: 25px;
@@ -32,6 +31,7 @@ body{
   margin-right: 100px;
   margin-top: 15px;
 }
+
 .cart{
   width: 25px;
   height: 25px;
@@ -41,56 +41,6 @@ body{
 }
 
 
-/* .onepplus{
-  top: 70px;
-  position: relative;
-  transition: transform .2s;
-  width: 225px;
-  height: 225px;
-  margin: 0 auto;
-}
-.onepplus:hover{
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.iphone{
-  top: 50px;
-  position: relative;
-  transition: transform .2s;
-  width: 230px;
-  height: 230px;
-  margin: 0 auto;
-}
-.iphone:hover{
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.iph{
-  float: right;
-  margin-top: -200px;
-  margin-right: 400px;
-}
-
-.redmi{
-  transition: transform .2s;
-  width: 210px;
-  height: 210px;
-  margin: 0 auto;
-}
-.redmi:hover{
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.mi{
-  margin-top: -145px;
-  margin-right: 150px;
-  float: right;
-} */
-
 /* brand images */
 .brand{
   border-radius: 9px;
@@ -98,6 +48,7 @@ body{
   background-color: white;
   padding: 50px;
 }
+
 h2{
   font-size: 400%;
   text-align: center;
