@@ -6,11 +6,11 @@
         <a href="home.html"><img class="account" src="images/account.png" alt="no image"></a>
         <a href="#"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
         <img class="icon" src="images/smile - Copy.png" alt="no image">
-
+        <div class="userName" id="loggedIn"></div>
         <input type="text" name="search" placeholder="Search.." onkeyup="search()" autocomplete="off">
         <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
 
-        <a href="index.html">
+        <a href="home.html">
             <h3 class="mobilehub">MOBHUB</h3>
         </a>
     </div>
@@ -46,5 +46,24 @@
         ];
         let name = data.filter(obj => obj.brand == "oneplus");
         console.log(name);
+    }
+
+    function checkLogin() {
+        let userStr = localStorage.getItem("LOGGED_IN_USER");
+        let user = userStr != null ? JSON.parse(userStr) : null;
+        if (user != null) {
+            document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name;
+            // "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+
+        }
+
+
+    }
+    checkLogin();
+
+    function logout() {
+        localStorage.clear();
+        window.location.reload();
+        window.location.href = "index.html"
     }
 </script>

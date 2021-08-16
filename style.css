@@ -35,6 +35,12 @@ body{
   color: grey;
 }
 
+.userName{
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
 /* search bar */
 
 input[type=text] {

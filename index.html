@@ -5,75 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-    <title>login page</title>
-    <a href="index.html" onclick="logout()">logout</a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="login.css">
+  <title>login page</title>
+  <!-- <a href="index.html" onclick="logout()">logout</a> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <h2>welcome</h2>
 
-    <div class="outer">
-        <form onsubmit="login()">
+  <div class="outer">
+    <form onsubmit="login()">
 
-            <div class="imgContainer">
-                <img src="images/profile.png" alt="avatar" class="avatar">
-            </div>
+      <div class="imgContainer">
+        <img src="images/profile.png" alt="avatar" class="avatar">
+      </div>
 
-            <div class="box">
-                <input type="email" name="email" id="email" placeholder="email"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> <br>
-                <input type="password" name="password" id="password" placeholder="Password" required> <br>
-                <button type="submit">Sign in</button><br>
-                <input type="checkbox" checked="checked"> Remember
-            </div>
+      <div class="box">
+        <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required> <br>
+        <input type="password" name="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Sign in</button><br>
+        <input type="checkbox" checked="checked"> Remember
+      </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-                <a href="#"><button type="button" class="cancelbtn">Cancel</button></a>
-                <span class="signUp">New member:<a href="register.html">Signup</a></span>
-            </div>
-        </form>
-    </div>
+      <div class="container" style="background-color:#f1f1f1">
+        <a href="#"><button type="button" class="cancelbtn">Cancel</button></a>
+        <span><a href="register.html"><button type="button" class="signUp">Signup</button></a></span>
+      </div>
+    </form>
+  </div>
 
-    <script>
-        function login() {
-            event.preventDefault();
-            const email = document.querySelector("#email").value;
-            const password = document.querySelector("#password").value;
-            console.log(email + "+" + password);
-            let loginValues = {
-                "email": email,
-                "password": password
-            };
-            console.log(loginValues);
-            if (email == "" || email == null || email.trim == "") {
-                alert("incorrect email");
-            }
-            else if (password.length <= 6) {
-                alert("password is too short");
-            }
-            else {
-                const url="https://product-mock-api.herokuapp.com/mobilesalesapp/api/v1/auth/login"
-            axios.post(url,loginValues).then(res=>{
-                console.log(res);
-        let user = res.data;
-        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
-        alert("login successfull");
-        window.location.href="home.html";
-         }).catch(err =>{
-        console.log(err);
-        alert("unable to login");
+  <script>
+    function login() {
+      event.preventDefault();
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+      console.log(email + "+" + password);
+      let loginValues = {
+        "email": email,
+        "password": password
+      };
+      console.log(loginValues);
+      if (email == "" || email == null || email.trim == "") {
+        alert("incorrect email");
+      }
+      else if (password.length <= 6) {
+        alert("password is too short");
+      }
+      else {
+        //         const url="https://product-mock-api.herokuapp.com/mobilesalesapp/api/v1/auth/login"
+        //     axios.post(url,loginValues).then(res=>{
+        //         console.log(res);
+        // let user = res.data;
+        // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
+        // alert("login successfull");
+        // window.location.href="home.html";
+        const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
+        const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
+        const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+        const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find"
+
+        const requestData = {
+          selector: {
+            email: email,
+            password: password
+          },
+          fields: ["_id", "name", "password"],
+        };
+
+        axios.post(url, requestData, { headers: { 'Authorization': basicAuth } }).then(res => {
+
+          let data = res.data.docs;
+          console.log(data);
+          if (data.length == 0) {
+            alert("invalid login credentials");
+          } else {
+            const user = data[0];
+            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data));
+            alert("login successful");
+            window.location.href = "home.html";
+          }
+        }).catch(err => {
+          console.log(err.response.data);
+          alert("unable to login");
         });
+      }
     }
-  }
-  function logout() {
-     localStorage.clear();
-     window.location.reload();
-     window.location.href="index.html"
-  }
-    </script>
+
+  </script>
 </body>
 
 </html>

@@ -62,30 +62,34 @@ input[type=password] {
     button:hover {
         opacity: 0.8;
     }
-    .container{
-        border-radius: 40px;
+    
+.container{
+        border-radius: 20px;
         width: 333px;
         height: 30px;
         padding: 16px;
-
     }
-    .cancelbtn {
-            margin-right : 65px;
-            padding: 5;
+.cancelbtn {
+            margin-right : 150px;
+            padding: 10px;
             width: 80px;
             height: 30px;
             background-color: #f44336;
         }
-    img.avatar {
+
+img.avatar {
             height: 40%;
             width: 40%;
         }
-    span.signUp {
+.signUp {
             float: right;
-            padding-top: 16px;
+            padding-top: 10px;
+            width: 80px;
+            height: 30px;
         }
-    @media screen and (max-width: 300px) {
-    span.signUp {
+
+@media screen and (max-width: 300px) {
+span.signUp {
             display: block;
             float: left;
             }
