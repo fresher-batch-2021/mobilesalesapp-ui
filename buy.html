@@ -153,27 +153,27 @@
         let userData = localStorage.getItem("LOGGED_IN_USER");
         let user = JSON.parse(userData);
         console.log(user);
-          if (user == null) {
-            console.log("user : ", user);
-            alert("plz login");
-            window.location.href = "login.html";
-          }
-          else {
-            
-            console.log("user : ", user);
-            alert("done");
-            window.location.href = "cart.html";
-          }
+        if (user == null) {
+          console.log("user : ", user);
+          alert("plz login");
+          window.location.href = "login.html";
+        }
+        else {
+
+          console.log("user : ", user);
+          alert("done");
+          window.location.href = "cart.html";
+        }
       }
 
     </script>
 
-<script src="assest/jquery.min.js"></script>
+    <script src="assest/jquery.min.js"></script>
 
-<script>
-   $("#header").load("header.html");
- </script>
- 
+    <script>
+      $("#header").load("header.html");
+    </script>
+
   </main>
 </body>
 

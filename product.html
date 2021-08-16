@@ -15,20 +15,30 @@
 
 <body>
     <header id="header"></header>
-<main>
-    <div class="row" id="oneplus">
-    </div>
-    <script>
+    <main>
+        <div class="row" id="oneplus">
+        </div>
+        <script>
 
-        function getOneplusArray() {
-            let content = "";
-            const url = "assest/oneplus.json";
-            axios.get(url).then((res) => {
-                console.log("res", res.data.oneplusModels);
+            function getOneplusArray() {
+                let content = "";
 
-                var onepluslist = res.data.oneplusModels;
-                for (let oneplus of onepluslist) {
-                    content = content + ` <div class="column">
+                const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
+                const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
+                const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+                const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
+
+                axios.get(url, { headers: { Authorization: basicAuth } }).then(res => {
+                    let data = res.data.rows;
+                    let oneplusList = data.map(obj => obj.doc);
+                    alert("product listed successfull");
+                    console.log(oneplusList);
+                    // console.log("res", res.data.oneplusModels);
+
+
+                    for (let oneplus of oneplusList) {
+                        content = content + ` <div class="column">
                 <div class="card">
                 <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
                 <h1>One Plus</h1>
@@ -38,22 +48,24 @@
                 <p><button type="button" onclick="abc('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brand}')">Add to Cart</button></p>
                 </div>
                 </div> `;
-                    console.log(content);
-                    document.querySelector("#oneplus").innerHTML = content;
-                }
-            })
+                        console.log(content);
+                        document.querySelector("#oneplus").innerHTML = content;
+                    }
+                }).catch(err => {
+                    console.log(err.response.data);
+                })
 
-        }
+            }
 
 
-        function getMiArray() {
-            let content = "";
-            const url = "assest/mi.json";
-            axios.get(url).then((res) => {
-                console.log("res", res.data.miModels);
-                var milist = res.data.miModels;
-                for (let mi of milist) {
-                    content = content + ` <div class="column">
+            function getMiArray() {
+                let content = "";
+                const url = "assest/mi.json";
+                axios.get(url).then((res) => {
+                    console.log("res", res.data.miModels);
+                    var milist = res.data.miModels;
+                    for (let mi of milist) {
+                        content = content + ` <div class="column">
                 <div class="card">
                 <img src="images/${mi.imageUrl}" alt="oneplus" style="width:100%">
                 <h1>Mi</h1>
@@ -63,21 +75,21 @@
                 <p><button>Add to Cart</button></p>
                 </div>
                 </div> `;
-                    console.log(content);
-                    document.querySelector("#oneplus").innerHTML = content;
-                }
-            })
-        }
+                        console.log(content);
+                        document.querySelector("#oneplus").innerHTML = content;
+                    }
+                })
+            }
 
 
-        function getRealmeArray() {
-            let content = "";
-            const url = "assest/realme.json";
-            axios.get(url).then((res) => {
-                console.log("res", res.data.realmeModels);
-                var realmelist = res.data.realmeModels;
-                for (let realme of realmelist) {
-                    content = content + ` <div class="column">
+            function getRealmeArray() {
+                let content = "";
+                const url = "assest/realme.json";
+                axios.get(url).then((res) => {
+                    console.log("res", res.data.realmeModels);
+                    var realmelist = res.data.realmeModels;
+                    for (let realme of realmelist) {
+                        content = content + ` <div class="column">
                 <div class="card">
                 <img src="images/${realme.imageUrl}" alt="oneplus" style="width:100%">
                 <h1>Realme</h1>
@@ -87,39 +99,39 @@
                 <p><button>Add to Cart</button></p>
                 </div>
                 </div> `;
-                    console.log(content);
-                    document.querySelector("#oneplus").innerHTML = content;
-                }
-            })
-        }
+                        console.log(content);
+                        document.querySelector("#oneplus").innerHTML = content;
+                    }
+                })
+            }
 
-        const Params = new URLSearchParams(window.location.search.substr(1));
-        console.log(Params);
-        let value = Params.get("value");
-        console.log(value);
-        if (value === "oneplus") {
-            getOneplusArray();
-        }
-        else if (value === "mi") {
-            getMiArray();
-        }
-        else if (value === "realme") {
-            getRealmeArray();
-        }
+            const Params = new URLSearchParams(window.location.search.substr(1));
+            console.log(Params);
+            let value = Params.get("value");
+            console.log(value);
+            if (value === "oneplus") {
+                getOneplusArray();
+            }
+            else if (value === "mi") {
+                getMiArray();
+            }
+            else if (value === "realme") {
+                getRealmeArray();
+            }
 
-        function abc(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
-            console.log(abc);
-            window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
-        }
-    </script>
+            function abc(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
+                console.log(abc);
+                window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
+            }
+        </script>
 
- <script src="assest/jquery.min.js"></script>
+        <script src="assest/jquery.min.js"></script>
 
-<script>
-   $("#header").load("header.html");
- </script>
- 
-</main>
+        <script>
+            $("#header").load("header.html");
+        </script>
+
+    </main>
 </body>
 
 </html>
