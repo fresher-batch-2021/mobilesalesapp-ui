@@ -24,9 +24,9 @@
     <div class="right-column">
 
       <div class="product-description">
-        <!-- <span>oneplus</span>
+        <span>oneplus</span>
                 <h1>Nord 2</h1>
-                <p> Pretty much Everything You Could Ask For</p> -->
+                <p> Pretty much Everything You Could Ask For</p>
       </div>
 
       <div class="product-configuration">
@@ -65,6 +65,7 @@
         <span>₹34,999 </span>
       </div>
       <button onclick="addProduct()" class="cart-btn">Buy Now</button>
+      
       <!-- <input type="submit" onclick="addProduct()"> -->
 
     </div>
@@ -136,7 +137,6 @@
         }
         else {
           // if item not exist, add new item to cart
-          console.log("bharathi");
           let productObj = {
             "productName": product,
             "productUrl": productUrl,
@@ -155,14 +155,14 @@
         console.log(user);
         if (user == null) {
           console.log("user : ", user);
-          alert("plz login");
-          window.location.href = "login.html";
+          alert("please login");
+          window.location.href = "index.html";
         }
         else {
 
           console.log("user : ", user);
           alert("done");
-          window.location.href = "cart.html";
+          window.location.href = "#";
         }
       }
 

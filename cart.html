@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="cart.css">
 </head>
 
@@ -14,83 +14,42 @@
   <header id="header"></header>
 
   <main>
-  <div class="row">
-    <div class="col-75">
-      <div class="container">
-        <form onsubmit="cart()">
-
-          <div class="row">
-            <div class="col-50">
-              <h3>Shipping Address</h3>
-              <label for="fname"><em class="fa fa-user"></em> Full Name</label>
-              <input type="text" id="fname" name="firstname" required placeholder="Enter Full Name" autofocus>
-              <label for="email"><em class="fa fa-envelope"></em> Email</label>
-              <input type="text" id="email" name="email" required placeholder="Enter Valid Email">
-              <label for="adr"><em class="fa fa-address-card-o"></em> Address</label>
-              <input type="text" id="adr" name="address" required placeholder="Enter Current Address">
-              <label for="city"><em class="fa fa-institution"></em> City</label>
-              <input type="text" id="city" name="city" required placeholder="Ener Current City">
-
-              <div class="row">
-                <div class="col-50">
-                  <label for="state">State</label>
-                  <input type="text" id="state" name="state" required placeholder="Enter Current State">
-                </div>
-                <div class="col-50">
-                  <label for="zip">Pin code</label>
-                  <input type="text" id="zip" name="zip" required placeholder="Enter Valid pin code">
-                </div>
-              </div>
-            </div>
-
-            <div class="col-50">
-              <h3>Payment</h3>
-              <label for="fname">Accepted Cards</label>
-              <div class="icon-container">
-                <em class="fa fa-cc-visa" style="color:navy;"></em>
-                <em class="fa fa-cc-amex" style="color:blue;"></em>
-                <em class="fa fa-cc-mastercard" style="color:red;"></em>
-                <em class="fa fa-cc-discover" style="color:orange;"></em>
-              </div>
-
-              <label for="cardname">Name on Card</label>
-              <input type="text" id="cardname" name="cardname" required placeholder="Valid Name">
-              <label for="cardnumber">Credit card number</label>
-              <input type="text" id="cardnumber" name="cardnumber" required placeholder="1111-2222-3333-4444">
-              <label for="expmonth">Exp Month</label>
-              <input type="text" id="expmonth" name="expmonth" required placeholder="Month On Card">
-              <div class="row">
-                <div class="col-50">
-                  <label for="expyear">Exp Year</label>
-                  <input type="text" id="expyear" name="expyear" required placeholder="Year On Card">
-                </div>
-                <div class="col-50">
-                  <label for="cvv">CVV</label>
-                  <input type="text" id="cvv" name="cvv" required placeholder="cvv">
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <label>
-            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-          </label>
-          <input type="submit" value="Continue to checkout" class="btn">
-        </form>
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        mobile 
       </div>
-    </div>
-    <div class="col-25">
-      <div class="container">
-        <h4>Cart <span class="price" style="color:black"><em class="fa fa-shopping-cart"></em> <strong>4</strong></span></h4>
-        <p><a href="#">Product 1</a> <span class="price">0</span></p>
-        <p><a href="#">Product 2</a> <span class="price">0</span></p>
-        <p><a href="#">Product 3</a> <span class="price">0</span></p>
-        <p><a href="#">Product 4</a> <span class="price">0</span></p>
-        <hr>
-        <p>Total <span class="price" style="color:black"><strong>0</strong></span></p>
+     
+      <!-- Product #1 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <!-- <span class="like-btn"></span> -->
+        </div>
+        </div>
+     
+        <div class="product-image">
+          <img src="images/oneplus9r.jpg" alt="no image">
+        </div>
+     
+        <div class="description">
+          <span>OnePlus9R</span>
+          <span>12GB+256GB</span>
+          <span>blue</span>
+        </div>
+     
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="images/plus.png" alt="no image" >
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="images/remove.png" alt="no image" >
+          </button>
+        </div>
+     
+        <div class="total-price">₹39999</div>
       </div>
-    </div>
-  </div>
 
   <script src="assest/jquery.min.js"></script>
 

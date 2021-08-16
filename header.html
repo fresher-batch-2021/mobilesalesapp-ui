@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="header.css">
 
 <header id="header">
 
     <div class="topnav">
         <a href="home.html"><img class="account" src="images/account.png" alt="no image"></a>
-        <a href="#"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
+        <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
         <img class="icon" src="images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
         <input type="text" name="search" placeholder="Search.." onkeyup="search()" autocomplete="off">
@@ -49,11 +49,12 @@
     }
 
     function checkLogin() {
+        
         let userStr = localStorage.getItem("LOGGED_IN_USER");
         let user = userStr != null ? JSON.parse(userStr) : null;
         if (user != null) {
-            document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name;
-            // "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+            document.querySelector("#loggedIn").innerHTML = "Welcome " + user[0].name;
+           
 
         }
 

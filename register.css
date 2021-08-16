@@ -6,7 +6,7 @@ h2{
     font-size: 50px;
     margin: 0px;
     text-align: center;
-font-family: 'Quicksand', sans-serif;
+/* font-family: 'Quicksand', sans-serif; */
 }
 form {
      text-align: center;
@@ -14,7 +14,7 @@ form {
 .outer{
     border-radius: 40px;
     background-color: whitesmoke;
-     margin-top: 100pX;
+     margin-top: 50pX;
      margin-bottom: 0px;
      margin-right: 500px;
      margin-left: 500px;
@@ -28,7 +28,7 @@ background-color: lightslategray;
  }
     .imgContainer {
         text-align: center;
-        margin: 12px 0 12px 0;   
+        margin: 50px 100px;   
         height: fit-content;
     }
     input[type=text],
@@ -60,9 +60,9 @@ background-color: lightslategray;
         width: 325px;
         height: 50px;
     }
-        .cancelbtn {
-            margin-right: 180px;
-            padding: 5;
+        .cancelButton {
+            margin: 0 230px;
+            padding: 5px;
             width: 80px;
             height: 30px;
             background-color: #f44336;

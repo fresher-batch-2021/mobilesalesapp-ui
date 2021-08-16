@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+.topnav{
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+  }
+  .topnav:hover{
+    background-color: white;
+  }
+  
+  .icon{
+    width: 40px;
+    height: 40px;
+    float: left;
+  }
+  
+  .mobilehub{
+    margin: 5px 10px;
+    font-size: 30px;
+    color:black;
+    float: left;
+    font-family: 'Krona One', sans-serif;
+    font-family: 'Spartan', sans-serif;
+    font-family: 'Tenor Sans', sans-serif;
+  }
+  .mobilehub:hover{
+    transform: unset;
+    color: grey;
+  }
+  
+  .userName{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  
+  /* search bar */
+  
+  input[type=text] {
+    margin-right: 50px;
+    float: right;
+    width: 130px;
+    box-sizing: content-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    /* background-image: url('images/search.png'); */
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 30%;
+  }
+  
+  
+  .account{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 15px;
+  }
+  
+  .logout{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-right: -80px;
+    margin-top: 15px;
+  }
