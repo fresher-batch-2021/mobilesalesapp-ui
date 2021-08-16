@@ -3,20 +3,23 @@
         {
             "imageUrl": "productmi.png",
             "modelName": "Mi11X",
-            "modelPrice": "27,999",
+            "modelPrice": "27999",
+            "ram":"12",
             "modelConfiguration": "12GBRAM + 256GBROM,48mp sony imx596 triple camera, snapdragon 870 processor"
         },
         {
             "imageUrl": "mi10i.jpg",
             "modelName": "mi10i",
-            "modelPrice": "21,999",
+            "modelPrice": "21999",
+            "ram":"8",
             "modelConfiguration": "6GBRAM + 128GBROM,108MP sony imx586 Quad camera, snapdragon 750G processor"
         },
         {
             "imageUrl": "mi9.jpg",
-            "modelName": "OnePlus9R",
-            "modelPrice": "39,000",
-            "modelConfiguration": "4GBRAM + 64GBROM,64MP sony quad camera, mediatek gelio G35 processor"
+            "modelName": "mi9",
+            "modelPrice": "39000",
+            "ram":"6",
+            "modelConfiguration": "64GBROM,64MP sony quad camera, mediatek gelio G35 processor"
         }
     ]
 }

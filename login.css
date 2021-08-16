@@ -33,7 +33,7 @@ form {
      padding-bottom: 500px;
      height: 500px;
      }
-.imgcontainer {
+.imgContainer {
         text-align: center;
         margin: 12px 0 12px 0;   
         height: fit-content;
@@ -80,12 +80,12 @@ input[type=password] {
             height: 40%;
             width: 40%;
         }
-    span.psw {
+    span.signUp {
             float: right;
             padding-top: 16px;
         }
     @media screen and (max-width: 300px) {
-    span.psw {
+    span.signUp {
             display: block;
             float: left;
             }

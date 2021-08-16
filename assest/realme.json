@@ -3,19 +3,22 @@
         {
             "imageUrl": "productreal.png",
             "modelName": "Realme X7 max",
-            "modelPrice": "27,999",
-            "modelConfiguration": "12GBRAM + 256GBROM,48mp sony imx596 triple camera, mediatek 1200 processor"
+            "modelPrice": "27999",
+            "ram":"12",
+            "modelConfiguration": " 256GBROM,48mp sony imx596 triple camera, mediatek 1200 processor"
         },
         {
             "imageUrl": "realmec2.png",
             "modelName": "Realmec21",
-            "modelPrice": "8,499",
+            "modelPrice": "8499",
+            "ram":"6",
             "modelConfiguration": "Bigger Battery, Clear Shots"
         },
         {
             "imageUrl": "realmenarzo30.png",
             "modelName": "Realme Narzo 30",
-            "modelPrice": "15,999",
+            "modelPrice": "15999",
+            "ram":"8",
             "modelConfiguration": "Unleash Peak Perfomance"
         }
     ]

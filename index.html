@@ -1,91 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mobhub</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="ss.css">
-
+    <title>login page</title>
+    <a href="index.html" onclick="logout()">logout</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
+    <h2>welcome</h2>
 
-  <header>
-    <div class="header">
-      <a href="login.html"><img class="account" src="images/account.png" alt="no image"></a>
-      <a href="#"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
-      <img class="icon" src="images/smile - Copy.png" alt="no image">
+    <div class="outer">
+        <form onsubmit="login()">
 
-      <a href="index.html">
-        <h3 class="mobilehub">MOBHUB</h3>
-      </a>
-    </div>
-  </header>
+            <div class="imgContainer">
+                <img src="images/profile.png" alt="avatar" class="avatar">
+            </div>
 
-  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="images/slide.jpg" alt="no image" style="width: 100%">
-    </div>
+            <div class="box">
+                <input type="email" name="email" id="email" placeholder="email"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> <br>
+                <input type="password" name="password" id="password" placeholder="Password" required> <br>
+                <button type="submit">Sign in</button><br>
+                <input type="checkbox" checked="checked"> Remember
+            </div>
 
-    <div class="mySlides fade">
-      <img src="images/slide1.jpg" alt="no image" style="width:100%">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="images/slide2.jpg" alt="no image" style="width: 100%">
+            <div class="container" style="background-color:#f1f1f1">
+                <a href="#"><button type="button" class="cancelbtn">Cancel</button></a>
+                <span class="signUp">New member:<a href="register.html">Signup</a></span>
+            </div>
+        </form>
     </div>
 
-    <div class="mySlides fade">
-      <img src="images/slide3.jpg" alt="no image" style="width:100%">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="images/slide4.jpg" alt="no image" style="width:100%">
-    </div>
-  </div>
-  <br>
-
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-
-  <div class="brand">
-    <h2>Popular Brands</h2>
-
-    <div class="row">
-      <div class="column">
-        <a href="product.html?value=oneplus"><img src="images/brand.png" style="width:100%" alt="no image"
-            class="hover-shadow cursor"></a>
-      </div>
-      <div class="column">
-        <a href="product.html?value=mi"><img src="images/brand2.png" style="width:100%" alt="no image"
-           class="hover-shadow cursor"></a>
-      </div>
-      <div class="column">
-        <a href="product.html?value=realme"><img src="images/brand4.jpg" style="width:100%" alt="no image"
-            class="hover-shadow cursor"></a>
-      </div>
-      <div class="column">
-        <img src="images/brand3.jpg" style="width:100%" alt="no image"
-        class="hover-shadow cursor">
-      </div>
-    </div>
-
-  </div>
-
-  <!-- <div>
-        <video width="1200" height="500" autoplay loop><source src="https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/product/1620281952758/zip/img/x60-ultra-video.mp4" type="video/mp4"></video>
-    </div> -->
-  <script src="assest/script.js"></script>
-
+    <script>
+        function login() {
+            event.preventDefault();
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+            console.log(email + "+" + password);
+            let loginValues = {
+                "email": email,
+                "password": password
+            };
+            console.log(loginValues);
+            if (email == "" || email == null || email.trim == "") {
+                alert("incorrect email");
+            }
+            else if (password.length <= 6) {
+                alert("password is too short");
+            }
+            else {
+                const url="https://product-mock-api.herokuapp.com/mobilesalesapp/api/v1/auth/login"
+            axios.post(url,loginValues).then(res=>{
+                console.log(res);
+        let user = res.data;
+        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
+        alert("login successfull");
+        window.location.href="home.html";
+         }).catch(err =>{
+        console.log(err);
+        alert("unable to login");
+        });
+    }
+  }
+  function logout() {
+     localStorage.clear();
+     window.location.reload();
+     window.location.href="index.html"
+  }
+    </script>
 </body>
 
 </html>
