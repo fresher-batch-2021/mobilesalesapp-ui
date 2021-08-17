@@ -2,6 +2,7 @@
     "miModels": [
         {
             "imageUrl": "productmi.png",
+            "brand": "mi",
             "modelName": "Mi11X",
             "modelPrice": "27999",
             "ram":"12",
@@ -9,6 +10,7 @@
         },
         {
             "imageUrl": "mi10i.jpg",
+            "brand": "mi",
             "modelName": "mi10i",
             "modelPrice": "21999",
             "ram":"8",
@@ -16,6 +18,7 @@
         },
         {
             "imageUrl": "mi9.jpg",
+            "brand": "mi",
             "modelName": "mi9",
             "modelPrice": "39000",
             "ram":"6",

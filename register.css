@@ -19,9 +19,11 @@ form {
      margin-right: 500px;
      margin-left: 500px;
  }
+
 body{
-background-color: lightslategray;
- }
+    background-image: url("images/login\ background.jpg");
+}
+
 .outer.box.container{
      padding-bottom: 500px;
      height: 500px;

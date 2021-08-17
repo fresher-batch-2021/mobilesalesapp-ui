@@ -16,28 +16,34 @@
 <body>
     <header id="header"></header>
     <main>
-        <div class="row" id="oneplus">
+        <div class="row" id="products">
         </div>
         <script>
 
-            function getOneplusArray() {
+            function getMobiles(brandName) {
                 let content = "";
 
                 const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
                 const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
                 const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
-                const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
+                const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_find";
 
-                axios.get(url, { headers: { Authorization: basicAuth } }).then(res => {
-                    let data = res.data.rows;
-                    let oneplusList = data.map(obj => obj.doc);
+                const requestData = {
+
+                    selector: {
+                        brandName: brandName
+                    }
+                }
+
+                axios.post(url,requestData, { headers: { Authorization: basicAuth } }).then(res => {
+                    let data = res.data.docs;
                     alert("product listed successfull");
-                    console.log(oneplusList);
+                    console.log(data);
                     // console.log("res", res.data.oneplusModels);
 
 
-                    for (let oneplus of oneplusList) {
+                    for (let oneplus of data) {
                         content = content + ` <div class="column">
                 <div class="card">
                 <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
@@ -49,74 +55,102 @@
                 </div>
                 </div> `;
                         console.log(content);
-                        document.querySelector("#oneplus").innerHTML = content;
+                        document.querySelector("#products").innerHTML = content;
                     }
                 }).catch(err => {
-                    console.log(err.response.data);
+                    console.log(err);
                 })
 
             }
 
 
-            function getMiArray() {
-                let content = "";
-                const url = "assest/mi.json";
-                axios.get(url).then((res) => {
-                    console.log("res", res.data.miModels);
-                    var milist = res.data.miModels;
-                    for (let mi of milist) {
-                        content = content + ` <div class="column">
-                <div class="card">
-                <img src="images/${mi.imageUrl}" alt="oneplus" style="width:100%">
-                <h1>Mi</h1>
-                <h3>${mi.modelName}</h3>
-                <p class="price">${mi.modelPrice}</p>
-                <p>${mi.modelConfiguration}</p>
-                <p><button>Add to Cart</button></p>
-                </div>
-                </div> `;
-                        console.log(content);
-                        document.querySelector("#oneplus").innerHTML = content;
-                    }
-                })
-            }
+            // function getMiArray() {
+            //     let content = "";
+
+            //     const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
+            //     const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
+            //     const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+            //     const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_find";
+
+            //     const requestData = {
+            //         selector: {
+            //             brand: mi
+            //         }
+            //     }
+
+            //     axios.get(url, { headers: { Authorization: basicAuth } }).then(res => {
+            //         let data = res.data.rows;
+            //         let miList = data.map(obj => obj.doc);
+            //         alert("product listed successfull");
+            //         console.log(miList);
+
+            //         for (let mi of miList) {
+            //             content = content + ` <div class="column">
+            //     <div class="card">
+            //     <img src="images/${mi.imageUrl}" alt="oneplus" style="width:100%">
+            //     <h1>Mi</h1>
+            //     <h3>${mi.modelName}</h3>
+            //     <p class="price">${mi.modelPrice}</p>
+            //     <p>${mi.modelConfiguration}</p>
+            //     <p><button type="button" onclick="abc('${mi.modelName}','${mi.imageUrl}','${mi.modelPrice}','${mi.modelConfiguration}','${mi.brand}')">Add to Cart</button></p>
+            //     </div>
+            //     </div> `;
+            //             console.log(content);
+            //             document.querySelector("#products").innerHTML = content;
+            //         }
+            //     }).catch(err => {
+            //         console.log(err.response.data);
+            //     })
+            // }
 
 
-            function getRealmeArray() {
-                let content = "";
-                const url = "assest/realme.json";
-                axios.get(url).then((res) => {
-                    console.log("res", res.data.realmeModels);
-                    var realmelist = res.data.realmeModels;
-                    for (let realme of realmelist) {
-                        content = content + ` <div class="column">
-                <div class="card">
-                <img src="images/${realme.imageUrl}" alt="oneplus" style="width:100%">
-                <h1>Realme</h1>
-                <h3>${realme.modelName}</h3>
-                <p class="price">${realme.modelPrice}</p>
-                <p>${realme.modelConfiguration}</p>
-                <p><button>Add to Cart</button></p>
-                </div>
-                </div> `;
-                        console.log(content);
-                        document.querySelector("#oneplus").innerHTML = content;
-                    }
-                })
-            }
+            // function getRealmeArray() {
+            //     let content = "";
+
+            //     const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
+            //     const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
+            //     const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+            //     const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
+
+            //     axios.get(url, { headers: { Authorization: basicAuth } }).then(res => {
+            //         let data = res.data.rows;
+            //         let realmeList = data.map(obj => obj.doc);
+            //         alert("product listed successfull");
+            //         console.log(realmeList);
+
+            //         for (let realme of realmeList) {
+            //             content = content + ` <div class="column">
+            //     <div class="card">
+            //     <img src="images/${realme.imageUrl}" alt="oneplus" style="width:100%">
+            //     <h1>Realme</h1>
+            //     <h3>${realme.modelName}</h3>
+            //     <p class="price">${realme.modelPrice}</p>
+            //     <p>${realme.modelConfiguration}</p>
+            //     <p><button type="button" onclick="abc('${realme.modelName}','${realme.imageUrl}','${realme.modelPrice}','${realme.modelConfiguration}','${realme.brand}')">Add to Cart</button></p>
+            //     </div>
+            //     </div> `;
+            //             console.log(content);
+            //             document.querySelector("#products").innerHTML = content;
+            //         }
+            //     }).catch(err => {
+            //         console.log(err.response.data);
+            //     })
+            // }
 
             const Params = new URLSearchParams(window.location.search.substr(1));
             console.log(Params);
             let value = Params.get("value");
             console.log(value);
             if (value === "oneplus") {
-                getOneplusArray();
+                getMobiles('oneplus');
             }
             else if (value === "mi") {
-                getMiArray();
+                getMobiles('mi');
             }
             else if (value === "realme") {
-                getRealmeArray();
+                getMobiles('realme');
             }
 
             function abc(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
