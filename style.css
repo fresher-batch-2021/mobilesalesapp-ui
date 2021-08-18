@@ -54,3 +54,23 @@ img.hover-shadow {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+/* all brands */
+
+.allBrands-text
+{
+  margin-top: 100px;
+  text-align: center;
+}
+button{
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: white;
+  cursor: pointer;
+  width: 10%;
+}
+button:hover{
+  opacity: 0.8;
+}

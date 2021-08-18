@@ -1,0 +1,49 @@
+{
+    "results": [
+        {
+            "imageUrl": "oneplus.png",
+            "brand": "oneplus",
+            "modelName": "Nord2",
+            "modelPrice": "35999",
+            "ram": "12",
+            "modelConfiguration": "256GBROM,50MP sony imx766 triple camera, Mediatek 1200-AI"
+        },
+        {
+            "imageUrl": "ce.jpg",
+            "brand": "oneplus",
+            "modelName": "NordCE",
+            "modelPrice": "30000",
+            "ram": "6",
+            "modelConfiguration": " 128GBROM,64MP sony imx586 triple camera, snapdragon 752G processor"
+        },
+        {
+            "imageUrl": "oneplus9r.jpg",
+            "brand": "oneplus",
+            "modelName": "OnePlus9R",
+            "modelPrice": "39000",
+            "ram": "8",
+            "modelConfiguration": "256GBROM,64MP sony imx586 triple camera, snapdragon 870 processor"
+        },
+        {
+            "imageUrl": "productreal.png",
+            "modelName": "Realme X7 max",
+            "modelPrice": "27999",
+            "ram": "12",
+            "modelConfiguration": " 256GBROM,48mp sony imx596 triple camera, mediatek 1200 processor"
+        },
+        {
+            "imageUrl": "realmec2.png",
+            "modelName": "Realmec21",
+            "modelPrice": "8499",
+            "ram": "6",
+            "modelConfiguration": "Bigger Battery, Clear Shots"
+        },
+        {
+            "imageUrl": "realmenarzo30.png",
+            "modelName": "Realme Narzo 30",
+            "modelPrice": "15999",
+            "ram": "8",
+            "modelConfiguration": "Unleash Peak Perfomance"
+        }
+    ]
+}

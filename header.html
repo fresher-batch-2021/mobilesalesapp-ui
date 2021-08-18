@@ -2,12 +2,18 @@
 
 <header id="header">
 
-    <div class="topnav">
+    <div class="topNav">
         <a href="home.html"><img class="account" src="images/account.png" alt="no image"></a>
         <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
         <img class="icon" src="images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
-        <input type="text" name="search" placeholder="Search.." onkeyup="search()" autocomplete="off">
+        <input type="text" id="searchList" list="productList" name="search" placeholder="Search.." onkeyup="search()"
+            autocomplete="off">
+
+        <datalist id="productList">
+
+        </datalist>
+
         <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
 
         <a href="home.html">
@@ -16,55 +22,4 @@
     </div>
 </header>
 
-<script>
-    function search() {
-        let data = [
-            {
-                "imageUrl": "oneplus.png",
-                "brand": "oneplus",
-                "modelName": "Nord2",
-                "modelPrice": "35999",
-                "ram": "12",
-                "modelConfiguration": "256GBROM,50MP sony imx766 triple camera, Mediatek 1200-AI"
-            },
-            {
-                "imageUrl": "ce.jpg",
-                "brand": "oneplus",
-                "modelName": "NordCE",
-                "modelPrice": "30000",
-                "ram": "6",
-                "modelConfiguration": " 128GBROM,64MP sony imx586 triple camera, snapdragon 752G processor"
-            },
-            {
-                "imageUrl": "oneplus9r.jpg",
-                "brand": "oneplus",
-                "modelName": "OnePlus9R",
-                "modelPrice": "39000",
-                "ram": "8",
-                "modelConfiguration": "256GBROM,64MP sony imx586 triple camera, snapdragon 870 processor"
-            }
-        ];
-        let name = data.filter(obj => obj.brand == "oneplus");
-        console.log(name);
-    }
-
-    function checkLogin() {
-        
-        let userStr = localStorage.getItem("LOGGED_IN_USER");
-        let user = userStr != null ? JSON.parse(userStr) : null;
-        if (user != null) {
-            document.querySelector("#loggedIn").innerHTML = "Welcome " + user[0].name;
-           
-
-        }
-
-
-    }
-    checkLogin();
-
-    function logout() {
-        localStorage.clear();
-        window.location.reload();
-        window.location.href = "index.html"
-    }
-</script>
+<script src="asset/header.js"></script>

@@ -27,7 +27,7 @@ form {
      margin-bottom: 0px;
      margin-right: 500px;
      margin-left: 500px;
-}
+    }
 
 .outer.box.container{
      padding-bottom: 500px;
@@ -50,7 +50,7 @@ input[type=password] {
         box-sizing: border-box;
     }
 
-    button {
+button {
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;

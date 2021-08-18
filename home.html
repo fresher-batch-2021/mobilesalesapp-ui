@@ -8,14 +8,14 @@
     <title>mobhub</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ss.css">
+    <link rel="stylesheet" href="slideshow.css">
 
 </head>
 
 <body>
     <header id="header"></header>
     <main>
-
+        <!-- For slide show -->
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <img src="images/slide.jpg" alt="no image" style="width: 100%">
@@ -47,6 +47,7 @@
             <span class="dot"></span>
         </div>
 
+        <!-- for top brands -->
         <div class="brand">
             <h2>Popular Brands</h2>
 
@@ -71,14 +72,23 @@
         </div>
 
         <!-- <div>
-        <video width="1200" height="500" autoplay loop><source src="https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/product/1620281952758/zip/img/x60-ultra-video.mp4" type="video/mp4"></video>
+        <video width="1200" height="500" ><source src="https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/product/1620281952758/zip/img/x60-ultra-video.mp4" type="video/mp4"></video>
     </div> -->
-        <script src="assest/script.js"></script>
-        <script src="assest/jquery.min.js"></script>
-        <script>
-            $("#header").load("header.html");
-        </script>
 
+        <!-- <div class="allBrands-image"> -->
+        <div class="allBrands-text">
+            <h1 style="font-size:50px">All Brands</h1>
+            <p>Available Here</p>
+            <button>View All</button>
+        </div>
+
+        <script src="asset/slideshow.js"></script>
+        <script src="asset/jquery.min.js"></script>
+
+        <script>$("#header").load("header.html");</script>
+
+        <footer id="footer"></footer>
+        <script>$("#footer").load("footer.html");</script>
 
     </main>
 

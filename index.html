@@ -6,7 +6,6 @@
 
 <head>
   <title>login page</title>
-  <!-- <a href="index.html" onclick="logout()">logout</a> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,11 +22,11 @@
       </div>
 
       <div class="box">
-        <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9]+@[a-z]+.[a-z]{1,32}$"
-          required autofocus> <br>
+        <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9]+@[a-z]+.[a-z]{1,32}$" required
+          autofocus> <br>
         <input type="password" name="password" id="password" placeholder="Password" required><br>
         <button type="submit">Sign in</button><br>
-        <a href="adminlogin.html" >Admin</a>
+        <a href="adminlogin.html">Admin</a>
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
@@ -37,47 +36,8 @@
     </form>
   </div>
 
-  <script>
-    function login() {
-      event.preventDefault();
-      const email = document.querySelector("#email").value;
-      const password = document.querySelector("#password").value;
-      console.log(email + "+" + password);
-      let loginValues = {
-        "email": email,
-        "password": password
-      };
-      console.log(loginValues);
-      if (email == "" || email == null || email.trim == "") {
-        alert("incorrect email");
-      }
-      else if (password.length <= 6) {
-        alert("password is too short");
-      }
-      else {
-
-        UserService.login(email,password).then(res=>{
-
-          let data = res.data.docs;
-          console.log(data);
-
-          if (data.length == 0) {
-            alert("invalid login credentials");
-          } else {
-            const user = data[0];
-            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data));
-            alert("login successful");
-            window.location.href = "home.html";
-          }
-        }).catch(err => {
-          console.log(err.response.data);
-          alert("unable to login");
-        });
-      }
-    }
-
-  </script>
-  <script src="assest/User-Service.js"></script>
+  <script src="asset/login.js"></script>
+  <script src="asset/User-Service.js"></script>
 </body>
 
 </html>
