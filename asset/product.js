@@ -40,7 +40,6 @@ function getMobiles(brandName) {
     })
 
 }
-
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
 let value = Params.get("value");

@@ -9,7 +9,7 @@
     background-color: #f1f1f1;
     padding: 20px 10px;
   }
-  .topnav:hover{
+  .topNav:hover{
     background-color: white;
   }
   
@@ -61,6 +61,10 @@
   input[type=text]:focus {
     width: 30%;
   }
+
+i{
+  float: right;
+}
   
   
   .account{

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <header id="header">
 
@@ -7,14 +8,18 @@
         <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
         <img class="icon" src="images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
+        <i class="fa fa-search" onclick="searchButton()"></i>
+
+        <!-- <button type="submit" class ="searchButton" onclick="searchButton()">button</button> -->
         <input type="text" id="searchList" list="productList" name="search" placeholder="Search.." onkeyup="search()"
             autocomplete="off">
+            
 
         <datalist id="productList">
 
         </datalist>
 
-        <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+       
 
         <a href="home.html">
             <h3 class="mobilehub">MOBHUB</h3>

@@ -21,6 +21,21 @@ function search() {
 
 }
 
+function searchButton(){
+console.log("navigRW");
+const brand = document.querySelector("#searchList").value;
+
+if (brand === "oneplus") {
+    window.location.href = "product.html?value=oneplus";
+}
+else if (brand === "mi") {
+    getMobiles('mi');
+}
+else if (brand === "realme") {
+    getMobiles('realme');
+}
+}
+
 
 function checkLogin() {
 
