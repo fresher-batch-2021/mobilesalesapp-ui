@@ -4,6 +4,7 @@
 
         class UserService {
 
+          //user seervice for login
             static login(email, password){
 
                 const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find"
@@ -19,6 +20,8 @@
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
 
             }
+
+            //user-service for register
             static register(registerValues)
             {
                 const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users"
