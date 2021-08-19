@@ -2,7 +2,7 @@ function search() {
     let data = [
         {
             oneplus: "oneplus",
-            redmi: "redmi",
+            redmi: "mi",
             realme: "realme"
         }
     ]
@@ -29,10 +29,10 @@ if (brand === "oneplus") {
     window.location.href = "product.html?value=oneplus";
 }
 else if (brand === "mi") {
-    getMobiles('mi');
+    window.location.href = "product.html?value=mi";
 }
 else if (brand === "realme") {
-    getMobiles('realme');
+    window.location.href = "product.html?value=realme";
 }
 }
 

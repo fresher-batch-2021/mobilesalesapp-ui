@@ -9,14 +9,14 @@ function register() {
         "email": email,
         "password": password
     };
-    try{
+    try {
 
-    //fields validation
-    // console.log(registerValues);
-    Validator.isValidString(name, "User Name Cannot Be Empty");
-    Validator.isValidString(email, "Email  Cannot Be Empty");
-    Password.isValidPassword(password, "Password Cannot Be Empty");
-    Password.isValidPasswordStrength(password, "Password Cannot Be Less Than 6");
+        //fields validation
+        // console.log(registerValues);
+        Validator.isValidString(name, "User Name Cannot Be Empty");
+        Validator.isValidString(email, "Email  Cannot Be Empty");
+        Validator.isValidPassword(password, "Password Cannot Be Empty");
+        Validator.isValidPasswordStrength(password, "Password Cannot Be Less Than 6");
 
         UserService.register(registerValues).then(res => {
             localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
@@ -25,9 +25,9 @@ function register() {
         }).catch(err => {
             alert("registration failed");
         });
-    }catch(err){
+    } catch (err) {
         console.error(err.message);
         alert(err);
         alert("Unable To Register");
-    }    
+    }
 }

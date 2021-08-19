@@ -25,7 +25,7 @@ function getMobiles(brandName) {
             content = content + ` <div class="column">
     <div class="card">
     <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
-    <h1>One Plus</h1>
+    <h1>${oneplus.brandName}</h1>
     <h3>${oneplus.modelName}</h3>
     <p class="price">${oneplus.modelPrice}</p>
     <p>${oneplus.modelConfiguration}</p>

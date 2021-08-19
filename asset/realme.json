@@ -2,6 +2,7 @@
     "realmeModels": [
         {
             "imageUrl": "productreal.png",
+            "brand": "realme",
             "modelName": "Realme X7 max",
             "modelPrice": "27999",
             "ram":"12",
@@ -9,6 +10,7 @@
         },
         {
             "imageUrl": "realmec2.png",
+            "brand": "realme",
             "modelName": "Realmec21",
             "modelPrice": "8499",
             "ram":"6",
@@ -16,6 +18,7 @@
         },
         {
             "imageUrl": "realmenarzo30.png",
+            "brand": "realme",
             "modelName": "Realme Narzo 30",
             "modelPrice": "15999",
             "ram":"8",

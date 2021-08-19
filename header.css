@@ -40,6 +40,9 @@
   }
   
   /* search bar */
+  #searchList{
+    margin-right: 10px;
+  }
   
   input[type=text] {
     margin-right: 50px;
@@ -64,6 +67,10 @@
 
 i{
   float: right;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 8px;
+  
 }
   
   
