@@ -92,7 +92,8 @@ i{
 
   /* footer */
   .footer {
-    position: sticky;
+    /* position: sticky; */
+    padding: 20px 10px;
     left: 0;
     bottom: 0;
     width: 100%;

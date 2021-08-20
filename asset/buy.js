@@ -8,7 +8,7 @@ let productConfiguration = Params.get("productConfiguration");
 let productBrand = Params.get("productBrand");
 let productPrice = Params.get("productPrice");
 
-console.log("product :", product);
+console.log("productName :", product);
 console.log("productUrl :", productUrl);
 console.log("productConfiguration :", productConfiguration);
 console.log("productBrand :", productBrand);
@@ -27,43 +27,24 @@ document.querySelector(".product-price").innerHTML = `
          <span>${productPrice}</span>
          `;
 
-// adding product to cart
-function addProduct() {
+         
 
 
-  console.log("check :", product);
+//checks user wether login or not and pass the values to add to cart page
 
-  let addProductStr = localStorage.getItem("cartProduct");
-  let cartProduct = addProductStr != null ? JSON.parse(addProductStr) : [];
-  var qty = 1;
+let cartProduct = {
+  "productName ": product,
+  "productUrl ": productUrl,
+  "productConfiguration ": productConfiguration,
+  "productBrand ": productBrand,
+  "productPrice ": productPrice
+}
 
+localStorage.setItem("productElements", JSON.stringify(cartProduct));
 
-  // If item already exist, update the quantity
-  let index = cartProduct.findIndex(cartProduct => cartProduct.Id == id);
-  // alert(index);
-  console.log(index);
-  if (index != -1) {
-    let productObj = cartProduct[index];
-    console.log(productObj);
-    productObj.Qty++;
-    cartProduct[index] = productObj;
-  }
-
-  else {
-    // if item not exist, add new item to cart
-    let productObj = {
-      "productName": product,
-      "productUrl": productUrl,
-      "productConfiguration": productConfiguration,
-      "productBrand": productBrand,
-      "productPrice": productPrice
-    };
-    console.log(productObj);
-    cartProduct.push(productObj);
-  }
-
-  localStorage.setItem("productElements", JSON.stringify(cartProduct));
-
+ //passes value to the cart page through buy now button
+ function addButton(product, productBrand, productUrl, productPrice, productConfiguration){
+  console.log(addButton)
   let userData = localStorage.getItem("LOGGED_IN_USER");
   let user = JSON.parse(userData);
   console.log(user);
@@ -73,9 +54,8 @@ function addProduct() {
     window.location.href = "index.html";
   }
   else {
-
     console.log("user : ", user);
     alert("done");
-    window.location.href = "cart.html";
+    window.location.href = "cart.html?productName=" + product + "&productUrl=" + productUrl + "&productConfiguration= " + productConfiguration + "&productBrand= " + productBrand + "&productPrice= " + productPrice;
   }
 }

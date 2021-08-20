@@ -54,5 +54,5 @@ checkLogin();
 function logout() {
     localStorage.clear();
     window.location.reload();
-    window.location.href = "index.html"
+    window.location.href = "home.html"
 }
