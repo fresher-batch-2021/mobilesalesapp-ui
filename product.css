@@ -1,19 +1,46 @@
 .body{
   background-color: grey;
 }
+
+/* sorting buttons */
+
+.btn-group button {
+  margin-top: 100px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 24px;  
+  cursor: pointer;
+}
+/* .sortPrice{
+  margin-left: 550px;
+} */
+
+/* mobile Cards */
 .card {
+    margin-top: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
+     width: 300px;
     text-align: center;
+    margin-right: 15px;
+    padding-bottom: 20px;
   }
+
   .row{
       display: flex;
 }
-.column{
-    width: 33.33%;
-}
-  
+
+  .maincard
+  {
+    width: 100%;
+  }
+  .maincardrow
+  {
+    width:50%;
+  }
+  .cardnew{
+    width:100%;
+  }
   .price {
     color: grey;
     font-size: 22px;
@@ -27,7 +54,6 @@
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 18px;
   }
   

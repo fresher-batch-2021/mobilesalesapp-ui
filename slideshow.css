@@ -4,14 +4,15 @@ body {font-family: Verdana, sans-serif;}
 img {vertical-align: middle;}
 
 .slideshow-container {
-  max-width: 1000px;
+  max-width:100%;
   position: relative;
-  top: 50px;
+  top: 90px;
   margin:auto;
+  z-index: -2;
 }
 
 .dot {
-  top: 60px;
+  top: 120px;
   position: relative;
   height: 15px;
   width: 15px;

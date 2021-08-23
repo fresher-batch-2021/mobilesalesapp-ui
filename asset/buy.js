@@ -33,11 +33,11 @@ document.querySelector(".product-price").innerHTML = `
 //checks user wether login or not and pass the values to add to cart page
 
 let cartProduct = {
-  "productName ": product,
-  "productUrl ": productUrl,
-  "productConfiguration ": productConfiguration,
-  "productBrand ": productBrand,
-  "productPrice ": productPrice
+  "productName": product,
+  "productUrl": productUrl,
+  "productConfiguration": productConfiguration,
+  "productBrand": productBrand,
+  "productPrice": productPrice
 }
 
 localStorage.setItem("productElements", JSON.stringify(cartProduct));

@@ -5,9 +5,11 @@
 
   
 .topNav{
-    overflow: hidden;
+    
     background-color: #f1f1f1;
     padding: 20px 10px;
+    position: fixed;
+    width: 100%;
   }
   .topNav:hover{
     background-color: white;
