@@ -86,6 +86,6 @@ localStorage.setItem("productElements", JSON.stringify(cartProduct));
   else {
     console.log("user : ", user);
     alert("done");
-    window.location.href = "cart.html?productName=" + product + "&productUrl=" + productUrl + "&productConfiguration= " + productConfiguration + "&productBrand= " + productBrand + "&productPrice= " + productPrice;
+    window.location.href = "history.html?productName=" + product + "&productUrl=" + productUrl + "&productConfiguration= " + productConfiguration + "&productBrand= " + productBrand + "&productPrice= " + productPrice;
   }
 }

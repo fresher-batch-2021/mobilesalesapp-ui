@@ -24,8 +24,27 @@
     <main>
 
         <div class="btn-group" style="width:100%">
-            <button class="sortPrice" onclick="sorting()" style="width:10%">Price</button>
-            <button class="sortRam" style="width:10%">Ram</button>
+            <div class="dropDown">
+                <button onclick="dropDown()" class="dropBtn">Price</button>
+                <div id="myDropDown" class="dropDown-content">
+                    <a onclick="getMobiles('null')">default</a>
+                  <a onclick="sorting(10000,20000)" >10,000-20,000</a>
+                  <a onclick="sorting(20000,30000)">20,000-30,000</a>
+                  <a onclick="sorting(30000,1000000)">above 30,000</a>
+                </div>
+                
+                <div class="dropDown">
+                    <button onclick="dropDown()" class="dropBtn-2">Ram</button>
+                    <div id="myDropDown" class="dropDown-content">
+                      <a href="#">4GB</a>
+                      <a href="#">6GB</a>
+                      <a href="#">8GB</a>
+                      <a href="#">12GB</a>
+                    </div>
+                  </div>
+              </div>
+            <!-- <button class="sortPrice" onclick="sorting()" style="width:10%">Price</button>
+            <button class="sortRam" style="width:10%">Ram</button> -->
         </div>
 
         <div id="products">
