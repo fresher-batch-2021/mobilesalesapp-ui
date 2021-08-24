@@ -22,7 +22,38 @@ document.querySelector(".product-description").innerHTML = `
 
 document.querySelector("#productImage").innerHTML = `
                 <img data-image="red" class="active" src="images/${productUrl}" alt="no image">
-                `;
+               
+                <table>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>`;
+
 document.querySelector(".product-price").innerHTML = `
          <span>${productPrice}</span>
          `;
@@ -39,7 +70,6 @@ let cartProduct = {
   "productBrand": productBrand,
   "productPrice": productPrice
 }
-
 localStorage.setItem("productElements", JSON.stringify(cartProduct));
 
  //passes value to the cart page through buy now button
