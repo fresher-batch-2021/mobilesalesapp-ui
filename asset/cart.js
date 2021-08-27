@@ -21,20 +21,20 @@ function shoppingCart(user) {
   let useData = localStorage.getItem("productElements");
   let userData = JSON.parse(useData);
   console.log(userData);
-  let getData = res.data.docs[0].user;
-  for (let data of getData){
+  // let getData = res.data.docs[0].user;
+  // for (let data of getData){
   //console.log(getData); 
   content = content +
     ` <tr>
-        <td><img class="product-image" src="images/${data.productUrl}" alt="no image"></td>
-        <td>${data.productName}</td>
-        <td>${data.productBrand}</td>
-        <td>${data.productPrice}</td>
+        <td><img class="product-image" src="images/${userData.productUrl}" alt="no image"></td>
+        <td>${userData.productName}</td>
+        <td>${userData.productBrand}</td>
+        <td>${userData.productPrice}</td>
         </tr>`;
 
   console.log(content);
   document.querySelector("#shoppingCart").innerHTML = content;
-}
+
 });
 }
 shoppingCart();
