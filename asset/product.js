@@ -1,16 +1,12 @@
 function getMobiles(brandName) {
     let content = "";
 
-    const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
-    const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
-    const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-
-    const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_find";
-
+    // if value is null show all products
     if (brandName == "null") {
         console.log("if");
-        const getUrl = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
-        axios.get(getUrl, { headers: { Authorization: basicAuth } }).then(res => {
+
+        productService.getAllProducts().then(res => {
+
             let data = res.data.rows.map(obj => obj.doc);
             console.log(data);
 
@@ -47,6 +43,8 @@ function getMobiles(brandName) {
             console.log(err);
         })
     }
+    
+    //if value is brandname show brand products
     else {
         const requestData = {
 
@@ -54,10 +52,11 @@ function getMobiles(brandName) {
                 brandName: brandName
             }
         }
-        axios.post(url, requestData, { headers: { Authorization: basicAuth } }).then(res => {
+
+        productService.getProduct(requestData).then(res => {
             let data = res.data.docs;
             console.log(data);
-            
+
 
             for (let mobiles of data) {
                 content = content + ` <div class="column">
@@ -98,49 +97,41 @@ else {
     getMobiles('null');
 }
 
-function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
-    console.log(passValue);
-    window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
-}
-
 //sorting buttons
 function dropDown() {
-  document.getElementById("myDropDown").classList.toggle("show");
+    document.getElementById("myDropDown").classList.toggle("show");
 }
 
-window.onclick = function(event) {
-  if (!event.target.matches('.dropBtn')) {
-    var dropdowns = document.getElementsByClassName("dropDown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+window.onclick = function (event) {
+    if (!event.target.matches('.dropBtn')) {
+        var dropdowns = document.getElementsByClassName("dropDown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-  }
 }
 
-function sorting(n,m) {
-    const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
-    const dbPassword = '3589b77ff4cc367d60ae67e1f7dada03';
-    const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+//sorting
+function sorting(n, m) {
 
-    const getUrl = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
-    axios.get(getUrl, { headers: { Authorization: basicAuth } }).then(res => {
+    productService.getAllProducts().then(res => {
         let data = res.data.rows.map(obj => obj.doc);
         console.log(data);
-        let content ="";
+        let content = "";
         let i = 0;
         for (let oneplus of data) {
-                if(oneplus.modelPrice > n && oneplus.modelPrice < m){
+            if (oneplus.modelPrice > n && oneplus.modelPrice < m) {
 
-                    if (i % 4 == 0) {
-                        content = content + "<div class='row'>";
-                    }
-                    i++;
+                if (i % 4 == 0) {
+                    content = content + "<div class='row'>";
+                }
+                i++;
 
-                    content = content + ` 
+                content = content + ` 
                 <div class="maincard">
                 <div class="maincardrow">
                 <div class="card">
@@ -157,9 +148,14 @@ function sorting(n,m) {
                 if (i % 4 == 0) {
                     content = content + "</div>";
                 }
-                }
             }
-            document.querySelector("#products").innerHTML = content;
-        });
-        
+        }
+        document.querySelector("#products").innerHTML = content;
+    });
+}
+
+//view specification button
+function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
+    console.log(passValue);
+    window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
 }

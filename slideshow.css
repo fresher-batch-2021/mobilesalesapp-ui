@@ -12,6 +12,7 @@ img {vertical-align: middle;}
 }
 
 .dot {
+  z-index: -2;
   top: 120px;
   position: relative;
   height: 15px;

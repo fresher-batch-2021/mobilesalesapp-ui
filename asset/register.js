@@ -9,14 +9,14 @@ function register() {
         "email": email,
         "password": password
     };
-    try {
 
-        //fields validation
+    //fields validation
+    try {
         Validator.isValidString(name, "User Name Cannot Be Empty");
         Validator.isValidString(email, "Email  Cannot Be Empty");
         Validator.isValidPassword(password, "Password Cannot Be Empty");
         Validator.isValidPasswordStrength(password, "Password Cannot Be Less Than 6");
-       
+
         //for backend validation and error message
         UserService.register(registerValues).then(res => {
             localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));

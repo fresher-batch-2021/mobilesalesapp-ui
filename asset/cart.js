@@ -1,30 +1,85 @@
-function shoppingCart() {
-    let content = "";
-    let useData = localStorage.getItem("productElements");
-    let userData = JSON.parse(useData);
-    console.log(userData);
-    console.log(userData.productUrl);
+
+function shoppingCart(user) {
+  let content = " "; 
+
+  const dbUsername = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
+  const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
+
+  const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+  
+  const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_find";
     
-      content = content + `<div >
-        <img class="product-image" src="images/${userData.productUrl}" alt="no image">
-        </div> 
-        <div class="description">
-        <span>${userData.productName}</span>
-        <span>${userData.productBrand}</span>
-        <span></span>
-        </div>
-        <div class="total-price">${userData.productPrice}</div>`;
-    console.log(content);
-    document.querySelector("#shoppingCart").innerHTML = content;
+   const requestgetdata = {
+    selector:{
+      user: user
+  },
 }
-// }).catch(err => {
-//     console.log(err);
-// })
+  axios.post(url,requestgetdata, { headers: { 'Authorization': basicAuth } }).then(res=>{
+    //console.log(res.data.docs)
+  
+  
+  let useData = localStorage.getItem("productElements");
+  let userData = JSON.parse(useData);
+  console.log(userData);
+  let getData = res.data.docs[0].user;
+  for (let data of getData){
+  //console.log(getData); 
+  content = content +
+    ` <tr>
+        <td><img class="product-image" src="images/${data.productUrl}" alt="no image"></td>
+        <td>${data.productName}</td>
+        <td>${data.productBrand}</td>
+        <td>${data.productPrice}</td>
+        </tr>`;
+
+  console.log(content);
+  document.querySelector("#shoppingCart").innerHTML = content;
+}
+});
+}
 shoppingCart();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // adding product to cart
   // function addProduct() {
-  
+
   // console.log("check :", product);
   // let addProductStr = localStorage.getItem("productElements");
   // let cartProduct = addProductStr != null ? JSON.parse(addProductStr) : [];
@@ -55,3 +110,13 @@ shoppingCart();
   //   cartProduct.push(productObj);
   // }
   // }
+
+//   `<div >
+//   <img class="product-image" src="images/${userData.productUrl}" alt="no image">
+//   </div> 
+//   <div class="description">
+//   <span>${userData.productName}</span>
+//   <span>${userData.productBrand}</span>
+//   <span></span>
+//   </div>
+//   <div class="total-price">${userData.productPrice}</div>`
