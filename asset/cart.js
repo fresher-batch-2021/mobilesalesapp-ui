@@ -1,43 +1,50 @@
 
 function shoppingCart(user) {
-  let content = " "; 
+  let content = " ";
 
   const dbUsername = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
   const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
 
   const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-  
+
   const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_find";
-    
-   const requestgetdata = {
-    selector:{
-      user: user
-  },
-}
-  axios.post(url,requestgetdata, { headers: { 'Authorization': basicAuth } }).then(res=>{
+
+  const requestgetdata = {
+    selector: {
+      'user': user
+    },
+  }
+  axios.post(url, requestgetdata, { headers: { 'Authorization': basicAuth } }).then(res => {
     //console.log(res.data.docs)
-  
-  
-  let useData = localStorage.getItem("productElements");
-  let userData = JSON.parse(useData);
-  console.log(userData);
-  // let getData = res.data.docs[0].user;
-  // for (let data of getData){
-  //console.log(getData); 
-  content = content +
-    ` <tr>
-        <td><img class="product-image" src="images/${userData.productUrl}" alt="no image"></td>
-        <td>${userData.productName}</td>
-        <td>${userData.productBrand}</td>
-        <td>${userData.productPrice}</td>
+
+
+    let useData = localStorage.getItem("LOGGED_IN_USER");
+    let userData = JSON.parse(useData);
+    console.log(userData);
+    let getData = res.data.docs;
+    console.log(getData)
+    for (let data of getData) {
+      console.log(data);
+      console.log(userData[0]._id , data.user)
+        content = content +
+          ` <tr>
+        <td><img class="product-image" src="images/${data.productUrl}" alt="no image"></td>
+        <td>${data.productName}</td>
+        <td>${data.productBrand}</td>
+        <td>${data.productPrice}</td>
+        <td>${data.status}</td>
+
         </tr>`;
 
-  console.log(content);
-  document.querySelector("#shoppingCart").innerHTML = content;
-
-});
+        console.log(content);
+      
+    }
+    document.querySelector("#shoppingCart").innerHTML = content;
+  });
 }
-shoppingCart();
+let useData = localStorage.getItem("LOGGED_IN_USER");
+    let userData = JSON.parse(useData);
+shoppingCart(userData[0]._id);
 
 
 

@@ -15,7 +15,6 @@ class UserService {
     static login(email, password) {
 
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find";
-
         const requestData = {
             selector: {
                 email: email,
@@ -23,19 +22,17 @@ class UserService {
             },
             fields: ["_id", "name", "password"],
         };
-
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
-
     }
 
     /**
      * this method invokes register user service
      * @param {*} registerValues 
      * @returns 
-     */
+    */
+
     static register(registerValues) {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users";
         return axios.post(url, registerValues, { headers: { 'Authorization': basicAuth } });
     }
-
 }

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet"  href="admin.css"> -->
-    <title>Add</title>
+    <title>Add Mobiles</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
     <form onsubmit="addMobileForm()">
         <label for="brandName"><strong>Brand Name</strong>
@@ -22,17 +23,17 @@
             <input type="file" required name="image" id="imageUrl">
         </label><br>
 
-        <label for ="ram"><strong>RaM</strong></label>
+        <label for="ram"><strong>RaM</strong></label>
         <select id="ram" required>
             <option>
                 6GB
-                </option>
-                <option>
-                    8GB
-                </option>
-                <option>
-                    12GB
-                </option>
+            </option>
+            <option>
+                8GB
+            </option>
+            <option>
+                12GB
+            </option>
         </select>
         <br>
 
@@ -40,25 +41,27 @@
             <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" required>
         </label><br>
         <label for="modelConfiguration"><strong>Model Configuration</strong>
-            <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration" required>
+            <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration"
+                required>
         </label><br>
-        <label for ="status"><strong>status</strong></label>
+        <label for="status"><strong>status</strong></label>
         <select id="status" required>
             <option>
                 Active
-                </option>
-                <option>
-                    Inactive
-                </option>
+            </option>
+            <option>
+                Inactive
+            </option>
         </select><br>
 
 
-<button >Apply</button>
+        <button>Apply</button>
 
-    <a href= "listmobile.html">mobile list</a>
- 
+        <a href="listmobile.html">mobile list</a>
+
     </form>
     <script src="assets/validator.js"></script>
     <script src="assets/addmobile.js"></script>
 </body>
+
 </html>

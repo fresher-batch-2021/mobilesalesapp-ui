@@ -25,9 +25,4 @@ class productService {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders";
         return axios.post(url, obj, { headers: { 'Authorization': basicAuth } });
     }
-
-    // static getData() {
-    //     const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders";
-    //     return axios.get(url, { headers: { 'Authorization': basicAuth } });
-    //}
 }

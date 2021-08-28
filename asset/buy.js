@@ -38,7 +38,8 @@ let cartProduct = {
   "productUrl": productUrl,
   "productConfiguration": productConfiguration,
   "productBrand": productBrand,
-  "productPrice": productPrice
+  "productPrice": productPrice,
+  "status": "pending"
 }
 
 //buynow button

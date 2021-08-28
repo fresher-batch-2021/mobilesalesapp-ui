@@ -12,23 +12,24 @@
     <form action="#" style="max-width:500px;margin:auto">
         <h2>Welcome Admin</h2>
         
-        <div class="input-container">
+        <!-- <div class="input-container">
           <i class="fa fa-user icon"></i>
           <input class="input-field" type="text" placeholder="User name" name="userName">
-        </div>
+        </div> -->
       
         <div class="input-container">
           <i class="fa fa-envelope icon"></i>
-          <input class="input-field" type="text" placeholder="Email" name="email">
+          <input class="input-field" type="text" id="email" placeholder="Email" name="email" required autofocus>
         </div>
         
         <div class="input-container">
           <i class="fa fa-key icon"></i>
-          <input class="input-field" type="password" placeholder="Password" name="password">
+          <input class="input-field" type="password" id="password" placeholder="Password" name="password" required>
         </div>
 
-        <button type="submit" class="btn"><i class="fa fa-sign-in icon"></i></button>
+        <button type="submit" onclick="adminlogin()" class="btn"><i class="fa fa-sign-in icon"></i></button>
       </form>
       
+      <script src="assets/adminlogin.js"></script>
 </body>
 </html>
