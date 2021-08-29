@@ -19,25 +19,24 @@
     <input type="text " id="searchBox" class="searchBox" placeholder="Search..." onkeyup="searchName()"
         autocomplete="off">
 
-    <table  id="myTable" >
+    <table  aria-describedby="mydesc" class="table" id="myTable" >
+        
 
-        <thead>
             <tr>
-                <th>s.no</th>
-                <th>Image</th>
-                <th>Mobile Name</th>
-                <th>Model Name</th>
+                <th scope="col">s.no</th>
+                <th scope="col">Image</th>
+                <th scope="col">Mobile Name</th>
+                <th scope="col">Model Name</th>
 
 
-                <th>Ram</th>
-                <th>model Configuration</th>
-                <th>Edit</th>
-                <th>status</th>
-                <th>delete</th>
+                <th scope="col">Ram</th>
+                <th scope="col">model Configuration</th>
+                <th scope="col">Edit</th>
+                <th scope="col">status</th>
+                <th scope="col">delete</th>
 
             </tr>
 
-        </thead>
         <tbody id="list-Mobile">
 
         </tbody>
