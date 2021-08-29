@@ -4,14 +4,17 @@ function search() {
         {
             oneplus: "oneplus",
             redmi: "mi",
-            realme: "realme"
+            realme: "realme",
+            vivo: "vivo"
         }
     ]
     let content = "";
     for (let obj of data) {
         content += ` <option value="${obj.oneplus}">${obj.oneplus}</option>
         <option value="${obj.redmi}">${obj.redmi}</option>
-        <option value="${obj.realme}">${obj.realme}</option> `;
+        <option value="${obj.realme}">${obj.realme}</option> 
+        <option value="${obj.vivo}">${obj.vivo}</option> `;
+        ;
     }
     console.log(content);
     document.querySelector("#productList").innerHTML = content;

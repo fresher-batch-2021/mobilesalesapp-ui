@@ -1,0 +1,38 @@
+.container{
+    margin-top: 10%;
+     margin-left: 20%;
+}
+h3{
+    margin-left: 33%;
+
+}
+.searchBox{
+    margin-left: 25%;
+    margin-top: 2%;
+    width: 30%;
+    padding: 5px;
+}
+input[type=text]{
+    box-sizing: content-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}    
+
+table {
+    margin-top: 5%;
+    border-collapse: collapse;
+    width: 80%;
+  }
+th{
+    color: white;
+    background-color: darkslategray;
+}  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

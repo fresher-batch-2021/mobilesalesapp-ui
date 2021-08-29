@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet"  href="admin.css"> -->
     <title>List</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="listmobile.css">
 </head>
+
 <body>
+    <header id="admin-header"></header>
+<div  class="container">
     <h3>MOBHUB ADMIN</h3>
-    <input type="text " id="searchBox" class="searchBox" placeholder="Search..." onkeyup="searchName()" autocomplete="off">
-    <table id="myTable" >
+    <input type="text " id="searchBox" class="searchBox" placeholder="Search..." onkeyup="searchName()"
+        autocomplete="off">
 
-<thead>
-    <tr>
-        <th>s.no</th>
-        <th>Mobile Name</th>
-        <th>Model Name</th>
+    <table  id="myTable" >
 
-        <th>Ram</th>
-        <th>model Configuration</th>
-        <th>Edit</th>
-        <th>status</th>
-        <th>delete</th>
-        
-    </tr>
-    
-</thead>    
+        <thead>
+            <tr>
+                <th>s.no</th>
+                <th>Image</th>
+                <th>Mobile Name</th>
+                <th>Model Name</th>
+
+
+                <th>Ram</th>
+                <th>model Configuration</th>
+                <th>Edit</th>
+                <th>status</th>
+                <th>delete</th>
+
+            </tr>
+
+        </thead>
         <tbody id="list-Mobile">
-         
-        
-            
-         
 
         </tbody>
-        
-        
+
+
     </table>
+</div>
     <script src="assets/listmobile.js"></script>
-    
+
     <script src="assets/deletemobile.js"></script>
+
+    <script src="assets/jquery.min.js"></script>
+    <script>$("#admin-header").load("adminindex.html");</script>
 </body>
+
 </html>

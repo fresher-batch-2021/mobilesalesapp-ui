@@ -25,7 +25,7 @@ function addMobile(brandName,modelName, imageUrl, ram, modelConfiguration, model
         Validator.isValidString(modelPrice, "Mobile Price is Mandatory");
         Validator.isValidString(status, "status is Mandatory");
 
-        console.log("Mobile Details are valid");
+        console.log("Mobile Details");
         alert("Successfully Added");
         const mobileObj = { brandName:brandName, modelName:modelName, imageUrl: imageUrl, ram:ram, modelConfiguration:modelConfiguration,  modelPrice:modelPrice, status:status};
         console.log(mobileObj);

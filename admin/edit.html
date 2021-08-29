@@ -1,40 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
+    <title>Edit Product</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="edit.css">
 </head>
+
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
-<form>
-    <input type="hidden" id="id" readonly />
-    <input type="hidden" id="rev" readonly />
-    <!-- <table > -->
+    <header id="admin-header"></header>
+    <div class="container">
+        <form>
+            <input type="hidden" id="id" readonly >
+            <input type="hidden" id="rev" readonly >
 
-        <!-- <thead> -->
-            <tr>
-                <th>Brand Name</th>
-                <td><input type="text" id="brandName"></td><br>
-             
-        <th>Model Name</th>
-                <td><input type="text" id="modelName"></td><br>
-                <th>imageUrl</th>
-        <td><input  type="file" id="imageUrl"><br></td><br>
+            <form onsubmit="addMobileForm()">
+                <label for="brandName"><strong>Brand Name</strong>
+                    <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" required>
+                </label><br>
+                <label for="modelName"><strong>Model Name</strong>
+                    <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" required>
+                </label><br>
+                <label for="image"><strong>Model Image</strong>
+                    <input type="file" required name="image" id="imageUrl">
+                </label><br>
+                <div class="ram">
+                    <label for="ram"><strong>Ram</strong></label>
+                    <select id="ram" required>
+                        <option>
+                            6GB
+                        </option>
+                        <option>
+                            8GB
+                        </option>
+                        <option>
+                            12GB
+                        </option>
+                    </select>
+                </div>
+                <br>
 
-                <th>Model Price</th><td><input type="text" id="modelPrice"></td><br>
-                <th>status</th>
-                <td><input type="text" id="status"></td><br>
-                <th>Model Configuration</th><td>
-                <input type="text" id="modelConfiguration"></td><br>
-                </tr>
-                <!-- </thead> -->
-    <!-- </table> -->
-    </form>
-    <input type="submit" onclick="modifyDetails()" id="edit" value="Done">
+                <label for="modelPrice"><strong>Model Price</strong>
+                    <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" required>
+                </label><br>
+                <label for="modelConfiguration"><strong>Model Configuration</strong>
+                    <input type="text" placeholder="Enter Configuration" name="modelConfiguration"
+                        id="modelConfiguration" required>
+                </label><br>
+
+                <button onclick="modifyDetails()" id="edit">Update</button>
+                <!-- <button><a href="listmobile.html">Products</a></button> -->
+    </div>
+
     <script src="assets/editmobile.js"></script>
-    
+
+    <script src="assets/jquery.min.js"></script>
+    <script>$("#admin-header").load("adminindex.html");</script>
+
 </body>
+
 </html>

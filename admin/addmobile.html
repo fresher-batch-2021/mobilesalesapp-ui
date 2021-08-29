@@ -9,59 +9,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="addmobile.css">
 </head>
 
 <body>
-    <form onsubmit="addMobileForm()">
-        <label for="brandName"><strong>Brand Name</strong>
-            <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" required>
-        </label><br>
-        <label for="modelName"><strong>Model Name</strong>
-            <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" required>
-        </label><br>
-        <label for="image"><strong>model Image</strong>
-            <input type="file" required name="image" id="imageUrl">
-        </label><br>
-
-        <label for="ram"><strong>RaM</strong></label>
-        <select id="ram" required>
-            <option>
-                6GB
-            </option>
-            <option>
-                8GB
-            </option>
-            <option>
-                12GB
-            </option>
-        </select>
+    <header id="admin-header"></header>
+    
+    <div class="container">
+        <form onsubmit="addMobileForm()">
+            <label for="brandName"><strong>Brand Name</strong>
+                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" required>
+            </label><br>
+            <label for="modelName"><strong>Model Name</strong>
+                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" required>
+            </label><br>
+            <label for="image"><strong>Model Image</strong>
+                <input type="file" required name="image" id="imageUrl">
+            </label><br>
+            <div class="ram">
+            <label  for="ram"><strong>Ram</strong></label>
+            <select id="ram" required>
+                <option>
+                    6GB
+                </option>
+                <option>
+                    8GB
+                </option>
+                <option>
+                    12GB
+                </option>
+            </select>
+        </div>
         <br>
 
-        <label for="modelPrice"><strong>model price</strong>
-            <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" required>
-        </label><br>
-        <label for="modelConfiguration"><strong>Model Configuration</strong>
-            <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration"
-                required>
-        </label><br>
-        <label for="status"><strong>status</strong></label>
-        <select id="status" required>
-            <option>
-                Active
-            </option>
-            <option>
-                Inactive
-            </option>
-        </select><br>
+            <label for="modelPrice"><strong>Model Price</strong>
+                <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" required>
+            </label><br>
+            <label for="modelConfiguration"><strong>Model Configuration</strong>
+                <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration"
+                    required>
+            </label><br>
+            <!-- <label for="status"><strong>status</strong></label>
+            <select id="status" required>
+                <option>
+                    Active
+                </option>
+                <option>
+                    Inactive
+                </option>
+            </select><br> -->
 
-
-        <button>Apply</button>
-
-        <a href="listmobile.html">mobile list</a>
+            <button>Done</button>
+            <button><a href="listmobile.html">Products</a></button>
+    </div>
+    
 
     </form>
     <script src="assets/validator.js"></script>
     <script src="assets/addmobile.js"></script>
+
+    <script src="assets/jquery.min.js"></script>
+    <script>$("#admin-header").load("adminindex.html");</script>
 </body>
 
 </html>

@@ -3,6 +3,10 @@
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   
   .header a {
@@ -49,6 +53,8 @@
 
   /* side bar */
 .sideBar {
+    top: 89px;
+    left: 0;
     margin: 0;
     padding: 0;
     width: 200px;
