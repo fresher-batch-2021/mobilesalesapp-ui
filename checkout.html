@@ -34,7 +34,7 @@
             <div class="phone-Number">
                 <div>
                     <label for="city">Phone</label>
-                    <input class="fields" id="shippingPhoneNo" type="text" name="city" placeholder="valid mobile number"
+                    <input class="fields" id="shippingPhoneNo" type="text" name="city" placeholder="valid mobile number" pattern="[6789][0-9]{9}" 
                         required>
                 </div>
 
@@ -44,22 +44,22 @@
             </h1>
             <div class="cc-number">
                 <label for="card-num">Card No.</label>
-                <input class="fields" id="shippingcardNo" type="text" name="card-num" placeholder="Valid Card No."
+                <input class="fields" id="shippingcardNo" type="text" name="card-num" placeholder="Valid Card No." pattern="[0-9]{16}"
                  required>
             </div>
             <div class="cc-info">
                 <div>
                     <label for="card-date">Exp</label>
-                    <input class="fields" id="shippingCardDate" type="text" name="expire" placeholder="Exp Date"
+                    <input class="fields" id="shippingCardDate" type="text" name="expire" placeholder="Exp Date" 
                         required>
                 </div>
                 <div>
                     <label for="card-ccv">CCV</label>
-                    <input class="fields" id="shippingCardCvv" type="text" name="security" placeholder="CCV" required>
+                    <input class="fields" id="shippingCardCvv" type="text" name="security" placeholder="CCV"  pattern="[0-9]{3}" required> 
                 </div>
             </div>
             <div>
-                <button type="submit">proceed</button>
+                <button type="submit" >proceed</button>
             </div>
         </form>
     </div>
@@ -69,6 +69,9 @@
     <script>
         $("#header").load("header.html");
     </script>
+
+<script src="service-api/services/validator.js"></script>
+<script src="service-api/services/product-service.js"></script>
 
 </body>
 

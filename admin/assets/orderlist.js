@@ -29,11 +29,11 @@ function shoppingCart() {
             console.log(content);
         }
         document.querySelector("#shoppingCart").innerHTML = content;
-    });   
+    });
 }
 shoppingCart();
 
-function changeStatus(user,productUrl,product,productConfiguration,productBrand,productPrice,id,rev) {
+function changeStatus(user, productUrl, product, productConfiguration, productBrand, productPrice, id, rev) {
     console.log("gfhjk");
     let cartProduct = {
         "user": user,

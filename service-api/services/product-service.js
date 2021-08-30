@@ -25,4 +25,14 @@ class productService {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders";
         return axios.post(url, obj, { headers: { 'Authorization': basicAuth } });
     }
+    //checkoutn page
+    static shippingData(requestgetdata){
+       const  url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_find";
+         return axios.post(url, requestgetdata, { headers: { 'Authorization': basicAuth } });
+    }
+
+    static updateShippingData(id,rev,shippingProduct){
+        const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id + "?rev=" + rev;
+        return axios.put(url, shippingProduct, { headers: { 'Authorization': basicAuth } });
+    }
 }
