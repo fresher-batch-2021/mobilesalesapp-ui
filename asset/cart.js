@@ -28,12 +28,12 @@ function shoppingCart(user) {
       console.log(userData[0]._id , data.user)
         content = content +
           ` <tr>
-        <td><img class="product-image" src="images/${data.productUrl}" alt="no image"></td>
+        <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
         <td>${data.productName}</td>
         <td>${data.productBrand}</td>
         <td>${data.productPrice}</td>
         <td>${data.status}</td>
-
+        <td>${data.shippingName}</td>
         </tr>`;
 
         console.log(content);

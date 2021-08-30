@@ -29,17 +29,24 @@ document.querySelector(".product-price").innerHTML = `
 
 let userData = localStorage.getItem("LOGGED_IN_USER");
 let user = JSON.parse(userData);
-console.log(user[0]._id)
+console.log(user)
 
 
 let cartProduct = {
   "user": user[0]._id,
+  "name": user[0].name,
   "productName": product,
   "productUrl": productUrl,
   "productConfiguration": productConfiguration,
   "productBrand": productBrand,
   "productPrice": productPrice,
-  "status": "pending"
+  "status": "pending",
+  "shippingName": "",
+  "shippingEmail": "",
+  "shippingPhone": "",
+  "cardNo": "",
+  "cardDate": "",
+  "cardCVV": ""
 }
 
 //buynow button
@@ -50,6 +57,8 @@ function addButton(product, productBrand, productUrl, productPrice, productConfi
   console.log(cartProduct);
 
   productService.sendData(cartProduct).then(res => {
+    console.log(res.data.id);
+    localStorage.setItem("CartID",res.data.id);
     console.log(user);
     if (user == null) {
       console.log("user : ", user);
@@ -59,7 +68,7 @@ function addButton(product, productBrand, productUrl, productPrice, productConfi
     else {
       console.log("user : ", user);
       alert("done");
-      window.location.href = "cart.html";
+      window.location.href = "checkout.html";
     }
   });
 }

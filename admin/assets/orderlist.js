@@ -19,10 +19,11 @@ function shoppingCart() {
             console.log(data);
             content = content +
                 ` <tr>
-          <td><img class="product-image" src="images/${data.productUrl}" alt="no image"></td>
+          <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
           <td>${data.productName}</td>
           <td>${data.productBrand}</td>
           <td>${data.productPrice}</td>
+          <td>${data.name}</td>
           <td>${data.status}<button onclick="changeStatus('${data.user}','${data.productUrl}','${data.productName}','${data.productConfiguration}','${data.productBrand}','${data.productPrice}','${data._id}','${data._rev}')">delivered</button></td>
           </tr>`;
             console.log(content);

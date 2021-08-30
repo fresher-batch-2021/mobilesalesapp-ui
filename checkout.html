@@ -7,31 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Out</title>
     <link rel="stylesheet" href="checkout.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="asset/checkout.js"></script>
 </head>
 
 <body>
     <header id="header"></header>
 
     <div class="container">
-        <form>
+        <form onsubmit="shippingDetails()">
             <h1 class="Shipping-Details">
                 Shipping Details
             </h1>
             <div class="name">
-
                 <div>
                     <label for="name">Name</label>
-                    <input class="fields" type="text" name="name" placeholder="Enter Name" required>
+                    <input class="fields" id="shippingName" type="text" name="name" placeholder="Enter Name" pattern="[A-Za-z ]{3,32}" required>
                 </div>
             </div>
             <div class="email">
                 <label for="email">Email</label>
-                <input class="fields" type="text" name="email" placeholder="Enter Email" required>
+                <input class="fields" id="shippingEmail" type="text" name="email" placeholder="Enter Email" pattern="[a-z0-9]+@[a-z]+.[a-z]{1,32}$" required>
             </div>
             <div class="phone-Number">
                 <div>
                     <label for="city">Phone</label>
-                    <input class="fields" type="text" name="city" placeholder="valid mobile number" required>
+                    <input class="fields" id="shippingPhoneNo" type="text" name="city" placeholder="valid mobile number"
+                        required>
                 </div>
 
             </div>
@@ -40,20 +44,22 @@
             </h1>
             <div class="cc-number">
                 <label for="card-num">Card No.</label>
-                <input class="fields" type="text" name="card-num" placeholder="Valid Card No." required>
+                <input class="fields" id="shippingcardNo" type="text" name="card-num" placeholder="Valid Card No."
+                 required>
             </div>
             <div class="cc-info">
                 <div>
                     <label for="card-date">Exp</label>
-                    <input class="fields" type="text" name="expire" placeholder="Exp Date" required>
+                    <input class="fields" id="shippingCardDate" type="text" name="expire" placeholder="Exp Date"
+                        required>
                 </div>
                 <div>
                     <label for="card-ccv">CCV</label>
-                    <input class="fields" type="text" name="security" placeholder="CCV" required>
+                    <input class="fields" id="shippingCardCvv" type="text" name="security" placeholder="CCV" required>
                 </div>
             </div>
             <div>
-                <button>proceed</button>
+                <button type="submit">proceed</button>
             </div>
         </form>
     </div>
