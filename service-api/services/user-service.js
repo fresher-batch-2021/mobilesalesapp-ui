@@ -12,15 +12,16 @@ class UserService {
      * @returns 
      */
 
-    static login(email, password) {
+    static login(email, password,role) {
 
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find";
         const requestData = {
             selector: {
                 email: email,
-                password: password
+                password: password,
+                role: role
             },
-            fields: ["_id", "name", "password"],
+            fields: ["_id", "name", "password","role"],
         };
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
     }

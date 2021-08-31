@@ -1,15 +1,10 @@
 function checkLogin() {
 
-    let userStr = localStorage.getItem("LOGGED_IN_ADMIN");
+    let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     if (user != null) {
-        document.querySelector("#loggedIn").innerHTML = "Welcome " + user[0].email;
+        document.querySelector("#loggedIn").innerHTML = "Hi! " + user.name;
     }
 }
 checkLogin();
 
-function logout() {
-    localStorage.clear();
-    window.location.reload();
-    window.location.href = "adminlogin.html"
-}

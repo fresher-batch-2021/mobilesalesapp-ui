@@ -54,7 +54,7 @@ function changeStatus(user, productUrl, product, productConfiguration, productBr
     const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id + "?rev=" + rev;
 
     axios.put(url, cartProduct, { headers: { 'Authorization': basicAuth } }).then(res => {
-        console.log("updae status : " + res.data);
+        console.log("update status : " + res.data);
         alert("Updated");
     }).catch(err => {
         console.log(err);

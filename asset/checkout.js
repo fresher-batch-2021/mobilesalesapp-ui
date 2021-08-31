@@ -14,7 +14,6 @@ function shippingDetails() {
         Validator.isValidString(email, "Email  Cannot Be Empty");
         Validator.isValidNumber(phoneNo, "phone Number Name Cannot Be Empty");
         Validator.isValidNumber(cardNo, "Card Number  Cannot Be Empty");
-        Validator.isValidNumber(cardDate, "Card Date Cannot Be Empty");
         Validator.isValidNumber(cardCVV, "CVV  Cannot Be Empty");
    
 
@@ -63,6 +62,12 @@ function shippingDetails() {
 }
 }
 
+function setDate(){
+    let today = new Date().toJSON().substr(0,10);
+    console.log(today);
+    document.querySelector("#shippingCardDate").setAttribute("min", today);
 
+}
+setDate();
 
 

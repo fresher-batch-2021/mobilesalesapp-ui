@@ -25,7 +25,7 @@ function shoppingCart(user) {
     console.log(getData)
     for (let data of getData) {
       console.log(data);
-      console.log(userData[0]._id , data.user)
+      console.log(userData._id , data.user)
         content = content +
           ` <tr>
         <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
@@ -44,7 +44,7 @@ function shoppingCart(user) {
 }
 let useData = localStorage.getItem("LOGGED_IN_USER");
     let userData = JSON.parse(useData);
-shoppingCart(userData[0]._id);
+shoppingCart(userData._id);
 
 
 

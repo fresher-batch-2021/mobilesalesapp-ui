@@ -33,8 +33,8 @@ console.log(user)
 
 
 let cartProduct = {
-  "user": user[0]._id,
-  "name": user[0].name,
+  "user": user._id,
+  "name": user.name,
   "productName": product,
   "productUrl": productUrl,
   "productConfiguration": productConfiguration,

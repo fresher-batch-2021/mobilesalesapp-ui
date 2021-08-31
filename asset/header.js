@@ -42,14 +42,14 @@ function checkLogin() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     if (user != null) {
-        document.querySelector("#loggedIn").innerHTML = "Welcome " + user[0].name;
+        document.querySelector("#loggedIn").innerHTML = "Welcome " + user.name;
     }
 }
 checkLogin();
 
 // logout
-function logout() {
-    localStorage.clear();
-    window.location.reload();
-    window.location.href = "index.html"
-}
+// function logout() {
+//     localStorage.clear();
+//     window.location.reload();
+//     window.location.href = "index.html"
+// }
