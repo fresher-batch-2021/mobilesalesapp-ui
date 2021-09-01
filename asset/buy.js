@@ -2,6 +2,7 @@ console.log(window.location.search.substr(1));
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
 
+
 let product = Params.get("productName");
 let productUrl = Params.get("productUrl");
 let productConfiguration = Params.get("productConfiguration");
@@ -58,16 +59,17 @@ function addButton(product, productBrand, productUrl, productPrice, productConfi
 
   productService.sendData(cartProduct).then(res => {
     console.log(res.data.id);
-    localStorage.setItem("CartID",res.data.id);
+    localStorage.setItem("CartID", res.data.id);
     console.log(user);
     if (user == null) {
       console.log("user : ", user);
-      alert("please login");
+      //alert("please login");
+      toastr.error("Please Login")
+      setTimeout(function login() {
       window.location.href = "index.html";
-    }
-    else {
+    }, 1500);
+    } else {
       console.log("user : ", user);
-      alert("done");
       window.location.href = "checkout.html";
     }
   });

@@ -21,7 +21,11 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-
+.approve-btn{
+  background-color: yellowgreen;
+  padding: 5px 5px;
+  border-radius: 4px;
+}
 tr:nth-child(even) {
   background-color: #dddddd;
 }

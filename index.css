@@ -13,27 +13,24 @@ h2{
     font-size: 50px;
     margin: 0px;
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
-}
-
-form {
-     text-align: center;
 }
 
 .outer{
     border-radius: 40px;
     background-color: whitesmoke;
-     margin-top: 100pX;
-     margin-bottom: 0px;
-     margin-right: 500px;
-     margin-left: 500px;
-     padding: 10px;
+    margin-top: 50pX;
+    margin-right: 500px;
+    margin-left: 500px;
+    padding: 10px;
     }
-
-.outer.box.container{
+    form {
+        text-align: center;
+   }
+/* .outer.box.container{
      padding-bottom: 500px;
      height: 500px;
-     }
+     } */
+     
 .imgContainer {
         text-align: center;
         margin: 12px 0 12px 0;   
@@ -52,14 +49,14 @@ input[type=password] {
     }
 
 button {
-    border-radius: 4px;
+        border-radius: 4px;
         background-color: black;
         color: white;
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
         cursor: pointer;
-         width: 70%;
+        width: 70%;
     }
     button:hover {
         opacity: 0.8;

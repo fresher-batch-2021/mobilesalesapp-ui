@@ -1,4 +1,3 @@
-
 function shoppingCart(user) {
   let content = " ";
 
@@ -14,7 +13,11 @@ function shoppingCart(user) {
       'user': user
     },
   }
-  axios.post(url, requestgetdata, { headers: { 'Authorization': basicAuth } }).then(res => {
+  axios.post(url, requestgetdata, {
+    headers: {
+      'Authorization': basicAuth
+    }
+  }).then(res => {
     //console.log(res.data.docs)
 
 
@@ -25,25 +28,31 @@ function shoppingCart(user) {
     console.log(getData)
     for (let data of getData) {
       console.log(data);
-      console.log(userData._id , data.user)
-        content = content +
-          ` <tr>
+      console.log(userData._id, data.user)
+      content = content +
+        ` <tr>
         <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
         <td>${data.productName}</td>
         <td>${data.productBrand}</td>
         <td>${data.productPrice}</td>
+        <td>${data.orderDate}</td>
         <td>${data.status}</td>
-        <td>${data.shippingName}</td>
+        <td>
+        <ul>
+        ${data.shippingName}
+        ${data.shippingPhone}
+        </ul>
+        </td>
         </tr>`;
 
-        console.log(content);
-      
+      console.log(content);
+
     }
     document.querySelector("#shoppingCart").innerHTML = content;
   });
 }
 let useData = localStorage.getItem("LOGGED_IN_USER");
-    let userData = JSON.parse(useData);
+let userData = JSON.parse(useData);
 shoppingCart(userData._id);
 
 
@@ -84,46 +93,31 @@ shoppingCart(userData._id);
 
 
 
-// adding product to cart
-  // function addProduct() {
-
-  // console.log("check :", product);
-  // let addProductStr = localStorage.getItem("productElements");
-  // let cartProduct = addProductStr != null ? JSON.parse(addProductStr) : [];
-  // var qty = 1;
 
 
-  // If item already exist, update the quantity
-  // let index = cartProduct.findIndex(cartProduct => cartProduct.Id == id);
-  // alert(index);
-  // console.log(index);
-  // if (index != -1) {
-  //   let productObj = cartProduct[index];
-  //   console.log(productObj);
-  //   productObj.Qty++;
-  //   cartProduct[index] = productObj;
-  // }
 
-  // else {
-    // if item not exist, add new item to cart
-  //   let productObj = {
-  //     "productName": product,
-  //     "productUrl": productUrl,
-  //     "productConfiguration": productConfiguration,
-  //     "productBrand": productBrand,
-  //     "productPrice": productPrice
-  //   };
-  //   console.log(productObj);
-  //   cartProduct.push(productObj);
-  // }
-  // }
+// If item already exist, update the quantity
+// let index = cartProduct.findIndex(cartProduct => cartProduct.Id == id);
+// alert(index);
+// console.log(index);
+// if (index != -1) {
+//   let productObj = cartProduct[index];
+//   console.log(productObj);
+//   productObj.Qty++;
+//   cartProduct[index] = productObj;
+// }
 
-//   `<div >
-//   <img class="product-image" src="images/${userData.productUrl}" alt="no image">
-//   </div> 
-//   <div class="description">
-//   <span>${userData.productName}</span>
-//   <span>${userData.productBrand}</span>
-//   <span></span>
-//   </div>
-//   <div class="total-price">${userData.productPrice}</div>`
+// else {
+// if item not exist, add new item to cart
+//   let productObj = {
+//     "productName": product,
+//     "productUrl": productUrl,
+//     "productConfiguration": productConfiguration,
+//     "productBrand": productBrand,
+//     "productPrice": productPrice
+//   };
+//   console.log(productObj);
+//   cartProduct.push(productObj);
+// }
+// }
+

@@ -24,7 +24,8 @@ function shoppingCart() {
           <td>${data.productBrand}</td>
           <td>${data.productPrice}</td>
           <td>${data.name}</td>
-          <td>${data.status}<button onclick="changeStatus('${data.user}','${data.productUrl}','${data.productName}','${data.productConfiguration}','${data.productBrand}','${data.productPrice}','${data._id}','${data._rev}')">delivered</button></td>
+          <td>${data.status}</td>
+          <td><button class="approve-btn" onclick="changeStatus('${data.user}','${data.productUrl}','${data.productName}','${data.productConfiguration}','${data.productBrand}','${data.productPrice}','${data._id}','${data._rev}')">approve</button></td>
           </tr>`;
             console.log(content);
         }

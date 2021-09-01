@@ -22,14 +22,17 @@ function register() {
         //for backend validation and error message
         UserService.register(registerValues).then(res => {
             localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
-            alert("register successful");
+           toastr.success("Register Successful");
+           setTimeout(function login() {
             window.location.href = "index.html";
+        }, 1000);
         }).catch(err => {
-            alert("registration failed");
+            toastr.error("Registration Failed");
         });
     } catch (err) {
         console.error(err.message);
-        alert(err);
-        alert("Unable To Register");
+        toastr.error(err);
+        toastr.error("Unable To Register");
+
     }
 }

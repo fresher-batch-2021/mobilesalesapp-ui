@@ -71,9 +71,9 @@ em{
   margin-top: 8px;
   
 }
-#active {
-  background-color: #ccc;
-  color: black;
+.userName{
+  background-color: lightgray;
+
 }
   
   .account{

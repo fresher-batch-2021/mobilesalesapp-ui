@@ -30,7 +30,8 @@ body{
  }
     .imgContainer {
         text-align: center;
-        margin: 50px 100px;   
+        margin-top: 10px;
+        margin-left: 30px; 
         height: fit-content;
     }
     input[type=text],
