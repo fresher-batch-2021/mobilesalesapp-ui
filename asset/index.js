@@ -40,14 +40,20 @@ function login() {
             } else {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-                toastr.success("login successful")
+                toastr.success("login successful",{
+                    positionClass: 'toast-top-center',
+                    preventDuplicates: true
+
+                })
                 if (role == "admin") {
-                    setTimeout(function login() {
+                    setTimeout(function () {
+                        //document.getElementById('signUp-btn').disabled = true;
                         window.location.href = "admin/adminindex.html";
                     }, 1000);
                 }
                 else if (role == "user") {
-                    setTimeout(function login() {
+                    setTimeout(function () {
+                       // document.getElementById('signUp-btn').disabled = true;
                         window.location.href = "home.html"
                     }, 1000);
                 }

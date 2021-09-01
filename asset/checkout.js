@@ -41,7 +41,7 @@ function shippingDetails() {
             let shippingProduct = {
                 "user": res.data.docs[0].user,
                 "name": res.data.docs[0].name,
-                "productName": res.data.docs[0].product,
+                "productName": res.data.docs[0].productName,
                 "productUrl": res.data.docs[0].productUrl,
                 "productConfiguration": res.data.docs[0].productConfiguration,
                 "productBrand": res.data.docs[0].productBrand,
@@ -57,10 +57,12 @@ function shippingDetails() {
             }
             console.log("Updated data : ", shippingProduct);
 
-            productService.updateShippingData(res.data.docs[0]._id, res.data.docs[0]._rev, shippingProduct).then(res => {
-                console.log(res.data);
-                alert("Updated Shipping details")
+            productService.updateShippingData(res.data.docs[0]._id, res.data.docs[0]._rev, shippingProduct).then(res1 => {
+                console.log(res1.data);
+                toastr.success("Updated Shipping details")
+                setTimeout(function login() {
                 window.location.href = "cart.html";
+            }, 1000);
             });
         });
     } catch (err) {

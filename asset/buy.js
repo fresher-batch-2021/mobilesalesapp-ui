@@ -63,9 +63,8 @@ function addButton(product, productBrand, productUrl, productPrice, productConfi
     console.log(user);
     if (user == null) {
       console.log("user : ", user);
-      //alert("please login");
       toastr.error("Please Login")
-      setTimeout(function login() {
+      setTimeout(function addButton() {
       window.location.href = "index.html";
     }, 1500);
     } else {

@@ -46,7 +46,7 @@ class UserService {
     }
 
     static emailValidation(email) {
-        const url = endpoint + "mobilesalesapp_users/_find";
+        const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_users/_find";
 
         let requestData = {
             selector: {
