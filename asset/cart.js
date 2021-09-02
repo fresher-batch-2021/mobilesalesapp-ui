@@ -25,10 +25,16 @@ function shoppingCart(user) {
     let userData = JSON.parse(useData);
     console.log(userData);
     let getData = res.data.docs;
-    console.log(getData)
-    for (let data of getData) {
+    console.log(getData);
+
+    let actionCancle = getData.filter(obj => obj.status !== "inactive");
+    console.log(JSON.stringify(actionCancle));
+    console.table(actionCancle);
+
+    for (let data of actionCancle) {
       console.log(data);
       console.log(userData._id, data.user)
+
       content = content +
         ` <tr>
         <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
@@ -43,6 +49,7 @@ function shoppingCart(user) {
         ${data.shippingPhone}
         </ul>
         </td>
+        <td><button class="cancle-btn" onclick= "cancelOrder('${data._id}','${data._rev}');">cancel </button></td>
         </tr>`;
 
       console.log(content);
@@ -55,6 +62,26 @@ let useData = localStorage.getItem("LOGGED_IN_USER");
 let userData = JSON.parse(useData);
 shoppingCart(userData._id);
 
+function cancelOrder(id, rev) {
+  console.log(id)
+  console.log(rev)
+
+  productService.cancelOrder(id).then(res => {
+    let product = res.data;
+    console.log(product);
+
+    product.status =  "inactive";
+
+    productService.cancelStatus(id,product).then(res => {
+      shoppingCart();
+    
+    }).catch(err => {
+      alert("error in deleting");
+    });
+
+
+  });
+}
 
 
 
@@ -120,4 +147,3 @@ shoppingCart(userData._id);
 //   cartProduct.push(productObj);
 // }
 // }
-
