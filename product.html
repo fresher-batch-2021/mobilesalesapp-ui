@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>produts</title>
+    <link rel="icon" href="images/favicon.ico">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -28,21 +29,12 @@
                 <button onclick="dropDown()" class="dropBtn">Price</button>
                 <div id="myDropDown" class="dropDown-content">
                     <a onclick="getMobiles('null')">default</a>
-                  <a onclick="sorting(10000,20000)" >10,000-20,000</a>
-                  <a onclick="sorting(20000,30000)">20,000-30,000</a>
-                  <a onclick="sorting(30000,1000000)">above 30,000</a>
+                    <a onclick="sorting(10000,20000)">10,000-20,000</a>
+                    <a onclick="sorting(20000,30000)">20,000-30,000</a>
+                    <a onclick="sorting(30000,1000000)">above 30,000</a>
                 </div>
-                
-                <!-- <div class="dropDown">
-                    <button onclick="dropDown()" class="dropBtn-2">Ram</button>
-                    <div id="myDropDown" class="dropDown-content">
-                      <a href="#">4GB</a>
-                      <a href="#">6GB</a>
-                      <a href="#">8GB</a>
-                      <a href="#">12GB</a>
-                    </div>
-                  </div> -->
-              </div>
+
+            </div>
         </div>
 
         <div id="products">
@@ -52,7 +44,9 @@
         <script src="asset/product.js"></script>
         <script src="asset/jquery.min.js"></script>
 
-        <script>$("#header").load("header.html");</script>
+        <script>
+            $("#header").load("header.html");
+        </script>
 
     </main>
 </body>

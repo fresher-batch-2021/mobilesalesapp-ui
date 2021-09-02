@@ -43,7 +43,7 @@ function getMobiles(brandName) {
             console.log(err);
         })
     }
-    
+
     //if value is brandname show brand products
     else {
         const requestData = {
@@ -83,17 +83,13 @@ let value = Params.get("value");
 console.log(value);
 if (value === "oneplus") {
     getMobiles('oneplus');
-}
-else if (value === "mi") {
+} else if (value === "mi") {
     getMobiles('mi');
-}
-else if (value === "realme") {
+} else if (value === "realme") {
     getMobiles('realme');
-}
-else if (value === "vivo") {
+} else if (value === "vivo") {
     getMobiles('vivo');
-}
-else {
+} else {
     getMobiles('null');
 }
 
