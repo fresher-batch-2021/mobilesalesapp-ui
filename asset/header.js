@@ -1,20 +1,17 @@
 //search bar
 function search() {
-    let data = [
-        {
-            oneplus: "oneplus",
-            redmi: "mi",
-            realme: "realme",
-            vivo: "vivo"
-        }
-    ]
+    let data = [{
+        oneplus: "oneplus",
+        redmi: "mi",
+        realme: "realme",
+        vivo: "vivo"
+    }]
     let content = "";
     for (let obj of data) {
         content += ` <option value="${obj.oneplus}">${obj.oneplus}</option>
         <option value="${obj.redmi}">${obj.redmi}</option>
         <option value="${obj.realme}">${obj.realme}</option> 
-        <option value="${obj.vivo}">${obj.vivo}</option> `;
-        ;
+        <option value="${obj.vivo}">${obj.vivo}</option> `;;
     }
     console.log(content);
     document.querySelector("#productList").innerHTML = content;
@@ -27,12 +24,12 @@ function searchButton() {
 
     if (brand === "oneplus") {
         window.location.href = "product.html?value=oneplus";
-    }
-    else if (brand === "mi") {
+    } else if (brand === "mi") {
         window.location.href = "product.html?value=mi";
-    }
-    else if (brand === "realme") {
+    } else if (brand === "realme") {
         window.location.href = "product.html?value=realme";
+    } else if (brand === "vivo") {
+        window.location.href = "product.html?value=vivo";
     }
 }
 
@@ -46,10 +43,3 @@ function checkLogin() {
     }
 }
 checkLogin();
-
-// logout
-// function logout() {
-//     localStorage.clear();
-//     window.location.reload();
-//     window.location.href = "index.html"
-// }

@@ -23,12 +23,10 @@ function login() {
     if (email == "" || email == null || email.trim == "") {
         toastr.error("email cannot be empty");
 
-    }
-    else if (password.length <= 6) {
+    } else if (password.length <= 6) {
         toastr.error("password must contains atleast 6 characters");
 
-    }
-    else {
+    } else {
 
         UserService.login(email, password, role).then(res => {
 
@@ -40,20 +38,17 @@ function login() {
             } else {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-                toastr.success("login successful",{
+                toastr.success("login successful", {
                     positionClass: 'toast-top-center',
                     preventDuplicates: true
 
                 })
                 if (role == "admin") {
                     setTimeout(function () {
-                        //document.getElementById('signUp-btn').disabled = true;
                         window.location.href = "admin/adminindex.html";
                     }, 1000);
-                }
-                else if (role == "user") {
+                } else if (role == "user") {
                     setTimeout(function () {
-                       // document.getElementById('signUp-btn').disabled = true;
                         window.location.href = "home.html"
                     }, 1000);
                 }

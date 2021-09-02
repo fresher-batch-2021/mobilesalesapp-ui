@@ -1,117 +1,96 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
 }
 
-body{
+body {
     background-image: url("images/login\ background.jpg");
     /* background-repeat: no-repeat;
     background-size: cover; */
 }
 
-h2{
+h2 {
     font-size: 50px;
     margin: 0px;
     text-align: center;
 }
 
-.outer{
+.outer {
     border-radius: 40px;
     background-color: whitesmoke;
     margin-top: 50pX;
     margin-right: 500px;
     margin-left: 500px;
     padding: 10px;
-    }
-    form {
-        text-align: center;
-   }
-/* .outer.box.container{
-     padding-bottom: 500px;
-     height: 500px;
-     } */
-     
+}
+
+form {
+    text-align: center;
+}
+
+/* container image      */
 .imgContainer {
-        text-align: center;
-        margin: 12px 0 12px 0;   
-        height: fit-content;
-    }
+    text-align: center;
+    margin: 12px 0 12px 0;
+    height: fit-content;
+}
+
 input[type=email],
 input[type=password] {
-        text-align: left;
-        width: 70%;
-        height: 5%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
+    text-align: left;
+    width: 70%;
+    height: 5%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
 button {
-        border-radius: 4px;
-        background-color: black;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 70%;
-    }
-    button:hover {
-        opacity: 0.8;
-    }
-    
-.container{
-        border-radius: 20px;
-        width: 95%;
-        /* height: 5%; */
-        padding: 6px;
-    }
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    border-radius: 20px;
+    width: 95%;
+    padding: 6px;
+}
 
 .cancelBtn {
-            margin-right : 150px;
-            padding: 5px;
-            width: 80px;
-            height: 30px;
-            background-color: #f44336;
-        }
+    margin-right: 150px;
+    padding: 5px;
+    width: 80px;
+    height: 30px;
+    background-color: #f44336;
+}
 
 img.avatar {
-            height: 40%;
-            width: 40%;
-        }
+    height: 40%;
+    width: 40%;
+}
+
 .signUp {
-            float: right;
-            padding: 5px;
-            width: 80px;
-            height: 30px;
-        }
+    float: right;
+    padding: 5px;
+    width: 80px;
+    height: 30px;
+}
 
 @media screen and (max-width: 300px) {
-span.signUp {
-            display: block;
-            float: left;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    span.signUp {
+        display: block;
+        float: left;
+    }
+}

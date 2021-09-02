@@ -3,23 +3,25 @@
 
 <header id="header">
 
-    <div class="topNav"> 
-        <a href="cart.html"><img class="account" src="images/shopping-cart.png" alt="no image"></a>
+    <div class="topNav">
+        <a href="cart.html"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
         <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
-        <img class="icon" src="images/smile - Copy.png" alt="no image">        
+        <img class="icon" src="images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
 
-        
+
         <em style="font-size: 30px;" class="fa fa-search" onclick="searchButton()"></em>
-        <input class="field" type="text" id="searchList" list="productList" name="search" placeholder="Search.." onkeyup="search()"
-            autocomplete="off">
+        <input class="field" type="text" id="searchList" list="productList" name="search" placeholder="Search.."
+            onkeyup="search()" autocomplete="off">
         <datalist id="productList">
 
         </datalist>
         <a href="home.html">
-            <h3 class="mobilehub">MOBHUB</h3>
+            <p class="mobilehub">MOBHUB</p>
         </a>
     </div>
+
 </header>
+
 <script src="asset/header.js"></script>
 <script src="asset/routes.js"></script>
