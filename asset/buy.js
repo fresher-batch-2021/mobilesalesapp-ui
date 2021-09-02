@@ -22,7 +22,7 @@ document.querySelector(".product-description").innerHTML = `
                 `;
 
 document.querySelector("#productImage").innerHTML = `
-                <img data-image="red" class="active" src="images/${productUrl}" alt="no image">`;
+                <img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">`;
 
 document.querySelector(".product-price").innerHTML = `
          <span>${productPrice}</span>
