@@ -49,7 +49,7 @@ function shoppingCart(user) {
         ${data.shippingPhone}
         </ul>
         </td>
-        <td><button class="cancle-btn" onclick= "cancelOrder('${data._id}','${data._rev}');">cancel </button></td>
+        <td><button class="cancle-btn" onclick= "deleteOrder('${data._id}','${data._rev}');">Delete </button></td>
         </tr>`;
 
       console.log(content);
@@ -62,7 +62,7 @@ let useData = localStorage.getItem("LOGGED_IN_USER");
 let userData = JSON.parse(useData);
 shoppingCart(userData._id);
 
-function cancelOrder(id, rev) {
+function deleteOrder(id, rev) {
   console.log(id)
   console.log(rev)
 
@@ -70,11 +70,11 @@ function cancelOrder(id, rev) {
     let product = res.data;
     console.log(product);
 
-    product.status =  "inactive";
+    product.status = "inactive";
 
-    productService.cancelStatus(id,product).then(res => {
+    productService.cancelStatus(id, product).then(res => {
       shoppingCart();
-    
+
     }).catch(err => {
       alert("error in deleting");
     });

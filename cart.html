@@ -7,44 +7,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My cart</title>
   <link rel="stylesheet" href="cart.css">
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
   <header id="header"></header>
 
-    <div class="shopping-cart">
-      
-      <table aria-describedby="mydesc" class="booking_list">
+  <div class="shopping-cart">
 
-        <thead>
-          <tr>
-            <th scope="col">Image</th>
-            <th scope="col">Brand Name</th>
-            <th scope="col">Model Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Order Date</th>
-            <th scope="col">Status</th>
-            <th scope="col">Shipping Details</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
+    <table aria-describedby="mydesc" class="booking_list">
 
-        <tbody id="shoppingCart">
-        </tbody>
-       
-      </table>
- 
-    </div>
+      <thead>
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Brand Name</th>
+          <th scope="col">Model Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Shipping Details</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="shoppingCart">
+      </tbody>
+
+    </table>
+
+  </div>
 
 
-    <script src="asset/jquery.min.js"></script>
-    <script src="asset/cart.js"></script>
-    <script src="service-api/services/product-service.js"></script>
+  <script src="asset/jquery.min.js"></script>
+  <script src="asset/cart.js"></script>
+  <script src="service-api/services/product-service.js"></script>
 
-    <script>$("#header").load("header.html");</script>
+  <script>
+    $("#header").load("header.html");
+  </script>
 
 </body>
 
