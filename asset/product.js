@@ -26,8 +26,7 @@ function getMobiles(brandName) {
                 <h1>${oneplus.brandName}</h1>
                 <h3>${oneplus.modelName}</h3>
                 <p class="price">${oneplus.modelPrice}</p>
-                <p>${oneplus.totalQuantity}</p>
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}')">View Specifications</button></p>
+                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}','${oneplus.ram}')">View Specifications</button></p>
                 </div>
                 </div>
                 </div>
@@ -71,8 +70,7 @@ function getMobiles(brandName) {
                 <h1>${mobiles.brandName}</h1>
                 <h3>${mobiles.modelName}</h3>
                 <p class="price">${mobiles.modelPrice}</p>
-                <p>${mobiles.totalQuantity}</p>
-                <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}','${mobiles._id}','${mobiles.totalQuantity}')">View Specifications</button></p>
+                <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}','${mobiles._id}','${mobiles.totalQuantity}','${mobiles.ram}')">View Specifications</button></p>
                 </div>
                  </div> `;
                 if (i % 4 == 0) {
@@ -147,8 +145,8 @@ function sorting(n, m) {
                 <h1>${oneplus.brandName}</h1>
                 <h3>${oneplus.modelName}</h3>
                 <p class="price">${oneplus.modelPrice}</p>
-                <p>${oneplus.totalQuantity}</p>
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}')">View Specifications</button></p>
+
+                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}','${oneplus.ram}')">View Specifications</button></p>
                 </div>
                 </div>
                 </div>
@@ -164,7 +162,7 @@ function sorting(n, m) {
 
 
 //view specification button
-function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, id, totalQuantity) {
+function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, id, totalQuantity,ram) {
     console.log(passValue);
     if (totalQuantity <= 0) {
         toastr.info("", "No stock", {
@@ -173,6 +171,10 @@ function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, i
             preventDuplicates: true
         });
     } else {
-        window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration=" + modelConfiguration + "&productBrand= " + modelName + "&productPrice=" + modelPrice + "&_id=" + id + "&totalQuantity=" + totalQuantity;
+        window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration=" + modelConfiguration + "&productBrand= " + modelName + "&productPrice=" + modelPrice + "&_id=" + id + "&totalQuantity=" + totalQuantity + "&ram=" + ram;
     }
 }
+
+{/* <p>${oneplus.totalQuantity}</p> */}
+{/* <p>${mobiles.totalQuantity}</p> */}
+{/* <p>${oneplus.totalQuantity}</p> */}

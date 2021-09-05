@@ -34,7 +34,10 @@ function login() {
             console.log(data);
 
             if (data.length == 0) {
-                toastr.error("invalid login credentials");
+                toastr.error("invalid login credentials", {
+                    positionClass: 'toast-top-center',
+                    preventDuplicates: true
+                });
             } else {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
@@ -42,20 +45,22 @@ function login() {
                     positionClass: 'toast-top-center',
                     preventDuplicates: true
 
-                })
+                });
                 if (role == "admin") {
                     setTimeout(function () {
                         window.location.href = "admin/adminindex.html";
                     }, 1000);
+
                 } else if (role == "user") {
                     setTimeout(function () {
                         window.location.href = "home.html"
                     }, 1000);
-                }
+                }            
             }
         }).catch(err => {
             console.log(err.response.data);
             toastr.error("unable to login");
         });
+    
     }
 }

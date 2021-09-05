@@ -5,6 +5,7 @@ console.log(Params);
 let id = Params.get("_id");
 let product = Params.get("productName");
 let productUrl = Params.get("productUrl");
+let ram = Params.get("ram");
 let productConfiguration = Params.get("productConfiguration");
 let productBrand = Params.get("productBrand");
 let productPrice = Params.get("productPrice");
@@ -15,6 +16,7 @@ console.log("_id :", id);
 console.log("productName :", product);
 console.log("productUrl :", productUrl);
 console.log("productConfiguration :", productConfiguration);
+console.log("ram :", ram);
 console.log("productBrand :", productBrand);
 console.log("productPrice :", productPrice);
 console.log("totalQuantity :", totalQuantity);
@@ -29,12 +31,13 @@ document.querySelector("#productImage").innerHTML = `
                 <img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">`;
 
 document.querySelector(".product-price").innerHTML = `
-         <span>${productPrice}</span>
-         
-         
+         <span>${productPrice}</span>         
          `;
+document.querySelector("#choose-varient").innerHTML = `
+<button>${ram}GB</button>
+`;
 document.querySelector("#buy-btn").innerHTML = `         
-         <button onclick="addButton('${id}','${totalQuantity}')" class="cart-btn" >Buy Now</button>
+         <button onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
          `;
 
 
