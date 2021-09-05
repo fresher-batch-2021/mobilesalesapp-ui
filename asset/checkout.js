@@ -7,7 +7,7 @@ function shippingDetails() {
     const cardDate = document.querySelector("#shippingCardDate").value;
     const cardCVV = document.querySelector("#shippingCardCvv").value;
     console.log(name + "+" + email + "+" + phoneNo + "+" + cardNo + "+" + cardDate + "+" + cardCVV);
-    
+
     var date = new Date();
     var dd = String(date.getDate()).padStart(2, '0');
     var mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -61,8 +61,8 @@ function shippingDetails() {
                 console.log(res1.data);
                 toastr.success("Updated Shipping details")
                 setTimeout(function login() {
-                window.location.href = "cart.html";
-            }, 1000);
+                    window.location.href = "cart.html";
+                }, 1000);
             });
         });
     } catch (err) {

@@ -18,7 +18,6 @@ function shoppingCart(user) {
       'Authorization': basicAuth
     }
   }).then(res => {
-    //console.log(res.data.docs)
 
 
     let useData = localStorage.getItem("LOGGED_IN_USER");
@@ -62,33 +61,41 @@ let useData = localStorage.getItem("LOGGED_IN_USER");
 let userData = JSON.parse(useData);
 shoppingCart(userData._id);
 
+
+// for delete btn
 function deleteOrder(id, rev) {
   console.log(id)
   console.log(rev)
 
-  productService.cancelOrder(id).then(res => {
-    let product = res.data;
-    console.log(product);
+  Swal.fire({
+    title: 'Are you sure to delete ',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
 
-    product.status = "inactive";
+      productService.cancelOrder(id).then(res => {
+        let product = res.data;
+        console.log(product);
 
-    productService.cancelStatus(id, product).then(res => {
-      shoppingCart();
+        product.status = "inactive";
 
-    }).catch(err => {
-      alert("error in deleting");
-    });
+        productService.cancelStatus(id, product).then(res => {
+          shoppingCart();
 
-
+        }).catch(err => {
+          alert("error in deleting");
+        });
+      });
+    }
   });
 }
-
-
-
-
-
-
-
-
-
-

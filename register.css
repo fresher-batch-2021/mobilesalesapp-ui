@@ -20,6 +20,7 @@ form {
     margin-bottom: 0px;
     margin-right: 500px;
     margin-left: 500px;
+    box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
 }
 
 body {

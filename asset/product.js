@@ -1,9 +1,9 @@
 function getMobiles(brandName) {
     let content = "";
 
+
     // if value is null show all products
     if (brandName == "null") {
-        console.log("if");
 
         productService.getAllProducts().then(res => {
 
@@ -13,7 +13,6 @@ function getMobiles(brandName) {
             let orderedData = _.sortBy(data, 'modelPrice');
             let i = 0
             for (let oneplus of orderedData) {
-
                 if (i % 4 == 0) {
                     content = content + "<div class='row'>";
                 }
@@ -23,16 +22,17 @@ function getMobiles(brandName) {
                 <div class="maincard">
                 <div class="maincardrow">
                 <div class="card">
-                <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
+                <img class"product-img" src="images/${oneplus.imageUrl}" alt="${oneplus.brandName}">
                 <h1>${oneplus.brandName}</h1>
                 <h3>${oneplus.modelName}</h3>
                 <p class="price">${oneplus.modelPrice}</p>
-                <p>${oneplus.modelConfiguration}</p>
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}')">View Specifications</button></p>
+                <p>${oneplus.totalQuantity}</p>
+                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}')">View Specifications</button></p>
                 </div>
                 </div>
                 </div>
                 `;
+
                 if (i % 4 == 0) {
                     content = content + "</div>";
                 }
@@ -43,6 +43,7 @@ function getMobiles(brandName) {
             console.log(err);
         })
     }
+
 
     //if value is brandname show brand products
     else {
@@ -57,18 +58,26 @@ function getMobiles(brandName) {
             let data = res.data.docs;
             console.log(data);
 
-
+            let i = 0
             for (let mobiles of data) {
-                content = content + ` <div class="column">
+                if (i % 4 == 0) {
+                    content = content + "<div class='row'>";
+                }
+                i++
+                content = content +
+                    ` <div class="column">
                 <div class="card">
                 <img src="images/${mobiles.imageUrl}" alt="oneplus" style="width:100%">
                 <h1>${mobiles.brandName}</h1>
                 <h3>${mobiles.modelName}</h3>
                 <p class="price">${mobiles.modelPrice}</p>
-                <p>${mobiles.modelConfiguration}</p>
-                <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}')">View Specifications</button></p>
+                <p>${mobiles.totalQuantity}</p>
+                <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}','${mobiles._id}','${mobiles.totalQuantity}')">View Specifications</button></p>
                 </div>
                  </div> `;
+                if (i % 4 == 0) {
+                    content = content + "</div>";
+                }
                 console.log(content);
                 document.querySelector("#products").innerHTML = content;
             }
@@ -93,6 +102,7 @@ if (value === "oneplus") {
     getMobiles('null');
 }
 
+
 //sorting buttons
 function dropDown() {
     document.getElementById("myDropDown").classList.toggle("show");
@@ -110,6 +120,8 @@ window.onclick = function (event) {
         }
     }
 }
+
+
 
 //sorting
 function sorting(n, m) {
@@ -135,8 +147,8 @@ function sorting(n, m) {
                 <h1>${oneplus.brandName}</h1>
                 <h3>${oneplus.modelName}</h3>
                 <p class="price">${oneplus.modelPrice}</p>
-                <p>${oneplus.modelConfiguration}</p>
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}')">View Specifications</button></p>
+                <p>${oneplus.totalQuantity}</p>
+                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}')">View Specifications</button></p>
                 </div>
                 </div>
                 </div>
@@ -150,8 +162,17 @@ function sorting(n, m) {
     });
 }
 
+
 //view specification button
-function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand) {
+function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, id, totalQuantity) {
     console.log(passValue);
-    window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration= " + modelConfiguration + "&productBrand= " + modelName + "&productPrice= " + modelPrice;
+    if (totalQuantity <= 0) {
+        toastr.info("", "No stock", {
+            timeOut: 1000,
+            positionClass: 'toast-top-center',
+            preventDuplicates: true
+        });
+    } else {
+        window.location.href = "buy.html?productName=" + brand + "&productUrl=" + imageUrl + "&productConfiguration=" + modelConfiguration + "&productBrand= " + modelName + "&productPrice=" + modelPrice + "&_id=" + id + "&totalQuantity=" + totalQuantity;
+    }
 }

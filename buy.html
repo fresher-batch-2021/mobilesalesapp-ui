@@ -28,11 +28,11 @@
 
   <main class="container">
 
-     <div class="left-column" id="productImage">
+    <div class="left-column" id="productImage">
 
 
 
-   </div>
+    </div>
 
 
     <div class="right-column">
@@ -77,20 +77,21 @@
       <div class="product-price">
         <span></span>
       </div>
-      <button onclick="addButton()" class="cart-btn">Buy Now</button>
+      <div>
+        <div id="buy-btn"></div>
 
 
-    </div>
-  
-    <script src="asset/buy.js"></script>
+      </div>
 
-    <script src="asset/jquery.min.js"></script>
-    <script src="service-api/services/product-service.js"></script>
+      <script src="asset/buy.js"></script>
+
+      <script src="asset/jquery.min.js"></script>
+      <script src="service-api/services/product-service.js"></script>
 
 
-    <script>
-      $("#header").load("header.html");
-    </script>
+      <script>
+        $("#header").load("header.html");
+      </script>
 
   </main>
 </body>
