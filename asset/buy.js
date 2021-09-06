@@ -108,7 +108,7 @@ function addButton(id, totalQuantity) {
         }, 1500);
       } else {
         console.log("user : ", user);
-        window.location.href = "#";
+        window.location.href = "checkout.html";
       }
     });
   });

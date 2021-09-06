@@ -175,6 +175,3 @@ function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, i
     }
 }
 
-{/* <p>${oneplus.totalQuantity}</p> */}
-{/* <p>${mobiles.totalQuantity}</p> */}
-{/* <p>${oneplus.totalQuantity}</p> */}
