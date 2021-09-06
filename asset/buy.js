@@ -90,9 +90,7 @@ function addButton(id, totalQuantity) {
     }
     productService.totalQantity(array, a._id, a._rev).then(res => {
       alert("done");
-    }).catch(err => {
-      alert("error in deleting");
-    })
+    }).catch(err => {})
     localStorage.setItem("productElements", JSON.stringify(cartProduct));
     console.log(cartProduct);
 
@@ -113,4 +111,3 @@ function addButton(id, totalQuantity) {
     });
   });
 }
-//?productName=" + product + "&productUrl=" + productUrl + "&productConfiguration= " + productConfiguration + "&productBrand= " + productBrand + "&productPrice= " + productPrice;
