@@ -6,14 +6,14 @@ function addMobileForm(){
     const imageUrl = imageUrlFilePath.substring(imageUrlFilePath.lastIndexOf("\\")+1);
     const ram= document.querySelector("#ram").value;
     const modelConfiguration= document.querySelector("#modelConfiguration").value;
+    const Quantity= document.querySelector("#totalQuantity").value;
     const modelPrice = document.querySelector("#modelPrice").value;
     const status= document.querySelector("#status").value;
-     addMobile(brandName,modelName,imageUrl,ram, modelConfiguration, modelPrice, status);
-
-
+    const totalQuantity=parseInt(Quantity);
+     addMobile(brandName,modelName,imageUrl,ram, modelConfiguration, modelPrice, status, totalQuantity);
 }
 
-function addMobile(brandName,modelName, imageUrl, ram, modelConfiguration, modelPrice, status){
+function addMobile(brandName,modelName, imageUrl, ram, modelConfiguration, modelPrice, status, totalQuantity){
     console.log("AddMobile" , brandName, modelName, imageUrl, ram, modelConfiguration, modelPrice, status);
     
     try{
@@ -25,9 +25,11 @@ function addMobile(brandName,modelName, imageUrl, ram, modelConfiguration, model
         Validator.isValidString(modelPrice, "Mobile Price is Mandatory");
         Validator.isValidString(status, "status is Mandatory");
 
+
+
         console.log("Mobile Details");
-        alert("Successfully Added");
-        const mobileObj = { brandName:brandName, modelName:modelName, imageUrl: imageUrl, ram:ram, modelConfiguration:modelConfiguration,  modelPrice:modelPrice, status:status};
+        toastr.success("Successfully Added");
+        const mobileObj = { brandName:brandName, modelName:modelName, imageUrl: imageUrl, ram:ram, modelConfiguration:modelConfiguration,  modelPrice:modelPrice, status:status,totalQuantity:totalQuantity};
         console.log(mobileObj);
        
     const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
@@ -48,7 +50,7 @@ function addMobile(brandName,modelName, imageUrl, ram, modelConfiguration, model
     }
     catch(err){
         console.error(err.message);
-        alert("Error" + err.message);
+        toastr.error("Error " + err.message);
     }
     
 }

@@ -162,7 +162,7 @@ function sorting(n, m) {
 
 
 //view specification button
-function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, id, totalQuantity,ram) {
+function passValue(modelName, imageUrl, modelPrice, modelConfiguration, brand, id, totalQuantity, ram) {
     console.log(passValue);
     if (totalQuantity <= 0) {
         toastr.info("", "No stock", {

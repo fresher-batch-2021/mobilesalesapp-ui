@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List</title>
+    <title>List Products</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="listmobile.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
 </head>
 
@@ -19,23 +21,22 @@
     <header id="admin-header"></header>
 <div  class="container">
     <h3>MOBHUB ADMIN</h3>
-    <input type="text " id="searchBox" class="searchBox" placeholder="Search..." onkeyup="searchName()"
-        autocomplete="off">
+  
+    <!-- <input type="text" onkeyup="searchName()" id="searchBox" class="search-box" placeholder="Search..." 
+        autocomplete="off"> -->
 
     <table  aria-describedby="mydesc" class="table" id="myTable" >
         
 
             <tr>
-                <th scope="col">s.no</th>
+                <th scope="col">S.No</th>
                 <th scope="col">Image</th>
                 <th scope="col">Mobile Name</th>
                 <th scope="col">Model Name</th>
                 <th scope="col">Ram</th>
-                <th scope="col">model Configuration</th>
-                <th scope="col">Edit</th>
-                <th scope="col">status</th>
-                <th scope="col">delete</th>
-
+                <th scope="col">Model Configuration</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
             </tr>
 
         <tbody id="list-Mobile">

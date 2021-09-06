@@ -33,9 +33,11 @@ function formMobileTableData(mobiles) {
         <td>${mobileObj.modelName}</td>
         <td>Rs.${mobileObj.modelPrice}</td>
         <td>${mobileObj.modelConfiguration}</td>
-        <td><a href='edit.html?id=${mobileObj._id}'>Edit</a></td>
         <td>${mobileObj.status}</td>
-        <td><button onClick="deleteMobile('${mobileObj._id}','${mobileObj._rev}')">Delete</button></td>
+        <td>        
+        <a href='edit.html?id=${mobileObj._id}'><button type="button"  class="edit-btn">Edit</button></a>
+        <button class="delete-btn" onClick="deleteMobile('${mobileObj._id}','${mobileObj._rev}')">Delete</button>
+        </td>
         </tr>`;
     }
     console.log(content);
@@ -44,19 +46,19 @@ function formMobileTableData(mobiles) {
 listMobile();
 
 
-function searchName() {
-    let searchName = document.getElementById("searchBox").value;
-    let myTable = document.getElementById("myTable");
-    let tableRow = myTable.getElementsByTagName("tr");
-    for (var i = 0; i < tableRow.length; i++) {
-        let tableDatas = tableRow[i].getElementsByTagName("td")[1];
-        if (tableDatas) {
-            let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
-            if (textValue.indexOf(searchName) > -1) {
-                tableRow[i].style.display = "";
-            } else {
-                tableRow[i].style.display = "none";
-            }
-        }
-    }
-}
+// function searchName() {
+//     let searchName = document.getElementById("searchBox").value;
+//     let myTable = document.getElementById("myTable");
+//     let tableRow = myTable.getElementsByTagName("tr");
+//     for (var i = 0; i < tableRow.length; i++) {
+//         let tableDatas = tableRow[i].getElementsByTagName("td")[1];
+//         if (tableDatas) {
+//             let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
+//             if (textValue.indexOf(searchName) > -1) {
+//                 tableRow[i].style.display = "";
+//             } else {
+//                 tableRow[i].style.display = "none";
+//             }
+//         }
+//     }
+// }

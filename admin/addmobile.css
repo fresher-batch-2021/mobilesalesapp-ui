@@ -1,7 +1,11 @@
+.page-heading{
+    margin-top: 150px;
+    margin-left: 43%;
+}
 .container{
     color: black;
     /* text-align: center; */
-    margin-top: 150px;
+    margin-top: 50px;
     border-radius: 40px;
     padding: 60px 60px;
     background-color: gainsboro;
@@ -17,6 +21,7 @@ input{
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
+        border-radius: 4px;
         box-sizing: border-box;
 }
 .ram {
