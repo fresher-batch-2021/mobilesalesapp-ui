@@ -89,7 +89,6 @@ function addButton(id, totalQuantity) {
       "totalQuantity": a.totalQuantity - 1
     }
     productService.totalQantity(array, a._id, a._rev).then(res => {
-      alert("done");
     }).catch(err => {})
     localStorage.setItem("productElements", JSON.stringify(cartProduct));
     console.log(cartProduct);
