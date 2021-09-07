@@ -3,7 +3,11 @@ const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
 
 const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
-class AadmindProductService {
-     
+class adminProductService {
+    static getAllProducts() {
+        const Url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
+        return axios.get(Url, { headers: { Authorization: basicAuth } });
+    }
+
 
 }
