@@ -65,7 +65,10 @@ function modifyDetails() {
 
     axios.put(url, modifyDetails, {headers: {Authorization: basicAuth}}).then(res =>{
         console.log(modifyDetails)
-        alert("successfull");
-        window.location.href = "listmobile.html";
-    }).catch(err => alert("error"))
+        toastr.success("successfull");
+        setTimeout(() => {
+            window.location.href = "listmobile.html"
+        }, 1500);
+        
+    }).catch(err => toastr.error("error"))
 }

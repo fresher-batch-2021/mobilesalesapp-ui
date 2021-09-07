@@ -8,16 +8,13 @@ function shoppingCart(user) {
 
   const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_find";
 
+  
   const requestgetdata = {
     selector: {
       'user': user
     },
   }
-  axios.post(url, requestgetdata, {
-    headers: {
-      'Authorization': basicAuth
-    }
-  }).then(res => {
+  axios.post(url, requestgetdata, {headers: {'Authorization': basicAuth}}).then(res => {
 
 
     let useData = localStorage.getItem("LOGGED_IN_USER");
@@ -25,7 +22,8 @@ function shoppingCart(user) {
     console.log(userData);
     let getData = res.data.docs;
     console.log(getData);
-
+    
+    //if status inactive the data will not shown on table
     let actionCancle = getData.filter(obj => obj.status !== "inactive");
     console.log(JSON.stringify(actionCancle));
     console.table(actionCancle);
@@ -93,7 +91,7 @@ function deleteOrder(id, rev) {
           shoppingCart();
 
         }).catch(err => {
-          alert("error in deleting");
+          toastr.error("error in deleting");
         });
       });
     }

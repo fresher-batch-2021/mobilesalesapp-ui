@@ -1,7 +1,7 @@
 function deleteMobile(MobileId,revId) {
     console.log("delete movie", MobileId, revId);
     if (MobileId == null) {
-      alert("Mobile Id is mandatory");
+      toastr.error("Mobile Id is mandatory");
     } else {
     
     const dbUsername = 'apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4';
@@ -27,11 +27,7 @@ function deleteMobile(MobileId,revId) {
               'success'
             )
 
-      axios
-        .delete(url,{headers:{Authorization:basicAuth}})
-        .then(res => {
-          // const data = res.data;
-          // console.log(data);          
+      axios.delete(url,{headers:{Authorization:basicAuth}}).then(res => {        
           console.log("Successfully Deleted");
           listMobile();
         }) 

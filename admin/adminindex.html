@@ -7,14 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Home</title>
     <link rel="icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="adminindex.css">
+    <link rel="stylesheet" href="css/adminindex.css">
+
+    <!-- toaster cdn for css -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- toaster cdn for js  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 
 <body>
 
     <div class="header" id="admin-header">
         <a href="adminindex.html" class="logo">MOBHUB</a>
-        
+
         <div class="header-right">
             <a class="active" id="loggedIn" href="#"></a>
             <a onclick="logout()">logout</a>

@@ -84,6 +84,7 @@ function getMobiles(brandName) {
         })
     }
 }
+//get url values from home page and shows the values
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
 let value = Params.get("value");

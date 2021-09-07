@@ -36,18 +36,23 @@ class productService {
         return axios.post(url, requestgetdata, { headers: { 'Authorization': basicAuth } });
     }
 
+    //cart page
     static updateShippingData(id, rev, shippingProduct) {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id + "?rev=" + rev;
         return axios.put(url, shippingProduct, { headers: { 'Authorization': basicAuth } });
     }
-
+            //delete button
     static cancelOrder(id) {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id;
         return axios.get(url, { headers: { 'Authorization': basicAuth } });
     }
-
+            //status update
     static cancelStatus(id, product) {
         const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id;
         return axios.put(url, product, { headers: { 'Authorization': basicAuth } });
+    }
+    static userOrder(requestgetdata){
+        const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_find";
+        return axios.post(url, requestgetdata, {headers: {'Authorization': basicAuth}});
     }
 }

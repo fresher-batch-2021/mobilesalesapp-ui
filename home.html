@@ -8,14 +8,24 @@
     <title>mobhub</title>
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+
+    <!-- toaster cdn for css -->
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+ <!-- jquery cdn -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ 
+ <!-- toaster cdn for js  -->
+ <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+ 
 
 </head>
 
 <body>
     <header id="header"></header>
-    <footer id="footer"></footer>
 
     <main>
         <!-- slide show -->
@@ -88,6 +98,9 @@
         <script>
             $("#header").load("header.html");
         </script>
+
+         <footer id="footer"></footer>
+        
         <script>
             $("#footer").load("footer.html");
         </script>

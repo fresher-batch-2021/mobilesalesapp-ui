@@ -7,35 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
     <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="css/edit.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="edit.css">
+
+
+    <!-- toaster cdn for css -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- toaster cdn for js  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 
 <body>
     <header id="admin-header"></header>
 
     <h2 class="page-heading">Edit Product</h2>
- 
+
     <div class="container">
         <form onsubmit="editDetails()">
             <input type="hidden" id="id" readonly>
             <input type="hidden" id="rev" readonly>
-            
+
             <label for="brandName"><strong>Brand Name</strong>
-                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" >
+                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName">
             </label><br>
             <label for="modelName"><strong>Model Name</strong>
-                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" >
+                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName">
             </label><br>
             <label for="image"><strong>Model Image</strong>
-                <input type="file"  name="image" id="imageUrl">
+                <input type="file" name="image" id="imageUrl">
             </label><br>
             <div class="ram">
                 <label for="ram"><strong>Ram</strong></label>
-                <select id="ram" >
+                <select id="ram">
                     <option>
                         6GB
                     </option>
@@ -49,19 +61,22 @@
             </div>
             <br>
             <label for="modelPrice"><strong>Model Price</strong>
-                <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" >
+                <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice">
             </label><br>
             <label for="modelConfiguration"><strong>Model Configuration</strong>
-                <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration" >
-                </label><br>
-                
-                <button onclick="modifyDetails()" id="edit">Update</button>
-            </form>
-        </div>
+                <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration">
+            </label><br>
 
-        <script src="assets/jquery.min.js"></script>
-        <script src="assets/editmobile.js"></script>
-        <script>$("#admin-header").load("adminindex.html");</script>
+            <button onclick="modifyDetails()" id="edit">Update</button>
+        </form>
+    </div>
+
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/editmobile.js"></script>
+    <script>
+        $("#admin-header").load("adminindex.html");
+    </script>
 
 </body>
+
 </html>

@@ -1,21 +1,36 @@
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="css/header.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- toaster cdn for css -->
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- toaster cdn for js  -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 <header id="header">
 
+    <!-- header right content -->
     <div class="topNav">
         <a href="cart.html"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
         <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
         <img class="icon" src="images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
 
-
+        <!-- search bar -->
         <em style="font-size: 30px;" class="fa fa-search" onclick="searchButton()"></em>
         <input class="field" type="text" id="searchList" list="productList" name="search" placeholder="Search.."
             onkeyup="search()" autocomplete="off">
         <datalist id="productList">
 
         </datalist>
+        
+        <!-- header left content -->
         <a href="home.html">
             <p class="mobilehub">MOBHUB</p>
         </a>

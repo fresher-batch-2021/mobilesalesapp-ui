@@ -13,77 +13,81 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="addmobile.css">
+    <link rel="stylesheet" href="css/addmobile.css">
 </head>
 
 <body>
     <header id="admin-header"></header>
     <main>
 
-    <h2 class="page-heading">Add Product</h2>
+        <h2 class="page-heading">Add Product</h2>
 
-    <div class="container">
-        <form onsubmit="addMobileForm()">
-            <label for="brandName"><strong>Brand Name</strong>
-                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" pattern="[A-Za-z ]{1,32}" required>
-            </label><br>
-            <label for="modelName"><strong>Model Name</strong>
-                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" pattern="[a-zA-Z0-9]+" required>
-            </label><br>
-            <label for="image"><strong>Model Image</strong>
-                <input type="file" required name="image" id="imageUrl">
-            </label><br>
-           
-            <div class="ram">
-                <label for="ram"><strong>Ram</strong></label>
-                <select id="ram" required>
-                    <option>
-                        6GB
-                    </option>
-                    <option>
-                        8GB
-                    </option>
-                    <option>
-                        12GB
-                    </option>
-                </select>
-            </div>
-            <br>
+        <div class="container">
+            <form onsubmit="addMobileForm()">
+                <label for="brandName"><strong>Brand Name</strong>
+                    <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName"
+                        pattern="[A-Za-z ]{1,32}" required>
+                </label><br>
+                <label for="modelName"><strong>Model Name</strong>
+                    <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName"
+                        pattern="[a-zA-Z0-9]+" required>
+                </label><br>
+                <label for="image"><strong>Model Image</strong>
+                    <input type="file" required name="image" id="imageUrl">
+                </label><br>
 
-            <label for="modelPrice"><strong>Model Price</strong>
-                <input type="text" placeholder="Enter Price" name="modelPrice" id="modelPrice" pattern="[1-9][0-9]{1-9}" required>
-            </label><br>
-            <label for="modelConfiguration"><strong>Model Configuration</strong>
-                <input type="text" placeholder="Enter Configuration" name="modelConfiguration" id="modelConfiguration" 
-                    required>
-            </label><br>
-            <label for="totalQuantity"><strong>Total Quantity</strong>
-                <input type="number" placeholder="Choose Quantity" name="totalQuantity" id="totalQuantity" min="1" max="20"
-                    required>
-            </label><br>
-            <div class="status">
-                <label for="status"><strong>status</strong></label>
-                <select id="status" required>
-                    <option>
-                        Active
-                    </option>
-                    <option>
-                        Inactive
-                    </option>
-                </select>
-            </div>
-            <br>
-            <button class="done-btn">Add</button>
-            <button class="products-btn"><a href="listmobile.html">Products</a></button>
+                <div class="ram">
+                    <label for="ram"><strong>Ram</strong></label>
+                    <select id="ram" required>
+                        <option>
+                            6GB
+                        </option>
+                        <option>
+                            8GB
+                        </option>
+                        <option>
+                            12GB
+                        </option>
+                    </select>
+                </div>
+                <br>
 
-    </div>
+                <label for="modelPrice"><strong>Model Price</strong>
+                    <input type="text" placeholder="Enter Price" name="modelPrice" id="modelPrice"
+                        pattern="[1-9][0-9]{1-9}" required>
+                </label><br>
+                <label for="modelConfiguration"><strong>Model Configuration</strong>
+                    <input type="text" placeholder="Enter Configuration" name="modelConfiguration"
+                        id="modelConfiguration" required>
+                </label><br>
+                <label for="totalQuantity"><strong>Total Quantity</strong>
+                    <input type="number" placeholder="Choose Quantity" name="totalQuantity" id="totalQuantity" min="1"
+                        max="20" required>
+                </label><br>
+                <div class="status">
+                    <label for="status"><strong>status</strong></label>
+                    <select id="status" required>
+                        <option>
+                            Active
+                        </option>
+                        <option>
+                            Inactive
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <button class="done-btn">Add</button>
+                <button class="products-btn"><a href="listmobile.html">Products</a></button>
+
+        </div>
 
 
-    </form>
+        </form>
 
-</main>
+    </main>
     <!-- for toaster -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 

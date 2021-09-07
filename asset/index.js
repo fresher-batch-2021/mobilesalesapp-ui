@@ -4,6 +4,7 @@ function login() {
     const password = document.querySelector("#password").value;
     const roles = document.querySelectorAll("#role");
 
+    //check roles 
     let role;
 
     roles.forEach(roleRadio => {
@@ -27,7 +28,8 @@ function login() {
         toastr.error("password must contains atleast 6 characters");
 
     } else {
-
+       
+        //call api and checks the fields
         UserService.login(email, password, role).then(res => {
 
             let data = res.data.docs;

@@ -56,10 +56,10 @@ function changeStatus(user, productUrl, product, productConfiguration, productBr
 
     axios.put(url, cartProduct, { headers: { 'Authorization': basicAuth } }).then(res => {
         console.log("update status : " + res.data);
-        alert("Updated");
+        toastr.success("Updated");
     }).catch(err => {
         console.log(err);
-        alert("failed");
+        toastr.error("failed");
     })
 }
 

@@ -1,3 +1,4 @@
+//paths
 const routes = [
     { path: 'index.html' },
     { path: 'register.html' },
@@ -15,11 +16,13 @@ const routes = [
     { path: 'admin/userlist.html',role: ["admin"] },
 ];
 
+// logout
  function logout() {
      localStorage.clear();
      window.location.href = "../index.html";
  }
 
+//check access admin or user
 function checkAccess(pageName, role) {
     let allowed = false;
     for (let route of routes) {
@@ -39,6 +42,7 @@ function checkAccess(pageName, role) {
     return allowed;
 }
 
+//if user or admin is irrevelenat to their access
 (function() {
     console.log("Routes initializing")
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
@@ -47,7 +51,11 @@ function checkAccess(pageName, role) {
     let allowedAccess = checkAccess(pathName, role);
 
     if (!allowedAccess) {
-        alert("You are not authorized to access this page. Redirecting to login page");
-        window.location.href = "../index.html";
+        toastr.error("You are not authorized to access this page. Redirecting to login page",{
+            positionClass: 'toast-top-center',
+        });      
+        setTimeout(() => {
+            window.location.href = "../index.html";
+        }, 3000);       
     }
 })();

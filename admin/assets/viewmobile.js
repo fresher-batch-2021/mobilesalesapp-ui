@@ -1,7 +1,7 @@
 function viewMobile(mobileId) {
     console.log("view mobile", mobileId);
     if (mobileId == null) {
-      alert("Mobile Id is mandatory");
+      toastr.error("Mobile Id is mandatory");
     } else {
       const url =
         "https://product-mock-api.herokuapp.com/movieapp/api/v1/movies/" +

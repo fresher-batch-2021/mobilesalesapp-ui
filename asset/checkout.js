@@ -67,7 +67,7 @@ function shippingDetails() {
         });
     } catch (err) {
         console.error(err.message);
-        alert(err);
+        toastr.error(err);
     }
 }
 
