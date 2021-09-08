@@ -18,7 +18,8 @@ function formMobileTableData(mobiles) {
     let content = "";
     let i = 1;
     for (let mobileObj of mobiles) {
-
+        
+        $("#list-Mobile tbody").empty();
         let imageUrl = "images/" + mobileObj.imageUrl;
         content += `<tr>
         <td>${i++}</td>
@@ -35,7 +36,7 @@ function formMobileTableData(mobiles) {
         </tr>`;
     }
     console.log(content);
-    document.querySelector("#list-Mobile").innerHTML = content;
+    $("#list-Mobile tbody").append(content);
 }
 listMobile();
 

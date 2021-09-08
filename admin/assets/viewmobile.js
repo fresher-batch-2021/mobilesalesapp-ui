@@ -20,7 +20,11 @@ function viewMobile(mobileId) {
   }
   
   function displayMobile(mobileObj){
-    let content = `<tr><td>${mobileObj.brandName}</td><td>${mobileObj.modelName}</td><td>${mobileObj.imageUrl}</td></tr>`;
+    let content = `<tr>
+    <td>${mobileObj.brandName}</td>
+    <td>${mobileObj.modelName}</td>
+    <td>${mobileObj.imageUrl}</td>
+    </tr>`;
     console.log(content);
   }
   viewMobile();

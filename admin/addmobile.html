@@ -23,7 +23,7 @@
         <h2 class="page-heading">Add Product</h2>
 
         <div class="container">
-            <form onsubmit="addMobileForm()">
+            <form id="addMobiles" method="post">
                 <label for="brandName"><strong>Brand Name</strong>
                     <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName"
                         pattern="[A-Za-z ]{1,32}" required>
@@ -91,7 +91,8 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-
+    <script src="assets/admin-products_service.js"></script>
+        <script src="assets/environment.js"></script>
     <script src="assets/validator.js"></script>
     <script src="assets/addmobile.js"></script>
 

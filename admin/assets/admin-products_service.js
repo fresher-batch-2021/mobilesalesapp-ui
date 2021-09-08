@@ -1,13 +1,27 @@
-const dbUsername = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
-const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
-
-const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-
 class adminProductService {
     static getAllProducts() {
-        const Url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_products/_all_docs?include_docs=true";
+        const Url = endPoint+"mobilesalesapp_products/_all_docs?include_docs=true";
         return axios.get(Url, { headers: { Authorization: basicAuth } });
     }
-
-
+    static addMobiles(mobileObj){
+        const url = endPoint+"mobilesalesapp_products";
+       return axios.post(url,mobileObj, {headers:{Authorization:basicAuth}});
+    }
+    static userList(){
+        const url = endPoint+"mobilesalesapp_users/_all_docs?include_docs=true";
+     return axios.get(url, { headers: { 'Authorization': basicAuth } });
+    }
+    static deleteProduct(){
+        const url = endPoint+"mobilesalesapp_products/"+MobileId+"?rev="+revId;
+     return axios.delete(url,{headers:{Authorization:basicAuth}});
+    }
+    // edit page
+    static getProduct(id){
+        const url = endPoint+`mobilesalesapp_products/${id}`;
+      return axios.get(url, {headers: {Authorization: basicAuth}});
+    }
+    static updateProduct(modifyDetails,id,rev){
+        const url = endPoint+"mobilesalesapp_products/"+id+"?rev="+rev;
+    return axios.put(url, modifyDetails, {headers: {Authorization: basicAuth}})
+    }
 }

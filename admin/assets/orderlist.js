@@ -17,6 +17,7 @@ function shoppingCart() {
         console.log("value", getData);
         for (let data of getData) {
             console.log(data);
+            $("#shoppingCart tbody").empty();
             content = content +
                 ` <tr>
           <td><img class="product-image" src="images/${data.productUrl}" alt="no image" width="100px" height="100px"></td>
@@ -29,7 +30,7 @@ function shoppingCart() {
           </tr>`;
             console.log(content);
         }
-        document.querySelector("#shoppingCart").innerHTML = content;
+        $("#shoppingCart tbody").append(content);
     });
 }
 shoppingCart();

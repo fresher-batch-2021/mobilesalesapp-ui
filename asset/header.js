@@ -14,13 +14,13 @@ function search() {
         <option value="${obj.vivo}">${obj.vivo}</option> `;;
     }
     console.log(content);
-    document.querySelector("#productList").innerHTML = content;
+    $("#productList").html(content);
 }
 
 // search button
 function searchButton() {
     console.log("navigate");
-    const brand = document.querySelector("#searchList").value;
+    const brand = $("#searchList").val();
 
     if (brand === "oneplus") {
         window.location.href = "product.html?value=oneplus";
@@ -39,7 +39,7 @@ function checkLogin() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     if (user != null) {
-        document.querySelector("#loggedIn").innerHTML = "Hi!" + user.name;
+        $("#loggedIn").html("Hi!" + user.name);
     }
 }
 checkLogin();

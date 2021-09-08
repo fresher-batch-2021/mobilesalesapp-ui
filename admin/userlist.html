@@ -31,7 +31,7 @@
 
     <div class="container">
         <h3>Users Table</h3>
-        <table aria-describedby="mydesc" class="user-List">
+        <table aria-describedby="mydesc" class="user-List" id="userList">
 
             <thead>
                 <tr>
@@ -41,7 +41,7 @@
                 </tr>
             </thead>
 
-            <tbody id="userList">
+            <tbody>
 
             </tbody>
         </table>
@@ -50,9 +50,13 @@
 
 
     <script src="assets/jquery.min.js"></script>
+
+    <script src="assets/admin-products_service.js"></script>
+
+    <script src="assets/environment.js"></script>
+
     <script src="assets/userlist.js"></script>
 
-    <script src="assets/jquery.min.js"></script>
     <script>
         $("#admin-header").load("adminindex.html");
     </script>

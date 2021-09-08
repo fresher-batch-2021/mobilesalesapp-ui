@@ -21,24 +21,34 @@ console.log("productBrand :", productBrand);
 console.log("productPrice :", productPrice);
 console.log("totalQuantity :", totalQuantity);
 
-document.querySelector(".product-description").innerHTML = `
-            <span>${product}</span> 
-                <h1>${productBrand}</h1>
-                <p> ${productConfiguration}</p>
-                `;
 
-document.querySelector("#productImage").innerHTML = `
-                <img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">`;
+let productDescription = `
+<span>${product}</span> 
+    <h1>${productBrand}</h1>
+    <p> ${productConfiguration}</p>
+    `;
+$(".product-description").html(productDescription);
 
-document.querySelector(".product-price").innerHTML = `
-         <span>${productPrice}</span>         
-         `;
-document.querySelector("#choose-varient").innerHTML = `
+let productImg = `
+<img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">
+`;
+$("#productImage").html(productImg);
+
+let productRate = `
+<span>${productPrice}</span>         
+`;
+$(".product-price").html(productRate);
+
+let productVarient = `
 <button>${ram}GB</button>
 `;
-document.querySelector("#buy-btn").innerHTML = `         
-         <button onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
-         `;
+$("#choose-varient").html();
+
+let buyButton = `         
+<button onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
+`;
+$("#buy-btn").html(buyButton);
+
 
 
 let userData = localStorage.getItem("LOGGED_IN_USER");
@@ -88,8 +98,7 @@ function addButton(id, totalQuantity) {
       "modelConfiguration": a.modelConfiguration,
       "totalQuantity": a.totalQuantity - 1
     }
-    productService.totalQantity(array, a._id, a._rev).then(res => {
-    }).catch(err => {})
+    productService.totalQantity(array, a._id, a._rev).then(res => {}).catch(err => {})
     localStorage.setItem("productElements", JSON.stringify(cartProduct));
     console.log(cartProduct);
 

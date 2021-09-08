@@ -1,8 +1,12 @@
+$(document).ready(function(){
+    console.log("jquery loaded");
+    $("#register").submit(register);
+});
 function register() {
     event.preventDefault();
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+    const name = $("#name").val();
+    const email = $("#email").val();
+    const password = $("#password").val();
     const role = "user";
     console.log(name + "+" + email + "+" + password);
     let registerValues = {
@@ -45,6 +49,4 @@ function register() {
         console.error(err.message);
         toastr.error(err);
     }
-
-
 }

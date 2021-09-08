@@ -37,7 +37,7 @@ function getMobiles(brandName) {
                 }
             }
             console.log(content);
-            document.querySelector("#products").innerHTML = content;
+           $("#products").html(content);
         }).catch(err => {
             console.log(err);
         })
@@ -77,7 +77,7 @@ function getMobiles(brandName) {
                     content = content + "</div>";
                 }
                 console.log(content);
-                document.querySelector("#products").innerHTML = content;
+                $("#products").html(content);
             }
         }).catch(err => {
             console.log(err);
@@ -157,7 +157,7 @@ function sorting(n, m) {
                 }
             }
         }
-        document.querySelector("#products").innerHTML = content;
+        $("#products").html(content);
     });
 }
 

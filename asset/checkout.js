@@ -1,11 +1,15 @@
+$(document).ready(function(){
+    console.log("jquery loaded");
+    $("#checkOut").submit(shippingDetails);
+});
 function shippingDetails() {
     event.preventDefault();
-    const name = document.querySelector("#shippingName").value;
-    const email = document.querySelector("#shippingEmail").value;
-    const phoneNo = document.querySelector("#shippingPhoneNo").value;
-    const cardNo = document.querySelector("#shippingcardNo").value;
-    const cardDate = document.querySelector("#shippingCardDate").value;
-    const cardCVV = document.querySelector("#shippingCardCvv").value;
+    const name = $("#shippingName").val();
+    const email = $("#shippingEmail").val();
+    const phoneNo = $("#shippingPhoneNo").val();
+    const cardNo = $("#shippingcardNo").val();
+    const cardDate = $("#shippingCardDate").val();
+    const cardCVV = $("#shippingCardCvv").val();
     console.log(name + "+" + email + "+" + phoneNo + "+" + cardNo + "+" + cardDate + "+" + cardCVV);
 
     var date = new Date();
@@ -74,7 +78,7 @@ function shippingDetails() {
 function setDate() {
     let today = new Date().toJSON().substr(0, 10);
     console.log(today);
-    document.querySelector("#shippingCardDate").setAttribute("min", today);
+    $("#shippingCardDate").attr("min", today);
 
 }
 setDate();

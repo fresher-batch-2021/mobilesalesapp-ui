@@ -52,7 +52,7 @@ function shoppingCart(user) {
       console.log(content);
 
     }
-    document.querySelector("#shoppingCart").innerHTML = content;
+    $("#shoppingCart").html(content);
   });
 }
 let useData = localStorage.getItem("LOGGED_IN_USER");

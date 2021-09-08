@@ -1,24 +1,20 @@
+$(document).ready(function(){
+    console.log("jquery loaded");
+    $("#login").submit(login);
+});
 function login() {
     event.preventDefault();
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
-    const roles = document.querySelectorAll("#role");
+    const email = $("#email").val();
+    const password = $("#password").val();
+    const roles = $("#role:checked").val();
 
-    //check roles 
-    let role;
+    console.log(roles);
 
-    roles.forEach(roleRadio => {
-        if (roleRadio.checked) {
-            role = roleRadio.value;
-        }
-    });
-    console.log(role);
-
-    console.log(email + "+" + password + "+" + role);
+    console.log(email + "+" + password + "+" + roles);
     let loginValues = {
         "email": email,
         "password": password,
-        "role": role
+        "role": roles
     };
     console.log(loginValues);
     if (email == "" || email == null || email.trim == "") {
@@ -30,7 +26,7 @@ function login() {
     } else {
        
         //call api and checks the fields
-        UserService.login(email, password, role).then(res => {
+        UserService.login(email, password, roles).then(res => {
 
             let data = res.data.docs;
             console.log(data);
@@ -48,12 +44,12 @@ function login() {
                     preventDuplicates: true
 
                 });
-                if (role == "admin") {
+                if (roles == "admin") {
                     setTimeout(function () {
                         window.location.href = "admin/adminindex.html";
                     }, 1000);
 
-                } else if (role == "user") {
+                } else if (roles == "user") {
                     setTimeout(function () {
                         window.location.href = "home.html"
                     }, 1000);
