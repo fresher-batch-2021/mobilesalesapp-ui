@@ -31,6 +31,9 @@ input{
 .status {
     text-align: center;
 }
+.buttons{
+    margin-top: 20px;
+}
 button{
     background-color: black;
     padding: 5px 5px;
@@ -38,14 +41,8 @@ button{
     width: 50%;
     border-radius: 4px;
     border: none;
+    margin-left: 25%;
 }
-button, a{
-    text-decoration: none;
-    color: white;
-}
-.done-btn {
-    float: right;
-}
-.products-btn{
-    float: left;
-}
+
+
+

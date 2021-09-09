@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Mobiles</title>
+    <title>Add Mobile</title>
     <link rel="icon" href="../images/favicon.ico">
     <!-- for toaster -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -27,14 +27,14 @@
                 <label for="brandName"><strong>Brand Name</strong>
                     <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName"
                         pattern="[A-Za-z ]{1,32}" required>
-                </label><br>
+                </label>
                 <label for="modelName"><strong>Model Name</strong>
                     <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName"
                         pattern="[a-zA-Z0-9]+" required>
-                </label><br>
+                </label>
                 <label for="image"><strong>Model Image</strong>
                     <input type="file" required name="image" id="imageUrl">
-                </label><br>
+                </label>
 
                 <div class="ram">
                     <label for="ram"><strong>Ram</strong></label>
@@ -50,20 +50,20 @@
                         </option>
                     </select>
                 </div>
-                <br>
+
 
                 <label for="modelPrice"><strong>Model Price</strong>
                     <input type="text" placeholder="Enter Price" name="modelPrice" id="modelPrice"
                         pattern="[1-9][0-9]{1-9}" required>
-                </label><br>
+                </label>
                 <label for="modelConfiguration"><strong>Model Configuration</strong>
                     <input type="text" placeholder="Enter Configuration" name="modelConfiguration"
                         id="modelConfiguration" required>
-                </label><br>
+                </label>
                 <label for="totalQuantity"><strong>Total Quantity</strong>
                     <input type="number" placeholder="Choose Quantity" name="totalQuantity" id="totalQuantity" min="1"
                         max="20" required>
-                </label><br>
+                </label>
                 <div class="status">
                     <label for="status"><strong>status</strong></label>
                     <select id="status" required>
@@ -75,12 +75,11 @@
                         </option>
                     </select>
                 </div>
-                <br>
-                <button class="done-btn">Add</button>
-                <button class="products-btn"><a href="listmobile.html">Products</a></button>
 
+                <div class="buttons">
+                    <button type="button" class="done-btn">Add</button>
+                </div>
         </div>
-
 
         </form>
 
@@ -92,7 +91,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script src="assets/admin-products_service.js"></script>
-        <script src="assets/environment.js"></script>
+    <script src="assets/environment.js"></script>
     <script src="assets/validator.js"></script>
     <script src="assets/addmobile.js"></script>
 

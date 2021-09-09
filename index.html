@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-  <title>login page</title>
+  <title>Sign In</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/index.css">
 
   <!-- toaster cdn for css -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+  
   <!-- jquery cdn -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -21,9 +21,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- toaster cdn for js  -->
+    
+    <!-- toaster cdn for js  -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 </head>
 
@@ -40,24 +41,26 @@
 
       <div class="box">
         <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9]+@[a-z]+.[a-z]{1,32}$" required
-          autofocus> <br>
-        <input type="password" name="password" id="password" placeholder="Password" required><br>
-
-        <label for="role">Role: <span style="color:black">*</span></label>
+          autofocus> 
+        <input type="password" name="password" id="password" placeholder="Password" required>
+       
+        <div>
+        <label for="role"><strong>Role:</strong> <span style="color:black">*</span></label>
         <input type="radio" name="role" id="role" value="admin" required>Admin
-        <input type="radio" name="role" id="role" value="user" required>User<br>
-        <button class="signin" type="submit">Sign in</button><br>
-
+        <input type="radio" name="role" id="role" value="user" required>User
+        <button class="signin" type="submit">Sign in</button>
       </div>
+ 
+    </div>
 
       <div class="container" style="background-color:#f1f1f1">
-        <a href="#"><button type="reset" class="cancelBtn">Reset</button></a>
-        <span><a href="register.html"><button type="button" id="signUp-btn" class="signUp">Sign up</button></a></span>
+        <button type="reset" class="cancelBtn">Reset</button>
+        <span><button type="button" id="signUp-btn" class="signUp"><a href="register.html">Sign Up</a></button></span>
       </div>
     </form>
   </div>
-  <script src="asset/environment.js"></script>
 
+  <script src="asset/environment.js"></script>
   <script src="asset/index.js"></script>
   <script src="service-api/services/user-service.js"></script>
 </body>

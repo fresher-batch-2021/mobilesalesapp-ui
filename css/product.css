@@ -46,14 +46,14 @@ body{
   z-index: 1;
 }
 
-.dropDown-content a {
+.dropDown-content input {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropDown a:hover {
+.dropDown input:hover {
   background-color: #ddd;
 }
 

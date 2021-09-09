@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 
     <!-- toaster cdn for js  -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
@@ -31,15 +31,15 @@
 
     <div class="container">
         <form id="editMobile" method="POST">
-            <input type="hidden" id="id" readonly />
-            <input type="hidden" id="rev" readonly />
+            <input type="hidden" id="id" readonly >
+            <input type="hidden" id="rev" readonly >
 
             <label for="brandName"><strong>Brand Name</strong>
-                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" /> </label><br />
+                <input type="text" placeholder="Enter Brand Name" name="brandName" id="brandName" /> </label>
             <label for="modelName"><strong>Model Name</strong>
-                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" /> </label><br />
+                <input type="text" placeholder="Enter Model Name" name="modelName" id="modelName" /> </label>
             <label for="image"><strong>Model Image</strong>
-                <input type="file" name="image" id="imageUrl" /> </label><br />
+                <input type="file" name="image" id="imageUrl" /> </label>
             <div class="ram">
                 <label for="ram"><strong>Ram</strong></label>
                 <select id="ram">
@@ -48,30 +48,39 @@
                     <option>12GB</option>
                 </select>
             </div>
-            <br />
+            
             <label for="modelPrice"><strong>Model Price</strong>
-                <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" /> </label><br />
+                <input type="text" placeholder="Enter price" name="modelPrice" id="modelPrice" /> </label>
             <label for="modelConfiguration"><strong>Model Configuration</strong>
                 <input type="text" placeholder="Enter Configuration" name="modelConfiguration"
-                    id="modelConfiguration" /> </label><br />
-            <div class="status">
-                <label for="status"><strong>status</strong></label>
-                <select id="status" required>
-                    <option>Active</option>
-                    <option>Inactive</option>
-                </select>
-            </div>
+                    id="modelConfiguration" /> </label>
+                    <label for="totalQuantity"><strong>Total Quantity</strong>
+                        <input type="number" placeholder="Choose Quantity" name="totalQuantity" id="totalQuantity" min="0"
+                            max="20" required>
+                    </label>
+                    <div class="status">
+                        <label for="status"><strong>status</strong></label>
+                        <select id="status" required>
+                            <option>
+                                Active
+                            </option>
+                            <option>
+                                Inactive
+                            </option>
+                        </select>
+                    </div>
+                    
 
-            <button  onclick="modifyDetails()" id="edit">Update</button>
+            <button type="submit" id="edit">Update</button>
         </form>
     </div>
-    <script src="assets/admin-products_service.js"></script>
-    <script src="assets/environment.js"></script>
-
-     <script src="assets/jquery.min.js"></script>
-    <script src="assets/editmobile.js"></script>
+    <script src="assets/jquery.min.js"></script>
     <script>
         $("#admin-header").load("adminindex.html");
     </script>
+    <script src="assets/environment.js"></script>
+    <script src="assets/admin-products_service.js"></script>  
+    <script src="assets/editmobile.js"></script>
+   
 </body>
 </html>

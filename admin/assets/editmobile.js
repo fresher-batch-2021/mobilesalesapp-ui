@@ -1,7 +1,4 @@
-$(document).ready(function(){
-    console.log("jquery loaded");
-    $("#editMobile").submit(editDetails);
-});
+
 function editDetails() {
     const queryString = window.location.search.substr(1);
     console.log(queryString);
@@ -20,12 +17,15 @@ function editDetails() {
         $("#modelName").val( mobileDetails.modelName);
         $("#modelPrice").val(mobileDetails.modelPrice);
         $("#modelConfiguration").val(mobileDetails.modelConfiguration);
+        $("#status").val(mobileDetails.status);
+        $("#totalQuantity").val(mobileDetails.totalQuantity);
+
     }).catch(err => console.error(err));
 }
 
-
-function modifyDetails() {
-
+$("#editMobile").submit(updateDetails);
+function updateDetails() {
+event.preventDefault();
     const id = $("#id").val();
     const rev = $("#rev").val();
     const brandName = $("#brandName").val();
@@ -34,7 +34,9 @@ function modifyDetails() {
     const modelName = $("#modelName").val();
     const modelPrice = $("#modelPrice").val();
     const modelConfiguration = $("#modelConfiguration").val();
-
+    const status = $("#status").val();
+    const totalQuantity = $("#totalQuantity").val();
+    
     let modifyDetails = {
         "id":id,
         "rev":rev,
@@ -43,15 +45,17 @@ function modifyDetails() {
         "modelName": modelName,
         "ram": ram,
         "modelConfiguration": modelConfiguration,
-        "modelPrice": modelPrice
+        "modelPrice": modelPrice,
+        "#status": status,
+        "totalQuantity": totalQuantity
     }
     console.log(modifyDetails);
 
     console.log(id,rev);
-    adminProductService.updateProduct(modifyDetails,id,rev).then(res =>{
+    adminProductService.updateProduct(id,rev,modifyDetails).then(res =>{
         console.log(modifyDetails)
         toastr.success("successfull");
-        setTimeout(() => {
+        setTimeout(function () {
             window.location.href = "listmobile.html"
         }, 1500);
         

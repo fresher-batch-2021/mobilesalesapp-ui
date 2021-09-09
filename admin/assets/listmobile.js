@@ -27,16 +27,20 @@ function formMobileTableData(mobiles) {
         <td>${mobileObj.brandName}</td>
         <td>${mobileObj.modelName}</td>
         <td>Rs.${mobileObj.modelPrice}</td>
-        <td>${mobileObj.modelConfiguration}</td>
+        <td>${mobileObj.ram}GB ${mobileObj.modelConfiguration}</td>
         <td>${mobileObj.status}</td>
+        <td>${mobileObj.totalQuantity}</td>
+
         <td>        
         <a href='edit.html?id=${mobileObj._id}'><button type="button"  class="edit-btn">Edit</button></a>
-        <button class="delete-btn" onClick="deleteMobile('${mobileObj._id}','${mobileObj._rev}')">Delete</button>
+        <button type"button" class="delete-btn" onClick="deleteMobile('${mobileObj._id}','${mobileObj._rev}')">Delete</button>
         </td>
+
         </tr>`;
+        $("#list-Mobile tbody").append(content);
     }
     console.log(content);
-    $("#list-Mobile tbody").append(content);
+    
 }
 listMobile();
 

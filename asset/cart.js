@@ -46,7 +46,7 @@ function shoppingCart(user) {
         ${data.shippingPhone}
         </ul>
         </td>
-        <td><button class="cancle-btn" onclick= "deleteOrder('${data._id}','${data._rev}');">Delete </button></td>
+        <td><button type="button" class="cancle-btn" onclick= "deleteOrder('${data._id}','${data._rev}');">Delete </button></td>
         </tr>`;
 
       console.log(content);

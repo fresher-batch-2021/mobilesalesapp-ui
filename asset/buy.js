@@ -40,12 +40,12 @@ let productRate = `
 $(".product-price").html(productRate);
 
 let productVarient = `
-<button>${ram}GB</button>
+<button type"button">${ram}GB</button>
 `;
 $("#choose-varient").html();
 
 let buyButton = `         
-<button onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
+<button type="button" onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
 `;
 $("#buy-btn").html(buyButton);
 
