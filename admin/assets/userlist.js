@@ -6,7 +6,7 @@ function userList() {
 
         getData = res.data.rows.map((obj) => obj.doc);
         console.log("value", getData)
-        for (let data of getData) {
+        for (const data of getData) {
             console.log(data);
             $("#userList tbody").empty();
 

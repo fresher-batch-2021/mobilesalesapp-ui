@@ -1,7 +1,7 @@
 function shoppingCart(user) {
   let content = " ";
 
-   productService.userCart().then(res => {
+  productService.userCart().then(res => {
 
 
     const useData = localStorage.getItem("LOGGED_IN_USER");

@@ -9,8 +9,8 @@ function shoppingCart() {
         let getData = res.data.rows.map((obj) => obj.doc);
         console.log(getData)
         console.log("value", getData);
-        for (let data of getData) {
-            console.log(data);
+        for (const data of getData) {
+           // console.log(data);
             $("#shoppingCart tbody").empty();
             content = content +
                 ` <tr>

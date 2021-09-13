@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 
@@ -63,20 +63,28 @@ img.hover-shadow {
 /* all brands */
 
 .allBrands-text {
-  margin-top: 100px;
+  background-color: darkgray;
+  color: white;
+  border-radius: 16px;
+  padding: 150px 150px;
   text-align: center;
 }
-
-button {
-  background-color: black;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: white;
-  cursor: pointer;
-  width: 10%;
+.allBrands-heading{
+  font-size:50px
+}
+.allBrands-subHeading{
+  font-size:30px;
+  margin-bottom: 30px;
+}
+.allBrands-content  a{
+  padding: 10px 8px;
+  border-radius: 4px;
+  font-size:30px;
+  text-decoration:none;
+  color: black;
+  background-color: whitesmoke;
 }
 
-button:hover {
+.allBrands-content:hover {
   opacity: 0.8;
 }

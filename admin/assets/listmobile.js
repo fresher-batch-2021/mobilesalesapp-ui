@@ -14,13 +14,13 @@ function listMobile() {
 
 
 function formMobileTableData(mobiles) {
-
     let content = "";
     let i = 1;
-    for (let mobileObj of mobiles) {
+    for (const mobileObj of mobiles) {
         
+
         $("#list-Mobile tbody").empty();
-        let imageUrl = "images/" + mobileObj.imageUrl;
+        const imageUrl = "images/" + mobileObj.imageUrl;
         content += `<tr>
         <td>${i++}</td>
         <td><img src="${imageUrl}" alt="${imageUrl}" width="100px" height="100px"></td>
@@ -32,7 +32,7 @@ function formMobileTableData(mobiles) {
         <td>${mobileObj.totalQuantity}</td>
 
         <td>        
-        <a href='edit.html?id=${mobileObj._id}'><button type="button"  class="edit-btn">Edit</button></a>
+        <a href='edit.html?id=${mobileObj._id}'  class="edit-btn">Edit</a>
         <button type"button" class="delete-btn" onClick="deleteMobile('${mobileObj._id}','${mobileObj._rev}')">Delete</button>
         </td>
 
@@ -43,4 +43,5 @@ function formMobileTableData(mobiles) {
     
 }
 listMobile();
+
 

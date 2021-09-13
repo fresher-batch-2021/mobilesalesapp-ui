@@ -32,8 +32,8 @@ class productService {
     }
 
     //cart page
-    static userCart(){
-        const url = endPoint+"mobilesalesapp_products/_find";
+    static userCart(user){
+        const url = endPoint+"mobilesalesapp_my_orders/_find";
         const requestgetdata = {
             selector: {
               'user': user

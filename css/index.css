@@ -57,6 +57,7 @@ button {
     width: 70%;
 }
 
+
 button:hover {
     opacity: 0.8;
 }
@@ -82,11 +83,17 @@ img.avatar {
 
 .signUp {
     float: right;
-    padding: 5px;
-    width: 80px;
-    height: 30px;
+    margin-top: 1%;
+    padding: 10px 5px;
+    text-decoration: none;
+    color: black;
+    font-weight:bolder;
 }
-
+.signUp:hover{
+    border-radius: 4px;
+    background-color: #ddd;
+    color: black;
+}
 @media screen and (max-width: 300px) {
     span.signUp {
         display: block;

@@ -29,7 +29,7 @@ th{
 }  
   td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 8px;
   }
   
@@ -37,12 +37,9 @@ th{
     background-color: #dddddd;
   }
   .edit-btn{
-  background-color: gray; 
-  width: 100%; 
+  text-decoration: none;
   padding: 5px;
-  color: white;
-  border-radius: 2px;
-  border:0px;
+  color: black;
   }
   .delete-btn{
   background-color: #f44336;  

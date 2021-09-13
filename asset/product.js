@@ -112,7 +112,7 @@ window.onclick = function (event) {
         const dropdowns = document.getElementsByClassName("dropDown-content");
         let  i;
         for (i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
+            let openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
@@ -128,7 +128,7 @@ function sorting(n, m) {
     productService.getAllProducts().then(res => {
         const data = res.data.rows.map(obj => obj.doc);
         console.log(data);
-        const content = "";
+        let content = "";
         let i = 0;
         for (const oneplus of data) {
             if (oneplus.modelPrice > n && oneplus.modelPrice < m) {
