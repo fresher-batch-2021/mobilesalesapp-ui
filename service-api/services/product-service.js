@@ -6,7 +6,7 @@ class productService {
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } });
 
     }
-    static totalQantity(requestData, id, rev) {
+    static totalQuantity(requestData, id, rev) {
         const url = endPoint+"mobilesalesapp_products/";
         return axios.put(url + id + "?rev=" + rev, requestData, { headers: { Authorization: basicAuth } });
 
@@ -20,7 +20,7 @@ class productService {
     }
 
     //store datas in my orders DB
-    static sendData(obj) {
+    static placeOrder(obj) {
 
         const url = endPoint+"mobilesalesapp_my_orders";
         return axios.post(url, obj, { headers: { 'Authorization': basicAuth } });
@@ -32,6 +32,15 @@ class productService {
     }
 
     //cart page
+    static userCart(){
+        const url = endPoint+"mobilesalesapp_products/_find";
+        const requestgetdata = {
+            selector: {
+              'user': user
+            },
+          }
+      return axios.post(url, requestgetdata, {headers: {'Authorization': basicAuth}});
+    }
     static updateShippingData(id, rev, shippingProduct) {
         const url = endPoint+"mobilesalesapp_my_orders/" + id + "?rev=" + rev;
         return axios.put(url, shippingProduct, { headers: { 'Authorization': basicAuth } });

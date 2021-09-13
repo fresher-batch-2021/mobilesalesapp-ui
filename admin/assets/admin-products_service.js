@@ -24,4 +24,13 @@ class adminProductService {
         const url = endPoint+"mobilesalesapp_products/" + id + "?rev=" + rev;
     return axios.put(url, modifyDetails, {headers: {Authorization: basicAuth}});
     }
+    // order list
+    static UserOrders(){
+        const url = endPoint+"mobilesalesapp_my_orders/_all_docs?include_docs=true";
+    return axios.get(url, {headers: {Authorization: basicAuth}});
+    }
+    static approveOrder(id,rev,cartProduct){
+        const url = endPoint+"mobilesalesapp_my_orders/" + id + "?rev=" + rev;
+      return  axios.put(url, cartProduct, { headers: { 'Authorization': basicAuth } });
+    }
 }

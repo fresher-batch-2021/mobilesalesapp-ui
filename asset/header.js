@@ -1,13 +1,13 @@
 //search bar
 function search() {
-    let data = [{
+    const data = [{
         oneplus: "oneplus",
         redmi: "mi",
         realme: "realme",
         vivo: "vivo"
     }]
-    let content = "";
-    for (let obj of data) {
+    const content = "";
+    for (const obj of data) {
         content += ` <option value="${obj.oneplus}">${obj.oneplus}</option>
         <option value="${obj.redmi}">${obj.redmi}</option>
         <option value="${obj.realme}">${obj.realme}</option> 
@@ -36,8 +36,8 @@ function searchButton() {
 // checks login & display user name
 function checkLogin() {
 
-    let userStr = localStorage.getItem("LOGGED_IN_USER");
-    let user = userStr != null ? JSON.parse(userStr) : null;
+    const userStr = localStorage.getItem("LOGGED_IN_USER");
+    const user = userStr != null ? JSON.parse(userStr) : null;
     if (user != null) {
         $("#loggedIn").html("Hi!" + user.name);
     }

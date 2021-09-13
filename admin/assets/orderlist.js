@@ -1,14 +1,8 @@
 function shoppingCart() {
     let content = "";
     console.log("shoping cart");
-    const dbUsername = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
-    const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
 
-    const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-
-    const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/_all_docs?include_docs=true";
-
-    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+    adminProductService.UserOrders().then(res => {
 
         console.log(res.data);
 
@@ -48,14 +42,7 @@ function changeStatus(user, productUrl, product, productConfiguration, productBr
     }
     console.log("status", cartProduct);
 
-    const dbUsername = "apikey-v2-1kdtmo28t5uulevcbb5m8mifmj5bd962vbuc18qwa0m4";
-    const dbPassword = "3589b77ff4cc367d60ae67e1f7dada03";
-
-    const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-
-    const url = "https://05025f1a-856b-47a0-aadb-52e737a386f3-bluemix.cloudantnosqldb.appdomain.cloud/mobilesalesapp_my_orders/" + id + "?rev=" + rev;
-
-    axios.put(url, cartProduct, { headers: { 'Authorization': basicAuth } }).then(res => {
+    adminProductService.approveOrder(id,rev,cartProduct).then(res => {
         console.log("update status : " + res.data);
         toastr.success("Updated");
     }).catch(err => {

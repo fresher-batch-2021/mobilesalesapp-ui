@@ -9,7 +9,7 @@ function register() {
     const password = $("#password").val();
     const role = "user";
     console.log(name + "+" + email + "+" + password);
-    let registerValues = {
+    const registerValues = {
         "name": name.trim(),
         "email": email.trim(),
         "password": password.trim(),
@@ -25,7 +25,7 @@ function register() {
 
         //for backend validation and error message
         UserService.emailValidation(email).then(res => {
-            let data = res.data.docs[0];
+            const data = res.data.docs[0];
             console.log(data)
             if (data != undefined) {
 

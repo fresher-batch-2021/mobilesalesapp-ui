@@ -2,14 +2,14 @@ console.log(window.location.search.substr(1));
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
 
-let id = Params.get("_id");
-let product = Params.get("productName");
-let productUrl = Params.get("productUrl");
-let ram = Params.get("ram");
-let productConfiguration = Params.get("productConfiguration");
-let productBrand = Params.get("productBrand");
-let productPrice = Params.get("productPrice");
-let totalQuantity = Params.get("totalQuantity");
+const id = Params.get("_id");
+const product = Params.get("productName");
+const productUrl = Params.get("productUrl");
+const ram = Params.get("ram");
+const productConfiguration = Params.get("productConfiguration");
+const productBrand = Params.get("productBrand");
+const productPrice = Params.get("productPrice");
+const totalQuantity = Params.get("totalQuantity");
 
 
 console.log("_id :", id);
@@ -22,41 +22,41 @@ console.log("productPrice :", productPrice);
 console.log("totalQuantity :", totalQuantity);
 
 
-let productDescription = `
+const productDescription = `
 <span>${product}</span> 
     <h1>${productBrand}</h1>
     <p> ${productConfiguration}</p>
     `;
 $(".product-description").html(productDescription);
 
-let productImg = `
+const productImg = `
 <img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">
 `;
 $("#productImage").html(productImg);
 
-let productRate = `
+const productRate = `
 <span>${productPrice}</span>         
 `;
 $(".product-price").html(productRate);
 
-let productVarient = `
+const productVariant = `
 <button type"button">${ram}GB</button>
 `;
-$("#choose-varient").html();
+$("#choose-variant").html();
 
-let buyButton = `         
+const buyButton = `         
 <button type="button" onclick="addButton('${id}','${totalQuantity}','${ram}')" class="cart-btn" >Buy Now</button>
 `;
 $("#buy-btn").html(buyButton);
 
 
 
-let userData = localStorage.getItem("LOGGED_IN_USER");
-let user = JSON.parse(userData);
+const userData = localStorage.getItem("LOGGED_IN_USER");
+const user = JSON.parse(userData);
 console.log(user)
 
 
-let cartProduct = {
+const cartProduct = {
   "user": user._id,
   "name": user.name,
   "productName": product,
@@ -87,9 +87,9 @@ function addButton(id, totalQuantity) {
 
     console.log(res.data);
     console.log(res.data.docs);
-    let a = res.data.docs[0];
+    const a = res.data.docs[0];
 
-    let array = {
+    const array = {
       "imageUrl": a.imageUrl,
       "brandName": a.brandName,
       "modelName": a.modelName,
@@ -98,11 +98,11 @@ function addButton(id, totalQuantity) {
       "modelConfiguration": a.modelConfiguration,
       "totalQuantity": a.totalQuantity - 1
     }
-    productService.totalQantity(array, a._id, a._rev).then(res => {}).catch(err => {})
+    productService.totalQuantity(array, a._id, a._rev).then(res => {}).catch(err => {})
     localStorage.setItem("productElements", JSON.stringify(cartProduct));
     console.log(cartProduct);
 
-    productService.sendData(cartProduct).then(res => {
+    productService.placeOrder(cartProduct).then(res => {
       console.log(res.data.id);
       localStorage.setItem("CartID", res.data.id);
       console.log(user);

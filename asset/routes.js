@@ -25,7 +25,7 @@ const routes = [
 //check access admin or user
 function checkAccess(pageName, role) {
     let allowed = false;
-    for (let route of routes) {
+    for (const route of routes) {
         
         if (route.path == pageName) {
             
@@ -45,10 +45,10 @@ function checkAccess(pageName, role) {
 //if user or admin is irrevelenat to their access
 (function() {
     console.log("Routes initializing")
-    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-    let role = user != null ? user.role : null;
-    let pathName = window.location.pathname.substr(1);
-    let allowedAccess = checkAccess(pathName, role);
+    const user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    const role = user != null ? user.role : null;
+    const pathName = window.location.pathname.substr(1);
+    const allowedAccess = checkAccess(pathName, role);
 
     if (!allowedAccess) {
         toastr.error("You are not authorized to access this page. Redirecting to login page",{

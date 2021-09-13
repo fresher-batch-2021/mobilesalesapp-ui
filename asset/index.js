@@ -11,7 +11,7 @@ function login() {
     console.log(roles);
 
     console.log(email + "+" + password + "+" + roles);
-    let loginValues = {
+    const loginValues = {
         "email": email,
         "password": password,
         "role": roles
@@ -28,7 +28,7 @@ function login() {
         //call api and checks the fields
         UserService.login(email, password, roles).then(res => {
 
-            let data = res.data.docs;
+            const data = res.data.docs;
             console.log(data);
 
             if (data.length == 0) {

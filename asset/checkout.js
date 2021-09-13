@@ -12,10 +12,10 @@ function shippingDetails() {
     const cardCVV = $("#shippingCardCvv").val();
     console.log(name + "+" + email + "+" + phoneNo + "+" + cardNo + "+" + cardDate + "+" + cardCVV);
 
-    var date = new Date();
-    var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth() + 1).padStart(2, '0');
-    var yyyy = date.getFullYear();
+    const date = new Date();
+    const dd = String(date.getDate()).padStart(2, '0');
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const yyyy = date.getFullYear();
     date = dd + '-' + mm + '-' + yyyy;
     console.log(date);
 
@@ -29,7 +29,7 @@ function shippingDetails() {
 
 
 
-        let id = localStorage.getItem("CartID");
+        const id = localStorage.getItem("CartID");
         console.log(id)
 
         const requestgetdata = {
@@ -42,7 +42,7 @@ function shippingDetails() {
             console.log(res.data);
             console.log(res.data.docs);
 
-            let shippingProduct = {
+            const shippingProduct = {
                 "user": res.data.docs[0].user,
                 "name": res.data.docs[0].name,
                 "productName": res.data.docs[0].productName,
@@ -76,7 +76,7 @@ function shippingDetails() {
 }
 
 function setDate() {
-    let today = new Date().toJSON().substr(0, 10);
+    const today = new Date().toJSON().substr(0, 10);
     console.log(today);
     $("#shippingCardDate").attr("min", today);
 

@@ -1,18 +1,18 @@
-function getMobiles(brandName) {
+function getMobiles(brandName = null) {
     let content = "";
 
 
     // if value is null show all products
-    if (brandName == "null") {
+    if (brandName == null) {
 
         productService.getAllProducts().then(res => {
 
-            let data = res.data.rows.map(obj => obj.doc);
+            const data = res.data.rows.map(obj => obj.doc);
             console.log(data);
 
-            let orderedData = _.sortBy(data, 'modelPrice');
+            const orderedData = _.sortBy(data, 'modelPrice');
             let i = 0
-            for (let oneplus of orderedData) {
+            for (const oneplus of orderedData) {
                 if (i % 4 == 0) {
                     content = content + "<div class='row'>";
                 }
@@ -52,13 +52,13 @@ function getMobiles(brandName) {
                 brandName: brandName
             }
         }
-
+  
         productService.getProduct(requestData).then(res => {
-            let data = res.data.docs;
+            const data = res.data.docs;
             console.log(data);
 
             let i = 0
-            for (let mobiles of data) {
+            for (const mobiles of data) {
                 if (i % 4 == 0) {
                     content = content + "<div class='row'>";
                 }
@@ -87,7 +87,7 @@ function getMobiles(brandName) {
 //get url values from home page and shows the values
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
-let value = Params.get("value");
+const value = Params.get("value");
 console.log(value);
 if (value === "oneplus") {
     getMobiles('oneplus');
@@ -98,7 +98,7 @@ if (value === "oneplus") {
 } else if (value === "vivo") {
     getMobiles('vivo');
 } else {
-    getMobiles('null');
+    getMobiles();
 }
 
 
@@ -109,10 +109,10 @@ function dropDown() {
 
 window.onclick = function (event) {
     if (!event.target.matches('.dropBtn')) {
-        var dropdowns = document.getElementsByClassName("dropDown-content");
-        var i;
+        const dropdowns = document.getElementsByClassName("dropDown-content");
+        let  i;
         for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
+            const openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
@@ -126,11 +126,11 @@ window.onclick = function (event) {
 function sorting(n, m) {
 
     productService.getAllProducts().then(res => {
-        let data = res.data.rows.map(obj => obj.doc);
+        const data = res.data.rows.map(obj => obj.doc);
         console.log(data);
-        let content = "";
+        const content = "";
         let i = 0;
-        for (let oneplus of data) {
+        for (const oneplus of data) {
             if (oneplus.modelPrice > n && oneplus.modelPrice < m) {
 
                 if (i % 4 == 0) {
