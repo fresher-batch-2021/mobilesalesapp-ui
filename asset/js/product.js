@@ -1,3 +1,20 @@
+const productTemplate = (mobiles)=>{
+    let content = `
+    <div class="maincard">
+    <div class="maincardrow">
+    <div class="card">
+    <img class"product-img" src="asset/images/${mobiles.imageUrl}" alt="${mobiles.brandName}">
+    <h1>${mobiles.brandName}</h1>
+    <h3>${mobiles.modelName}</h3>
+    <p class="price">${mobiles.modelPrice}</p>
+    <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}','${mobiles._id}','${mobiles.totalQuantity}','${mobiles.ram}')">View Specifications</button></p>
+    </div>
+    </div>
+    </div>
+    `;
+    return content;
+  };
+
 function getMobiles(brandName = null) {
     let content = "";
 
@@ -12,25 +29,13 @@ function getMobiles(brandName = null) {
 
             const orderedData = _.sortBy(data, 'modelPrice');
             let i = 0
-            for (const oneplus of orderedData) {
+            for (const mobiles of orderedData) {
                 if (i % 4 == 0) {
                     content = content + "<div class='row'>";
                 }
                 i++;
 
-                content = content + ` 
-                <div class="maincard">
-                <div class="maincardrow">
-                <div class="card">
-                <img class"product-img" src="images/${oneplus.imageUrl}" alt="${oneplus.brandName}">
-                <h1>${oneplus.brandName}</h1>
-                <h3>${oneplus.modelName}</h3>
-                <p class="price">${oneplus.modelPrice}</p>
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}','${oneplus.ram}')">View Specifications</button></p>
-                </div>
-                </div>
-                </div>
-                `;
+                content = content + productTemplate(mobiles);
 
                 if (i % 4 == 0) {
                     content = content + "</div>";
@@ -40,6 +45,7 @@ function getMobiles(brandName = null) {
            $("#products").html(content);
         }).catch(err => {
             console.log(err);
+            toastr.error("oops! sorry couldn't get server");
         })
     }
 
@@ -63,16 +69,8 @@ function getMobiles(brandName = null) {
                     content = content + "<div class='row'>";
                 }
                 i++
-                content = content +
-                    ` <div class="column">
-                <div class="card">
-                <img src="images/${mobiles.imageUrl}" alt="oneplus" style="width:100%">
-                <h1>${mobiles.brandName}</h1>
-                <h3>${mobiles.modelName}</h3>
-                <p class="price">${mobiles.modelPrice}</p>
-                <p><button type="button" onclick="passValue('${mobiles.modelName}','${mobiles.imageUrl}','${mobiles.modelPrice}','${mobiles.modelConfiguration}','${mobiles.brandName}','${mobiles._id}','${mobiles.totalQuantity}','${mobiles.ram}')">View Specifications</button></p>
-                </div>
-                 </div> `;
+                content = content + productTemplate(mobiles);
+                    
                 if (i % 4 == 0) {
                     content = content + "</div>";
                 }
@@ -130,28 +128,15 @@ function sorting(n, m) {
         console.log(data);
         let content = "";
         let i = 0;
-        for (const oneplus of data) {
-            if (oneplus.modelPrice > n && oneplus.modelPrice < m) {
+        for (const mobiles of data) {
+            if (mobiles.modelPrice > n && mobiles.modelPrice < m) {
 
                 if (i % 4 == 0) {
                     content = content + "<div class='row'>";
                 }
                 i++;
 
-                content = content + ` 
-                <div class="maincard">
-                <div class="maincardrow">
-                <div class="card">
-                <img src="images/${oneplus.imageUrl}" alt="oneplus" style="width:100%">
-                <h1>${oneplus.brandName}</h1>
-                <h3>${oneplus.modelName}</h3>
-                <p class="price">${oneplus.modelPrice}</p>
-
-                <p><button type="button" onclick="passValue('${oneplus.modelName}','${oneplus.imageUrl}','${oneplus.modelPrice}','${oneplus.modelConfiguration}','${oneplus.brandName}','${oneplus._id}','${oneplus.totalQuantity}','${oneplus.ram}')">View Specifications</button></p>
-                </div>
-                </div>
-                </div>
-                `;
+                content = content + productTemplate(mobiles);
                 if (i % 4 == 0) {
                     content = content + "</div>";
                 }

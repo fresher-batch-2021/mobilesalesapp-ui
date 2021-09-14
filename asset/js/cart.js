@@ -3,7 +3,6 @@ function shoppingCart(user) {
 
   productService.userCart().then(res => {
 
-
     const useData = localStorage.getItem("LOGGED_IN_USER");
     const userData = JSON.parse(useData);
     console.log(userData);

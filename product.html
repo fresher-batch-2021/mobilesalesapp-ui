@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="icon" href="asset/images/favicon.ico">
+    <link rel="stylesheet" href="asset/css/product.css">
 <!-- toaster style -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
@@ -33,7 +33,7 @@
     <header id="header"></header>
     <main>
 
-        <div class="btn-group" style="width:100%">
+        <div class="btn-group">
             <div class="dropDown">
                 <button type="button" onclick="dropDown()" class="dropBtn">Price</button>
                 <div id="myDropDown" class="dropDown-content">
@@ -50,10 +50,10 @@
 
         </div>
         <script src="service-api/services/product-service.js"></script>
-        <script src="asset/environment.js"></script>
+        <script src="asset/js/environment.js"></script>
 
-        <script src="asset/product.js"></script>
-        <script src="asset/jquery.min.js"></script>
+        <script src="asset/js/product.js"></script>
+        <script src="asset/js/jquery.min.js"></script>
 
         <script>
             $("#header").load("header.html");

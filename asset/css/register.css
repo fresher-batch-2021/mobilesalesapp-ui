@@ -3,13 +3,13 @@
     padding: 0%;
 }
 
-body {
-    background-image: url("../images/login\ background.jpg");
-}
-
 h2 {
     font-size: 50px;
     margin: 0px;
+    text-align: center;
+}
+
+form {
     text-align: center;
 }
 
@@ -17,23 +17,29 @@ h2 {
     border-radius: 40px;
     background-color: whitesmoke;
     margin-top: 50pX;
+    margin-bottom: 0px;
     margin-right: 500px;
     margin-left: 500px;
-    padding: 10px;
     box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.18);
 }
 
-form {
-    text-align: center;
+body {
+    background-image: url("../images/login\ background.jpg");
 }
 
-/* container image      */
+.outer.box.container {
+    padding-bottom: 500px;
+    height: 500px;
+}
+
 .imgContainer {
     text-align: center;
-    margin: 12px 0 12px 0;
+    margin-top: 10px;
+    margin-left: 30px;
     height: fit-content;
 }
 
+input[type=text],
 input[type=email],
 input[type=password] {
     text-align: left;
@@ -47,57 +53,59 @@ input[type=password] {
 }
 
 button {
-    border-radius: 4px;
     background-color: black;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     width: 70%;
 }
-
 
 button:hover {
     opacity: 0.8;
 }
 
 .container {
-    border-radius: 20px;
-    width: 95%;
-    padding: 6px;
+    background-color:#f1f1f1;
+    border-radius: 30px;
+    width: 325px;
+    height: 50px;
 }
 
-.cancelBtn {
-    margin-right: 150px;
-    padding: 5px;
-    width: 80px;
-    height: 30px;
-    background-color: #f44336;
+.cancelButton {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+.cancelButton:hover{
+    border-radius: 4px;
+    background-color: #ddd;
+}
+a {
+    margin-top: 15px;
+    float: right;
 }
 
 img.avatar {
-    height: 40%;
     width: 40%;
 }
 
-.signUp {
+.container {
+    padding: 10px;
+
+}
+
+span.psw {
     float: right;
-    margin-top: 1%;
-    padding: 10px 5px;
-    text-decoration: none;
-    color: black;
-    font-weight:bolder;
+    padding-top: 16px;
 }
-.signUp:hover{
-    border-radius: 4px;
-    background-color: #ddd;
-    color: black;
-}
+
 @media screen and (max-width: 300px) {
-    span.signUp {
+    span.psw {
         display: block;
         float: left;
     }
 }
-

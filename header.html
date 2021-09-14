@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="asset/css/header.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,13 +17,13 @@
 
     <!-- header right content -->
     <div class="topNav">
-        <a href="cart.html"><img class="cart" src="images/shopping-cart.png" alt="no image"></a>
-        <img class="logout" onclick="logout()" src="images/logout.png" alt="no image">
-        <img class="icon" src="images/smile - Copy.png" alt="no image">
+        <a href="cart.html"><img class="cart" src="asset/images/shopping-cart.png" alt="no image"></a>
+        <img class="logout" onclick="logout()" src="asset/images/logout.png" alt="no image">
+        <img class="icon" src="asset/images/smile - Copy.png" alt="no image">
         <div class="userName" id="loggedIn"></div>
 
         <!-- search bar -->
-        <em style="font-size: 30px;" class="fa fa-search" onclick="searchButton()"></em>
+        <em class="fa fa-search" onclick="searchButton()"></em>
         <input class="field" type="text" id="searchList" list="productList" name="search" placeholder="Search.."
             onkeyup="search()" autocomplete="off">
         <datalist id="productList">
@@ -37,6 +37,6 @@
     </div>
 
 </header>
-<script src="asset/environment.js"></script>
-<script src="asset/header.js"></script>
-<script src="asset/routes.js"></script>
+<script src="asset/js/environment.js"></script>
+<script src="asset/js/header.js"></script>
+<script src="asset/js/routes.js"></script>

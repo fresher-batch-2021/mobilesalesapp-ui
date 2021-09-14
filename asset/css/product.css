@@ -10,7 +10,9 @@ body{
 }
 
 /* sorting buttons */
-
+.btn-group{
+width:100%;
+}
 .btn-group button {
   margin-top: 100px;
   background-color: black;

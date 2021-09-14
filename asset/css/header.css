@@ -67,14 +67,14 @@
 }
 
 /* search icon */
-em {
+
+.fa{
   float: right;
   position: relative;
   margin-right: 50px;
   margin-top: 8px;
-
+  font-size: 30px;
 }
-
 /* cart icon */
 .cart {
   width: 25px;

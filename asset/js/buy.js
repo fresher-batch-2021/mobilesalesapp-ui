@@ -2,6 +2,7 @@ console.log(window.location.search.substr(1));
 const Params = new URLSearchParams(window.location.search.substr(1));
 console.log(Params);
 
+//1.get parameters through URL
 const id = Params.get("_id");
 const product = Params.get("productName");
 const productUrl = Params.get("productUrl");
@@ -21,7 +22,7 @@ console.log("productBrand :", productBrand);
 console.log("productPrice :", productPrice);
 console.log("totalQuantity :", totalQuantity);
 
-
+//append values in html
 const productDescription = `
 <span>${product}</span> 
     <h1>${productBrand}</h1>
@@ -30,7 +31,7 @@ const productDescription = `
 $(".product-description").html(productDescription);
 
 const productImg = `
-<img data-image="red" class="active" src="images/${productUrl}" alt="${productBrand}">
+<img data-image="red" class="active" src="asset/images/${productUrl}" alt="${productBrand}">
 `;
 $("#productImage").html(productImg);
 
@@ -55,7 +56,6 @@ const userData = localStorage.getItem("LOGGED_IN_USER");
 const user = JSON.parse(userData);
 console.log(user)
 
-
 const cartProduct = {
   "user": user._id,
   "name": user.name,
@@ -78,6 +78,8 @@ console.log(cartProduct);
 //buynow button
 function addButton(id, totalQuantity) {
   console.log(id, totalQuantity);
+  
+  
   const requestData = {
     selector: {
       "_id": id.trim(),
@@ -98,10 +100,13 @@ function addButton(id, totalQuantity) {
       "modelConfiguration": a.modelConfiguration,
       "totalQuantity": a.totalQuantity - 1
     }
-    productService.totalQuantity(array, a._id, a._rev).then(res => {}).catch(err => {})
+    productService.totalQuantity(array, a._id, a._rev).then(res => {
     localStorage.setItem("productElements", JSON.stringify(cartProduct));
     console.log(cartProduct);
-
+  }).catch(err => {
+    console.log(err.response.data);
+    toastr.error("oops! sorry couldn't get server");
+  });
     productService.placeOrder(cartProduct).then(res => {
       console.log(res.data.id);
       localStorage.setItem("CartID", res.data.id);

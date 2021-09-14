@@ -7,8 +7,8 @@
 
 <head>
   <title>Sign In</title>
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="asset/images/favicon.ico">
+  <link rel="stylesheet" href="asset/css/index.css">
 
   <!-- toaster cdn for css -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -36,7 +36,7 @@
     <form id="login" method="POST">
 
       <div class="imgContainer">
-        <img src="images/profile.png" alt="avatar" class="avatar">
+        <img src="asset/images/profile.png" alt="avatar" class="avatar">
       </div>
 
       <div class="box">
@@ -45,7 +45,7 @@
         <input type="password" name="password" id="password" placeholder="Password" required>
        
         <div>
-        <label for="role"><strong>Role:</strong> <span style="color:black">*</span></label>
+        <label for="role"><strong>Role:</strong> <span class="mandatory-symbol">*</span></label>
         <input type="radio" name="role" id="role" value="admin" required>Admin
         <input type="radio" name="role" id="role" value="user" required>User
         <button class="signin" type="submit">Sign in</button>
@@ -53,15 +53,15 @@
  
     </div>
 
-      <div class="container" style="background-color:#f1f1f1">
+      <div class="container">
         <button type="reset" class="cancelBtn">Reset</button>
         <span><a href="register.html" id="signUp-btn" class="signUp">Sign Up</a></span>
       </div>
     </form>
   </div>
 
-  <script src="asset/environment.js"></script>
-  <script src="asset/index.js"></script>
+  <script src="asset/js/environment.js"></script>
+  <script src="asset/js/index.js"></script>
   <script src="service-api/services/user-service.js"></script>
 </body>
 
